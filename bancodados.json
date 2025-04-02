@@ -1,0 +1,154 @@
+{
+  "users": {
+    "user1": {
+      "email": "joao.silva@example.com",
+      "senha": "senha123"
+    },
+    "user2": {
+      "email": "maria.oliveira@example.com",
+      "senha": "senha456"
+    },
+    "user3": {
+      "email": "carlos.souza@example.com",
+      "senha": "senha789"
+    },
+    "user4": {
+      "email": "ana.santos@example.com",
+      "senha": "senha101"
+    },
+    "user5": {
+      "email": "pedro.alves@example.com",
+      "senha": "senha202"
+    },
+    "user6": {
+      "email": "lucas.martins@example.com",
+      "senha": "senha303"
+    }
+  },
+  "receitas": {
+    "r1": {
+      "id": "1",
+      "titulo": "Arroz Carreteiro",
+      "imagem": "URL_da_imagem",
+      "categoria": "Prato Principal",
+      "tempo_preparo": "45",
+      "rendimento": "10 porções",
+      "ingredientes": {
+        "i1": { "id": "101", "quantidade": "2 xícaras" },
+        "i2": { "id": "102", "quantidade": "300g" },
+        "i3": { "id": "103", "quantidade": "1 unidade" },
+        "i4": { "id": "104", "quantidade": "2 dentes" },
+        "i5": { "id": "105", "quantidade": "1 colher de sopa" },
+        "i6": { "id": "106", "quantidade": "1 litro" },
+        "i7": { "id": "107", "quantidade": "A gosto" }
+      },
+      "passos": {
+        "p1": "Aqueça o óleo e refogue a cebola e o alho até dourarem.",
+        "p2": "Acrescente a carne seca e misture bem.",
+        "p3": "Adicione o arroz e mexa por 2 minutos.",
+        "p4": "Coloque a água quente e o sal, misture bem.",
+        "p5": "Cozinhe até a água secar e o arroz ficar macio.",
+        "p6": "Desligue o fogo e tampe por 5 minutos antes de servir."
+      }
+    },
+    "r2": {
+      "id": "2",
+      "titulo": "Feijão com Macarrão",
+      "imagem": "URL_da_imagem",
+      "categoria": "Prato Principal",
+      "tempo_preparo": "40",
+      "rendimento": "12 porções",
+      "ingredientes": {
+        "i1": { "id": "108", "quantidade": "500g" },
+        "i2": { "id": "109", "quantidade": "200g" },
+        "i3": { "id": "110", "quantidade": "2 dentes" },
+        "i4": { "id": "111", "quantidade": "1 unidade" },
+        "i5": { "id": "112", "quantidade": "1 colher de sopa" },
+        "i6": { "id": "113", "quantidade": "1 litro" },
+        "i7": { "id": "114", "quantidade": "A gosto" }
+      },
+      "passos": {
+        "p1": "Cozinhe o feijão na panela de pressão por 25 minutos.",
+        "p2": "Em outra panela, refogue o alho e a cebola no óleo.",
+        "p3": "Adicione o feijão cozido e misture bem.",
+        "p4": "Acrescente o macarrão e cozinhe até ficar macio.",
+        "p5": "Tempere com sal e deixe ferver por mais 5 minutos.",
+        "p6": "Sirva quente."
+      }
+    },
+    "r3": {
+      "id": "3",
+      "titulo": "Bolinho de Chuva",
+      "imagem": "URL_da_imagem",
+      "categoria": "Lanche",
+      "tempo_preparo": "30",
+      "rendimento": "20 unidades",
+      "ingredientes": {
+        "i1": { "id": "115", "quantidade": "2 xícaras" },
+        "i2": { "id": "116", "quantidade": "1 xícara" },
+        "i3": { "id": "117", "quantidade": "1 colher de sopa" },
+        "i4": { "id": "118", "quantidade": "2 unidades" },
+        "i5": { "id": "119", "quantidade": "1/2 xícara" },
+        "i6": { "id": "120", "quantidade": "Para fritar" }
+      },
+      "passos": {
+        "p1": "Misture a farinha, o açúcar e o fermento em uma tigela.",
+        "p2": "Acrescente os ovos e o leite aos poucos, misturando bem.",
+        "p3": "Aqueça o óleo em fogo médio.",
+        "p4": "Com uma colher, coloque pequenas porções da massa no óleo quente.",
+        "p5": "Frite até os bolinhos ficarem dourados.",
+        "p6": "Retire e coloque em papel toalha para absorver o óleo.",
+        "p7": "Polvilhe açúcar e canela antes de servir."
+      }
+    },
+    "r4": {
+      "id": "4",
+      "titulo": "Farofa de Cenoura",
+      "imagem": "URL_da_imagem",
+      "categoria": "Acompanhamento",
+      "tempo_preparo": "20",
+      "rendimento": "10 porções",
+      "ingredientes": {
+        "i1": { "id": "121", "quantidade": "2 cenouras raladas" },
+        "i2": { "id": "122", "quantidade": "2 xícaras de farinha de mandioca" },
+        "i3": { "id": "123", "quantidade": "1 cebola picada" },
+        "i4": { "id": "124", "quantidade": "2 colheres de sopa de manteiga" },
+        "i5": { "id": "125", "quantidade": "Sal a gosto" }
+      },
+      "passos": {
+        "p1": "Aqueça a manteiga e refogue a cebola até dourar.",
+        "p2": "Adicione a cenoura ralada e refogue por mais 2 minutos.",
+        "p3": "Acrescente a farinha de mandioca e mexa bem.",
+        "p4": "Tempere com sal a gosto e misture até ficar homogêneo.",
+        "p5": "Sirva quente ou fria."
+      }
+    }
+  },
+  "ingredientes": {
+    "101": { "id": "101", "nome": "Arroz" },
+    "102": { "id": "102", "nome": "Carne seca" },
+    "103": { "id": "103", "nome": "Cebola" },
+    "104": { "id": "104", "nome": "Alho" },
+    "105": { "id": "105", "nome": "Óleo" },
+    "106": { "id": "106", "nome": "Água" },
+    "107": { "id": "107", "nome": "Sal" },
+    "108": { "id": "108", "nome": "Feijão" },
+    "109": { "id": "109", "nome": "Macarrão" },
+    "110": { "id": "110", "nome": "Alho" },
+    "111": { "id": "111", "nome": "Cebola" },
+    "112": { "id": "112", "nome": "Óleo" },
+    "113": { "id": "113", "nome": "Água" },
+    "114": { "id": "114", "nome": "Sal" },
+    "115": { "id": "115", "nome": "Farinha de trigo" },
+    "116": { "id": "116", "nome": "Açúcar" },
+    "117": { "id": "117", "nome": "Fermento químico" },
+    "118": { "id": "118", "nome": "Ovos" },
+    "119": { "id": "119", "nome": "Leite" },
+    "120": { "id": "120", "nome": "Óleo para fritar" },
+    "121": { "id": "121", "nome": "Cenoura ralada" },
+    "122": { "id": "122", "nome": "Farinha de mandioca" },
+    "123": { "id": "123", "nome": "Cebola picada" },
+    "124": { "id": "124", "nome": "Manteiga" },
+    "125": { "id": "125", "nome": "Sal" }
+  }
+}
