@@ -5,8 +5,8 @@ function Sobre() {
     <div>
       <h1>Pagina Sobre a empresa</h1> <br/> <br/> 
 
-      <Link to="/">Pagina Home</Link> <br/>
-      <Link to="/contato">Contato</Link>
+      <Link to="/https://sites.google.com/estudante.sed.sc.gov.br/tanamedida/início?authuser=2">Pagina Home</Link> <br/>
+      <a href="https://sites.google.com/estudante.sed.sc.gov.br/tanamedida/início?authuser=2"><button>teste</button></a>
     </div>
   );
 }
