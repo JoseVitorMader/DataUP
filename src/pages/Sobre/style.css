@@ -1,0 +1,60 @@
+body {
+    background: url('/public/fundo_site.png') center fixed no-repeat;
+    background-size: cover;
+    margin: 0;
+    min-height: 100vh;
+  }
+  
+  .sobre-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(244, 202, 158, 0.85);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .sobre-text {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .sobre-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #c47321;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .sobre-link:hover {
+    background-color: #a35e19;
+    box-shadow: 0 5px 15px rgba(196, 115, 33, 0.3);
+  }
+  
+  .sobre-link::after {
+    content: '';
+    position: absolute;
+    background: rgba(196, 115, 33, 0.2);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    z-index: 0;
+    transform: scale(0);
+  }
+  

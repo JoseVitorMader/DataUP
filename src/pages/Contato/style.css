@@ -1,0 +1,106 @@
+body {
+    background: url('/public/fundo_site.png') center fixed no-repeat;
+    background-size: cover;
+    margin: 0;
+    min-height: 100vh;
+  }
+  
+  .contato-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(244, 202, 158, 0.85);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .contato-text {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .contato-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #c47321;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .sobre-link:hover {
+    background-color: #a35e19;
+    box-shadow: 0 5px 15px rgba(196, 115, 33, 0.3);
+  }
+  
+  .contato-link::after {
+    content: '';
+    position: absolute;
+    background: rgba(196, 115, 33, 0.2);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    z-index: 0;
+    transform: scale(0);
+  }
+  
+  .contato-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contato-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Estilo do botão do Instagram */
+.contato-button:nth-child(1) {
+    background-color: #E4405F;
+    color: white;
+}
+
+.contato-button:nth-child(1):hover {
+    background-color: #C1355B;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(228, 64, 95, 0.4);
+}
+
+/* Estilo do botão do Email */
+.contato-button:nth-child(2) {
+    background-color: #0078D4;
+    color: white;
+}
+
+.contato-button:nth-child(2):hover {
+    background-color: #005FA3;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 120, 212, 0.4);
+}
+
+/* Ícones */
+.contato-button svg {
+    font-size: 1.2rem;
+}
