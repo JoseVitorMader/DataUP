@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import './style.css';
 
 const menuItems = [
-  { to: "/cardapio", icon: <FaUtensils />, text: "Cardápio" },
+  { to: "/cardapios", icon: <FaUtensils />, text: "Cardápio" },
   { to: "/estoque", icon: <FaBoxes />, text: "Estoque" },
   { to: "/feedbacks", icon: <FaComment />, text: "Feedbacks" },
   { to: "/recebimento", icon: <FaTruck />, text: "Recebimento" },
