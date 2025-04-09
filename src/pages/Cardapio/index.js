@@ -32,11 +32,11 @@ const Cardapio = () => {
 
   return (
     <div className="container">
-      <h1>CARDÁPIOS</h1>
+      <h2>CARDÁPIOS</h2>
 
       {cardapioSelecionado ? (
         <div className="cardapio-detalhes">
-          <h2>{cardapioSelecionado.nome}</h2>
+          <h1>{cardapioSelecionado.nome}</h1>
           <p><strong>Escola:</strong> {cardapioSelecionado.escola}</p>
           <iframe
             src={cardapioSelecionado.url_pdf.replace("/view?usp=sharing", "/preview")}
@@ -49,7 +49,7 @@ const Cardapio = () => {
           <button className="botao-voltar" onClick={() => setCardapioSelecionado(null)}>Voltar</button>
         </div>
       ) : (
-        <div className="grid">
+        <div className="flex-container">
           {loading ? (
             <p className="loading">Carregando cardápios...</p>
           ) : cardapios.length > 0 ? (
