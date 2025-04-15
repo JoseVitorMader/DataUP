@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Sobre from './pages/Sobre';
 import Header from './components/Header';
+import NavBar from './components/NavBar';
 import Erro from './pages/Erro';
 import Contato from './pages/Contato';
 import Cadastro from './pages/Registrar';
@@ -13,7 +14,7 @@ import Receitas from './pages/Receitas';
 import Cardapios from './pages/Cardapio';
 import Recebimento from './pages/Recebimento';
 import Estoque from "./pages/Estoque";
-import React from "./pages/Recebimento";
+
 
 
 // Animação foda
@@ -36,6 +37,12 @@ const LayoutWithHeader = ({ children }) => (
   </>
 );
 
+const LayoutWithNavBar = ({ children }) => (
+  <>
+  <NavBar />
+  <AnimatedPage>{children}</AnimatedPage></>
+);
+
 function AnimatedRoutes() {
   const location = useLocation();
 
@@ -51,7 +58,7 @@ function AnimatedRoutes() {
         <Route path="/resetar" element={<AnimatedPage><ResetarSenha /></AnimatedPage>} />
         <Route path="/receitas" element={<LayoutWithHeader><Receitas /></LayoutWithHeader>} />
         <Route path="/cardapios" element={<LayoutWithHeader><Cardapios /></LayoutWithHeader>} />
-        <Route path="/recebimento" element={<LayoutWithHeader><React /></LayoutWithHeader>} />
+        <Route path="/recebimento" element={<LayoutWithHeader><Recebimento /></LayoutWithHeader>} />
         <Route path="/estoque" element={<LayoutWithHeader><Estoque /></LayoutWithHeader>} />
         <Route path="*" element={<AnimatedPage><Erro /></AnimatedPage>} />
       </Routes>
