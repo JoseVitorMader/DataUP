@@ -11,6 +11,10 @@ import RecuperarSenha from './pages/Recuperar';
 import ResetarSenha from './pages/Resetar';
 import Receitas from './pages/Receitas';
 import Cardapios from './pages/Cardapio';
+import Recebimento from './pages/Recebimento';
+import Estoque from "./pages/Estoque";
+import React from "./pages/Recebimento";
+
 
 // Animação foda
 const AnimatedPage = ({ children }) => (
@@ -47,6 +51,8 @@ function AnimatedRoutes() {
         <Route path="/resetar" element={<AnimatedPage><ResetarSenha /></AnimatedPage>} />
         <Route path="/receitas" element={<LayoutWithHeader><Receitas /></LayoutWithHeader>} />
         <Route path="/cardapios" element={<LayoutWithHeader><Cardapios /></LayoutWithHeader>} />
+        <Route path="/recebimento" element={<LayoutWithHeader><React /></LayoutWithHeader>} />
+        <Route path="/estoque" element={<LayoutWithHeader><Estoque /></LayoutWithHeader>} />
         <Route path="*" element={<AnimatedPage><Erro /></AnimatedPage>} />
       </Routes>
     </AnimatePresence>

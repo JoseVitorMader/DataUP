@@ -1,4 +1,4 @@
-// src/services/firebase.js
+// src/firebase.js
 import { initializeApp, getApps } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
 
@@ -9,12 +9,11 @@ const firebaseConfig = {
   projectId: "tanamedida-2e7a3",
   storageBucket: "tanamedida-2e7a3.appspot.com",
   messagingSenderId: "490709823146",
-  appId: "1:490709823146:web:a3c389cab4954757f5aad3"
+  appId: "1:490709823146:web:a3c389cab4954757f5aad3",
+  measurementId: "G-QP4XP50HGR"
 };
 
-// Verifica se o Firebase já foi inicializado
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
-
 const db = getDatabase(app);
 
-export { db };
+export { app, db };

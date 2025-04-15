@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff7ed;
+}
+
+.cadastro-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #f4ca9e;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.cadastro-container h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  color: #c47321;
+}
+
+.form-recebimento {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-recebimento input {
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #c47321;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+  background-color: #fffdf7;
+}
+
+.form-recebimento input:focus {
+  border-color: #9e540a;
+  box-shadow: 0 0 10px #c47321;
+}
+
+.form-recebimento input[readonly] {
+  background-color: #eee;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-recebimento button {
+  padding: 15px;
+  background: linear-gradient(90deg, #c47321, #9e540a);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.form-recebimento button:hover {
+  background: linear-gradient(90deg, #c96806, #8f4904);
+  box-shadow: 0 0 10px #000000;
+}
