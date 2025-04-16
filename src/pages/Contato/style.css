@@ -19,6 +19,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: all 0.3s ease;
+    margin-top: 110px;
   }
   
   .contato-text {
@@ -76,7 +77,7 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Estilo do botão do Instagram */
+
 .contato-button:nth-child(1) {
     background-color: #E4405F;
     color: white;
@@ -88,7 +89,7 @@ body {
     box-shadow: 0 5px 15px rgba(228, 64, 95, 0.4);
 }
 
-/* Estilo do botão do Email */
+
 .contato-button:nth-child(2) {
     background-color: #0078D4;
     color: white;
@@ -100,7 +101,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 120, 212, 0.4);
 }
 
-/* Ícones */
+
 .contato-button svg {
     font-size: 1.2rem;
 }

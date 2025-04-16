@@ -5,7 +5,7 @@ import './style.css';
 function Contato() {
   return (
     <div className="contato-content">
-      <h1>Sobre</h1>
+      <h1>Contato</h1>
       <p className="contato-text">
         Se você deseja entrar em contato com o <strong>Tá Na Medida</strong>, temos o maior prazer em atender suas dúvidas, 
         ouvir suas sugestões ou estabelecer parcerias! 📩💬

@@ -4,7 +4,7 @@ import { getDatabase, ref, get, child } from "firebase/database";
 import './style.css';
 
 const Cardapio = () => {
-  const app = getApp(); // Usa o app já inicializado
+  const app = getApp(); 
   const db = getDatabase(app);
 
   const [cardapios, setCardapios] = useState([]);

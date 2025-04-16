@@ -1,7 +1,7 @@
 body {
     background: url('/public/fundo_site.png') center fixed no-repeat;
     background-size: cover;
-    margin: 0;
+    margin-top: 0;
     min-height: 100vh;
   }
   
@@ -19,6 +19,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: all 0.3s ease;
+    margin-top: 110px;
   }
   
   .sobre-text {

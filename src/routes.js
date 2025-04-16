@@ -3,8 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Sobre from './pages/Sobre';
-import Header from './components/Header';
-import NavBar from './components/NavBar';
+import AppLayout from './components/Header';
 import Erro from './pages/Erro';
 import Contato from './pages/Contato';
 import Cadastro from './pages/Registrar';
@@ -29,19 +28,15 @@ const AnimatedPage = ({ children }) => (
   </motion.div>
 );
 
-// Componente para rotas com Header
+
 const LayoutWithHeader = ({ children }) => (
   <>
-    <Header />
+    <AppLayout />
     <AnimatedPage>{children}</AnimatedPage>
   </>
 );
 
-const LayoutWithNavBar = ({ children }) => (
-  <>
-  <NavBar />
-  <AnimatedPage>{children}</AnimatedPage></>
-);
+
 
 function AnimatedRoutes() {
   const location = useLocation();

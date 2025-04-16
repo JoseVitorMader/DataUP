@@ -11,18 +11,18 @@ function Estoque() {
     const recebimentosRef = ref(db, 'recebimentos');
     const estoqueRef = ref(db, 'estoque');
 
-    // Importa os recebimentos para estoque caso ainda não estejam lá
+    
     onValue(recebimentosRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
         Object.entries(data).forEach(([key, value]) => {
           const estoqueItemRef = ref(db, `estoque/${key}`);
-          set(estoqueItemRef, value); // Sobrescreve
+          set(estoqueItemRef, value); 
         });
       }
     });
 
-    // Observa estoque para exibir
+    
     onValue(estoqueRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {

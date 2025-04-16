@@ -9,6 +9,11 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 24px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo-title {
@@ -17,23 +22,62 @@ header {
 }
 
 .favicon {
-    width: 40px; /* Ajuste conforme necessário */
+    width: 40px;
     height: 40px;
     margin-right: 10px;
 }
 
-header a {
-    color: #c47321;
-    font-size: 20px;
-    text-decoration: none;
+.navbar {
+    display: flex;
+    align-items: center;
 }
 
-header a + a {
-    margin-left: 10px;
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0 8px;
+    position: relative;
+}
+
+.nav-link {
+    color: #c47321;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.nav-text {
+    font-size: 14px;
+    font-weight: 500;
 }
 
 h2 {
     font-size: 52px;
     font-family: 'Coiny', sans-serif;
     font-weight: 700;
+    margin: 0;
+}
+
+
+body {
+    padding-top: 100px;
 }
