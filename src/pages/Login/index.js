@@ -52,6 +52,7 @@ const Login = () => {
         });
 
         if (userFound) {
+          localStorage.setItem('isADM', userFound.ADM ? 'true' : 'false');
           navigate('/home'); 
         } else {
           setError("Email ou senha inválidos.");

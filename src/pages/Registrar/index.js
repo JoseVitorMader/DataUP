@@ -35,26 +35,27 @@ const Cadastro = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     setError("");
-
+  
     if (password !== confirmPassword) {
       setError("As senhas não coincidem.");
       return;
     }
-
+  
     try {
       const userId = Date.now().toString();
       set(ref(db, 'users/' + userId), {
         email: email.trim().toLowerCase(),
-        senha: password.trim()
+        senha: password.trim(),
+        ADM: false 
       });
-
-      navigate('/'); // Redireciona para a tela de login após o cadastro
+  
+      navigate('/');
     } catch (err) {
       console.error("Erro no cadastro:", err);
       setError("Erro ao cadastrar usuário.");
     }
   };
-
+  
   return (
     <div className="container">
       <form className="login-form" onSubmit={handleRegister}>
