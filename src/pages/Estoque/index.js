@@ -36,7 +36,7 @@ function Estoque() {
 
   const handleQuantidadeChange = (id, novaQuantidade) => {
     const novaQtdNum = parseFloat(novaQuantidade.replace(',', '.')) || 0;
-    if (novaQtdNum <= 0) {
+    if (novaQtdNum <= 0.00) {
       remove(ref(db, `estoque/${id}`));
     } else {
       set(ref(db, `estoque/${id}/quantidade`), novaQuantidade);
