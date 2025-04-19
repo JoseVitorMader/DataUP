@@ -44,7 +44,7 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/DataUP" element={<AnimatedPage><Login /></AnimatedPage>} />
+        <Route path="/" element={<AnimatedPage><Login /></AnimatedPage>} />
         <Route path="/home" element={<LayoutWithHeader><Home /></LayoutWithHeader>} />
         <Route path="/sobre" element={<LayoutWithHeader><Sobre /></LayoutWithHeader>} />
         <Route path="/contato" element={<LayoutWithHeader><Contato /></LayoutWithHeader>} />
@@ -63,10 +63,11 @@ function AnimatedRoutes() {
 
 function RoutesApp() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/DataUP/">
       <AnimatedRoutes />
     </BrowserRouter>
   );
 }
+
 
 export default RoutesApp;
