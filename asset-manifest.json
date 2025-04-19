@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/JoseVitorMader.github.io/DataUP/static/css/main.dc66c245.css",
+    "main.js": "/JoseVitorMader.github.io/DataUP/static/js/main.bb8fdcd7.js",
+    "static/media/fundo_login.png": "/JoseVitorMader.github.io/DataUP/static/media/fundo_login.cb70a75281adb74d4a76.png",
+    "static/media/fundo_site.png": "/JoseVitorMader.github.io/DataUP/static/media/fundo_site.655e8cbcdd1191d6fb18.png",
+    "index.html": "/JoseVitorMader.github.io/DataUP/index.html",
+    "main.dc66c245.css.map": "/JoseVitorMader.github.io/DataUP/static/css/main.dc66c245.css.map",
+    "main.bb8fdcd7.js.map": "/JoseVitorMader.github.io/DataUP/static/js/main.bb8fdcd7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc66c245.css",
+    "static/js/main.bb8fdcd7.js"
+  ]
+}
