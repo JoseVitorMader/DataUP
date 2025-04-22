@@ -32,7 +32,8 @@ A estrutura do projeto segue a seguinte organização:
 ```
 📂 ta-na-medida/
 ├── 📁 backend/      # Código do servidor Express
-├── 📁 frontend/     # Código do React
+├── 📁 public/       # Arquivos estáticos
+├── 📁 src/          # Código do React
 ├── 📄 .env          # Configurações sensíveis do projeto
 ├── 📄 package.json  # Configuração das dependências
 └── 📄 README.md     # Documentação do projeto
