@@ -63,7 +63,7 @@ function AnimatedRoutes() {
 
 function RoutesApp() {
   return (
-    <BrowserRouter basename="/DataUP/">
+    <BrowserRouter>
       <AnimatedRoutes />
     </BrowserRouter>
   );
