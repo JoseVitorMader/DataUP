@@ -15,7 +15,7 @@ import Recebimento from './pages/Recebimento';
 import Estoque from "./pages/Estoque";
 import CadastroCardapio from "./pages/CadastrarCardapio";
 import AdminUsers from "./pages/GerenciaUsuarios";
-
+import CadastroReceitas from "./pages/CadastrarReceitas";
 
 // Animação foda
 const AnimatedPage = ({ children }) => (
@@ -58,6 +58,7 @@ function AnimatedRoutes() {
         <Route path="/estoque" element={<LayoutWithHeader><Estoque /></LayoutWithHeader>} />
         <Route path="/usuarios" element={<LayoutWithHeader><AdminUsers /></LayoutWithHeader>} />
         <Route path= "/cadCardapio"  element ={ <LayoutWithHeader> <CadastroCardapio/></LayoutWithHeader>}/>
+        <Route path= "/cadReceita"  element ={ <LayoutWithHeader> <CadastroReceitas/></LayoutWithHeader>}/>
         <Route path="*" element={<AnimatedPage><Erro /></AnimatedPage>} />
       </Routes>
     </AnimatePresence>
