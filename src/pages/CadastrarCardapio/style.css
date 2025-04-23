@@ -1,26 +1,26 @@
 /* CadastroCardapio.css */
 
 /* Definir o estilo básico do formulário */
-form {
+.form-cadCardapio {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f4f4f4;
+  background-color: #f4ca9ed9;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo para os rótulos (labels) */
-label {
+.form-cadCardapio {
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
 /* Estilo para os campos de entrada (inputs) */
-input[type="text"], 
-input[type="url"] {
+.form-cadCardapio[type="text"], 
+.form-cadCardapio[type="url"] {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -31,26 +31,27 @@ input[type="url"] {
 }
 
 /* Estilo para a borda dos inputs quando focados */
-input[type="text"]:focus, 
-input[type="url"]:focus {
-  border-color: #007bff;
+.form-cadCardapio[type="text"]:focus, 
+.form-cadCardapio[type="url"]:focus {
+  border-color: #9e540a;
+  box-shadow: 0 0 10px #c47321;
   outline: none;
 }
 
 /* Remover a palavra 'required' visível na tela */
-label span {
+.form-cadCardapio label span {
   color: red;
   font-size: 14px;
 }
 
 /* Adicionar espaçamento entre os inputs */
-input[type="url"] {
+.form-cadCardapio input[type="url"] {
   margin-bottom: 20px;
 }
 
 /* Estilo para o botão de envio (caso queira adicionar) */
-button {
-  background-color: #007bff;
+.form-cadCardapio button {
+  background-color: #f8a46f;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -59,6 +60,6 @@ button {
   font-size: 16px;
 }
 
-button:hover {
-  background-color: #0056b3;
+.form-cadCardapio button:hover {
+  background-color: #f39c12;
 }
