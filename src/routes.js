@@ -13,8 +13,8 @@ import Receitas from './pages/Receitas';
 import Cardapios from './pages/Cardapio';
 import Recebimento from './pages/Recebimento';
 import Estoque from "./pages/Estoque";
+import CadastroCardapio from "./pages/CadastrarCardapio";
 import AdminUsers from "./pages/GerenciaUsuarios";
-
 
 
 // Animação foda
@@ -57,6 +57,7 @@ function AnimatedRoutes() {
         <Route path="/recebimento" element={<LayoutWithHeader><Recebimento /></LayoutWithHeader>} />
         <Route path="/estoque" element={<LayoutWithHeader><Estoque /></LayoutWithHeader>} />
         <Route path="/usuarios" element={<LayoutWithHeader><AdminUsers /></LayoutWithHeader>} />
+        <Route path= "/cadCardapio"  element ={ <LayoutWithHeader> <CadastroCardapio/></LayoutWithHeader>}/>
         <Route path="*" element={<AnimatedPage><Erro /></AnimatedPage>} />
       </Routes>
     </AnimatePresence>
@@ -70,6 +71,5 @@ function RoutesApp() {
     </BrowserRouter>
   );
 }
-
 
 export default RoutesApp;
