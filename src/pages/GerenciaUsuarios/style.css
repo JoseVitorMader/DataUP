@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff7ed;
+  font-family: 'Coiny', cursive;
+}
+
+.admin-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  background: #f4ca9e;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-top: 110px;
+}
+
+.admin-container h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  color: #c47321;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.loading {
+  font-size: 24px;
+  color: #c47321;
+}
+
+.error {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.search-bar {
+  margin: 20px 0;
+}
+
+.search-bar input {
+  width: 80%;
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #c47321;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+  background-color: #fffdf7;
+}
+
+.search-bar input:focus {
+  border-color: #9e540a;
+  box-shadow: 0 0 10px #c47321;
+}
+
+.users-table {
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fffdf7;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 2px solid #c47321;
+}
+
+th {
+  background-color: #c47321;
+  color: white;
+  font-size: 18px;
+}
+
+tr:hover {
+  background-color: #f4e1c6;
+}
+
+.admin-status {
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.admin-status.admin {
+  background-color: #4caf50;
+  color: white;
+}
+
+.admin-status.user {
+  background-color: #f8a46f;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Coiny', cursive;
+  transition: all 0.3s;
+}
+
+.back-button {
+  background: linear-gradient(90deg, #c47321, #9e540a);
+  color: white;
+  padding: 12px 25px;
+  margin-bottom: 20px;
+}
+
+.back-button:hover {
+  background: linear-gradient(90deg, #c96806, #8f4904);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.edit {
+  background-color: #3c90f0;
+  color: white;
+}
+
+.save {
+  background-color: #4caf50;
+  color: white;
+}
+
+.cancel {
+  background-color: #f44336;
+  color: white;
+}
+
+.toggle-admin {
+  background-color: #eca966;
+  color: black;
+}
+
+.delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.no-users {
+  font-size: 20px;
+  color: #c47321;
+  padding: 20px;
+}
+
+input[type="email"], select {
+  padding: 10px;
+  border: 2px solid #c47321;
+  border-radius: 10px;
+  width: 100%;
+  font-family: 'Coiny', cursive;
+  background-color: #fffdf7;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}

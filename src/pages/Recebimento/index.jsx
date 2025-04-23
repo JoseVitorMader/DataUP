@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ref, set, onValue } from 'firebase/database';
-import { db } from '../../firebase.js'; // ✅ Firebase centralizado
+import { db } from '../../firebase.js';
 import './style.css';
 
 function CadastrarRecebimento() {
@@ -17,14 +17,51 @@ function CadastrarRecebimento() {
     return (qtd * valor).toFixed(2);
   };
 
+  const verificarEAdicionarIngrediente = async (nomeProduto) => {
+    try {
+      const ingredientesRef = ref(db, 'ingredientes');
+      const snapshot = await new Promise((resolve, reject) => {
+        onValue(ingredientesRef, resolve, reject, { onlyOnce: true });
+      });
+
+      let ingredienteExiste = false;
+      if (snapshot.exists()) {
+        const ingredientes = snapshot.val();
+        ingredienteExiste = Object.values(ingredientes).some(
+          ing => ing.nome.toLowerCase() === nomeProduto.toLowerCase()
+        );
+      }
+
+      if (!ingredienteExiste) {
+        let nextId = 101;
+        if (snapshot.exists()) {
+          const ids = Object.keys(snapshot.val()).map(Number);
+          nextId = Math.max(...ids) + 1;
+        }
+
+        await set(ref(db, `ingredientes/${nextId}`), {
+          id: nextId.toString(),
+          nome: nomeProduto
+        });
+        return true;
+      }
+      return false;
+    } catch (err) {
+      console.error("Erro ao verificar/adicionar ingrediente:", err);
+      return false;
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setSuccess('');
 
     try {
+      const ingredienteAdicionado = await verificarEAdicionarIngrediente(produto);
+      
+      const recebimentosRef = ref(db, 'recebimentos');
       const snapshot = await new Promise((resolve, reject) => {
-        const recebimentosRef = ref(db, 'recebimentos');
         onValue(recebimentosRef, resolve, reject, { onlyOnce: true });
       });
 
@@ -34,19 +71,24 @@ function CadastrarRecebimento() {
         count = Object.keys(data).length + 1;
       }
 
-      const total = calcularTotal();
       const recebimento = {
-        quantidade,
-        produto,
         codigo,
+        produto,
+        quantidade,
         valorUnitario,
-        valorTotal: total
+        valorTotal: calcularTotal()
       };
 
       await set(ref(db, `recebimentos/re${count}`), recebimento);
-      setSuccess(`Recebimento re${count} cadastrado com sucesso!`);
+      
+      let successMessage = `Recebimento re${count} cadastrado com sucesso!`;
+      if (ingredienteAdicionado) {
+        successMessage += ` O ingrediente "${produto}" foi adicionado ao estoque.`;
+      }
 
-      // Limpa os campos
+      setSuccess(successMessage);
+
+
       setQuantidade('');
       setProduto('');
       setCodigo('');

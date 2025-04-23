@@ -13,6 +13,7 @@ import Receitas from './pages/Receitas';
 import Cardapios from './pages/Cardapio';
 import Recebimento from './pages/Recebimento';
 import Estoque from "./pages/Estoque";
+import AdminUsers from "./pages/GerenciaUsuarios";
 
 
 
@@ -55,6 +56,7 @@ function AnimatedRoutes() {
         <Route path="/cardapios" element={<LayoutWithHeader><Cardapios /></LayoutWithHeader>} />
         <Route path="/recebimento" element={<LayoutWithHeader><Recebimento /></LayoutWithHeader>} />
         <Route path="/estoque" element={<LayoutWithHeader><Estoque /></LayoutWithHeader>} />
+        <Route path="/usuarios" element={<LayoutWithHeader><AdminUsers /></LayoutWithHeader>} />
         <Route path="*" element={<AnimatedPage><Erro /></AnimatedPage>} />
       </Routes>
     </AnimatePresence>
