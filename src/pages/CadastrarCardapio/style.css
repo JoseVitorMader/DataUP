@@ -1,20 +1,20 @@
 /* CadastroCardapio.css */
 
 /* Definir o estilo básico do formulário */
-.form-cadCardapio {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  margin-top: 240px;
-  padding: 20px;
-  background-color: #f4ca9ed9;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.cadastro-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #f4ca9e;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-top: 110px;
 }
 .form-container{
   max-width: 600px;
   margin: 50px auto;
-  background: #f4ca9e;
+  background: #f7dab9;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -63,7 +63,7 @@
 /* Estilo para o botão de envio (caso queira adicionar) */
 .form-cadCardapio button {
   background-color: #f8a46f;
-  color: white;
+  color: rgb(231, 168, 109);
   padding: 10px 15px;
   border: none;
   border-radius: 4px;
@@ -74,3 +74,40 @@
 .form-cadCardapio button:hover {
   background-color: #0056b3;
 }
+.form-cadCardapio input {
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #c47321;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+  background-color: #fffdf7;
+}
+
+.form-cadCardpio input:focus {
+  border-color: #9e540a;
+  box-shadow: 0 0 10px #c47321;
+}
+
+.form-cadCardapio input[readonly] {
+  background-color: #eee;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-cadCardapio button {
+  padding: 15px;
+  background: linear-gradient(90deg, #c47321, #9e540a);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.form-cadCardapio button:hover {
+  background: linear-gradient(90deg, #c96806, #8f4904);
+  box-shadow: 0 0 10px #000000;
+}
+
