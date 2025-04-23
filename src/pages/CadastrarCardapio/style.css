@@ -1,7 +1,13 @@
-/* CadastroCardapio.css */
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
 
-/* Definir o estilo básico do formulário */
-.cadastro-container {
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff7ed;
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
   max-width: 600px;
   margin: 50px auto;
   background: #f4ca9e;
@@ -11,92 +17,42 @@
   text-align: center;
   margin-top: 110px;
 }
-.form-container{
-  max-width: 600px;
-  margin: 50px auto;
-  background: #f7dab9;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  margin-top: 110px;
+
+.form-container h1 {
+  font-family: 'Coiny', cursive;
+  font-size: 48px;
+  margin-bottom: 30px;
+  color: #c47321;
 }
 
-/* Estilo para os rótulos (labels) */
-.form-cadCardapio {
+.form-container label {
   display: block;
+  text-align: left;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-size: 18px;
+  color: #5e3b09;
 }
 
-/* Estilo para os campos de entrada (inputs) */
-.form-cadCardapio[type="text"], 
-.form-cadCardapio[type="url"] {
+.form-container input {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-/* Estilo para a borda dos inputs quando focados */
-.form-cadCardapio[type="text"]:focus, 
-.form-cadCardapio[type="url"]:focus {
-  border-color: #9e540a;
-  box-shadow: 0 0 10px #c47321;
-  outline: none;
-}
-
-/* Remover a palavra 'required' visível na tela */
-.form-cadCardapio label span {
-  color: red;
-  font-size: 14px;
-}
-
-/* Adicionar espaçamento entre os inputs */
-.form-cadCardapio input[type="url"] {
-  margin-bottom: 20px;
-}
-
-/* Estilo para o botão de envio (caso queira adicionar) */
-.form-cadCardapio button {
-  background-color: #f8a46f;
-  color: rgb(231, 168, 109);
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.form-cadCardapio button:hover {
-  background-color: #0056b3;
-}
-.form-cadCardapio input {
   padding: 15px;
   font-size: 18px;
   border: 2px solid #c47321;
   border-radius: 10px;
   outline: none;
-  transition: 0.3s;
+  margin-bottom: 20px;
   background-color: #fffdf7;
+  transition: 0.3s;
 }
 
-.form-cadCardpio input:focus {
+.form-container input:focus {
   border-color: #9e540a;
   box-shadow: 0 0 10px #c47321;
 }
 
-.form-cadCardapio input[readonly] {
-  background-color: #eee;
-  font-weight: bold;
-  color: #555;
-}
-
-.form-cadCardapio button {
+.form-container button {
   padding: 15px;
+  width: 100%;
   background: linear-gradient(90deg, #c47321, #9e540a);
   color: white;
   border: none;
@@ -106,8 +62,7 @@
   transition: background 0.3s, box-shadow 0.3s;
 }
 
-.form-cadCardapio button:hover {
+.form-container button:hover {
   background: linear-gradient(90deg, #c96806, #8f4904);
   box-shadow: 0 0 10px #000000;
 }
-

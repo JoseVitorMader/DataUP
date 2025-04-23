@@ -32,7 +32,9 @@ const CadastroCardapio = () => {
   };
 
   return (
+    
     <form onSubmit={handleSubmit} className="form-container">
+        <h1>Adicione um novo Cardapio!</h1>
       <label>
         Escola:
         <input type="text" name="escola" value={form.escola} onChange={handleChange} required />

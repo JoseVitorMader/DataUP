@@ -1,0 +1,52 @@
+
+@media (max-width: 768px) {
+    html {
+      font-size: 93%; 
+    }
+  
+    .container {
+      padding: 0 15px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    input, button, textarea, select {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  }
+  
+
+  @media (max-width: 480px) {
+    html {
+      font-size: 87.5%; 
+    }
+  
+    .container {
+      padding: 0 10px;
+    }
+  
+    h1 {
+      font-size: 1.7rem;
+    }
+  
+    h2 {
+      font-size: 1.3rem;
+    }
+  
+    input, button, textarea, select {
+      font-size: 0.95rem;
+      padding: 10px;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
