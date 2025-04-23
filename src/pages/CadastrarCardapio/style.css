@@ -1,1 +1,113 @@
+/* CadastroCardapio.css */
+
+/* Definir o estilo básico do formulário */
+.cadastro-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #f4ca9e;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-top: 110px;
+}
+.form-container{
+  max-width: 600px;
+  margin: 50px auto;
+  background: #f7dab9;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-top: 110px;
+}
+
+/* Estilo para os rótulos (labels) */
+.form-cadCardapio {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Estilo para os campos de entrada (inputs) */
+.form-cadCardapio[type="text"], 
+.form-cadCardapio[type="url"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Estilo para a borda dos inputs quando focados */
+.form-cadCardapio[type="text"]:focus, 
+.form-cadCardapio[type="url"]:focus {
+  border-color: #9e540a;
+  box-shadow: 0 0 10px #c47321;
+  outline: none;
+}
+
+/* Remover a palavra 'required' visível na tela */
+.form-cadCardapio label span {
+  color: red;
+  font-size: 14px;
+}
+
+/* Adicionar espaçamento entre os inputs */
+.form-cadCardapio input[type="url"] {
+  margin-bottom: 20px;
+}
+
+/* Estilo para o botão de envio (caso queira adicionar) */
+.form-cadCardapio button {
+  background-color: #f8a46f;
+  color: rgb(231, 168, 109);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-cadCardapio button:hover {
+  background-color: #0056b3;
+}
+.form-cadCardapio input {
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #c47321;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+  background-color: #fffdf7;
+}
+
+.form-cadCardpio input:focus {
+  border-color: #9e540a;
+  box-shadow: 0 0 10px #c47321;
+}
+
+.form-cadCardapio input[readonly] {
+  background-color: #eee;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-cadCardapio button {
+  padding: 15px;
+  background: linear-gradient(90deg, #c47321, #9e540a);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.form-cadCardapio button:hover {
+  background: linear-gradient(90deg, #c96806, #8f4904);
+  box-shadow: 0 0 10px #000000;
+}
 
