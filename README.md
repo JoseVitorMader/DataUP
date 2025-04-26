@@ -17,6 +17,7 @@ npm install react-icons
 npm install concurrently
 npm install framer-motion
 npm install react-router-dom
+npm install @emailjs/browser
 ```
 
 Após instalar todas as dependências, inicie o projeto com:

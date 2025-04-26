@@ -1,22 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, get } from 'firebase/database';
+import { ref, get } from 'firebase/database';
+import { db } from '../../firebase'; 
+import emailjs from '@emailjs/browser';
 import './style.css';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCLEL9RdqRoop0n2Dc2c0bqzsKagv4ZaCU",
-  authDomain: "tanamedida-2e7a3.firebaseapp.com",
-  databaseURL: "https://tanamedida-2e7a3-default-rtdb.firebaseio.com",
-  projectId: "tanamedida-2e7a3",
-  storageBucket: "tanamedida-2e7a3.firebasestorage.app",
-  messagingSenderId: "490709823146",
-  appId: "1:490709823146:web:a3c389cab4954757f5aad3",
-  measurementId: "G-QP4XP50HGR"
-};
-
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
 
 const RecuperarSenha = () => {
   const [email, setEmail] = useState('');
@@ -42,7 +29,7 @@ const RecuperarSenha = () => {
     }
 
     try {
-      const usersRef = ref(database, 'users');
+      const usersRef = ref(db, 'users');
       const snapshot = await get(usersRef);
 
       if (snapshot.exists()) {
@@ -50,22 +37,17 @@ const RecuperarSenha = () => {
         const emailExists = Object.values(users).some(user => user.email === email);
 
         if (emailExists) {
-          // Envia a solicitação para o backend
-          const response = await fetch('http://localhost:5000/send-reset-email', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
+          await emailjs.send(
+            'service_6srk4ni',     
+            'template_ge9r3dr',    
+            {
+              to_email: email,    
+              reset_link: 'https://tanamedida.onrender.com/resetar' 
             },
-            body: JSON.stringify({ email, resetLink: 'http://localhost:3000/resetar' }),
-          });
+            'TpykPSwk5qN8sLLfN'     
+          );
 
-          const data = await response.json();
-
-          if (response.ok) {
-            setMessage("Um email de recuperação foi enviado. Verifique sua caixa de entrada.");
-          } else {
-            setError(data.error || "Erro ao enviar email.");
-          }
+          setMessage("Um email de recuperação foi enviado. Verifique sua caixa de entrada.");
         } else {
           setError("Este e-mail não está registrado em nosso sistema.");
         }
@@ -73,8 +55,8 @@ const RecuperarSenha = () => {
         setError("Nenhum usuário encontrado no sistema.");
       }
     } catch (err) {
-      setError(`Erro ao verificar email: ${err.message}`);
-      console.error("Erro Firebase:", err);
+      console.error("Erro:", err);
+      setError("Erro ao enviar email.");
     }
   };
 
