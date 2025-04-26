@@ -1,22 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, get, update } from 'firebase/database';
+import { ref, get, update } from 'firebase/database';
+import { db } from '../../firebase'; 
 import './style.css';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCLEL9RdqRoop0n2Dc2c0bqzsKagv4ZaCU",
-  authDomain: "tanamedida-2e7a3.firebaseapp.com",
-  databaseURL: "https://tanamedida-2e7a3-default-rtdb.firebaseio.com",
-  projectId: "tanamedida-2e7a3",
-  storageBucket: "tanamedida-2e7a3.firebasestorage.app",
-  messagingSenderId: "490709823146",
-  appId: "1:490709823146:web:a3c389cab4954757f5aad3",
-  measurementId: "G-QP4XP50HGR"
-};
-
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
 
 const ResetarSenha = () => {
   const [email, setEmail] = useState('');
@@ -43,7 +29,7 @@ const ResetarSenha = () => {
     }
 
     try {
-      const usersRef = ref(database, 'users');
+      const usersRef = ref(db, 'users');
       const snapshot = await get(usersRef);
 
       if (snapshot.exists()) {
@@ -51,8 +37,7 @@ const ResetarSenha = () => {
         const userKey = Object.keys(users).find(key => users[key].email === email);
 
         if (userKey) {
-          // Atualiza a senha do usuário diretamente no Realtime Database
-          await update(ref(database, `users/${userKey}`), { senha: novaSenha });
+          await update(ref(db, `users/${userKey}`), { senha: novaSenha });
           setMessage("Senha redefinida com sucesso!");
         } else {
           setError("Este e-mail não está registrado em nosso sistema.");
@@ -61,8 +46,8 @@ const ResetarSenha = () => {
         setError("Nenhum usuário encontrado no sistema.");
       }
     } catch (err) {
+      console.error("Erro ao redefinir senha:", err);
       setError(`Erro ao redefinir senha: ${err.message}`);
-      console.error("Erro Firebase:", err);
     }
   };
 
