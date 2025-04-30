@@ -1,137 +1,128 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
 
-/* HEADER BASE */
+
+body {
+  padding-top: 70px; 
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #fffaf3;
+}
+
+
 header {
-    width: 100%;
-    height: 100px;
-    background-color: #f4ca9e;
-    color: #c47321;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 70px; 
+  background-color: #f4ca9e;
+  color: #c47321;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo-title {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .favicon {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-item {
-    margin: 0 8px;
-    position: relative;
-}
-
-.nav-link {
-    color: #c47321;
-    text-decoration: none;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.nav-icon {
-    font-size: 20px;
-    margin-bottom: 4px;
-}
-
-.nav-text {
-    font-size: 14px;
-    font-weight: 500;
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
 }
 
 h2 {
-    font-size: 48px;
-    font-family: 'Coiny', sans-serif;
-    font-weight: 700;
-    margin: 0;
+  font-size: 32px;
+  font-family: 'Coiny', sans-serif;
+  font-weight: 700;
+  margin: 0;
 }
 
-body {
-    padding-top: 100px;
+
+.sidebar-menu {
+  position: fixed;
+  top: 70px; 
+  left: 0;
+  width: 260px;
+  height: calc(100vh - 70px);
+  background-color: #f4ca9e;
+  padding: 20px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  z-index: 999;
+  transition: transform 0.3s ease;
 }
 
+.sidebar-item {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  color: #c47321;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  gap: 10px;
+}
+
+.sidebar-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
 
 
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        height: auto;
-        padding: 12px;
-        align-items: flex-start;
-    }
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 12px;
+    align-items: flex-start;
+  }
 
-    .logo-title {
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 10px;
-    }
+  .logo-title {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
-    .navbar {
-        width: 100%;
-        justify-content: center;
-    }
+  h2 {
+    font-size: 24px;
+  }
 
-    .nav-list {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
+  .sidebar-menu {
+    width: 100%;
+    height: auto;
+    top: 70px;
+    position: absolute;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .nav-item {
-        margin: 5px 0;
-    }
-
-    .nav-link {
-        font-size: 18px;
-        flex-direction: row;
-        justify-content: center;
-        gap: 8px;
-    }
-
-    .nav-icon {
-        margin-bottom: 0;
-    }
+  .sidebar-item {
+    width: 100%;
+    font-size: 16px;
+    padding: 8px 0;
+  }
 }
 
 @media (max-width: 480px) {
-    h2 {
-        font-size: 32px;
-    }
+  h2 {
+    font-size: 20px;
+  }
 
-    .nav-link {
-        font-size: 16px;
-        padding: 6px 10px;
-    }
+  .sidebar-item {
+    font-size: 15px;
+  }
+
+  .favicon {
+    width: 32px;
+    height: 32px;
+  }
 }
