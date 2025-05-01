@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  FaUtensils, FaBoxes, FaComment, FaTruck, FaBook, FaHome,
-  FaInfoCircle, FaEnvelope, FaUserShield, FaPlus, FaMinus
-} from 'react-icons/fa';
+import { FaUtensils, FaBoxes, FaComment, FaTruck, FaBook, FaHome, FaInfoCircle, FaEnvelope, FaUserShield, FaChartBar, FaPlus, FaMinus } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import './style.css';
 
@@ -40,37 +37,42 @@ function Header() {
   const visibleItems = isADM ? (showADM ? adminItems : normalItems) : normalItems;
 
   return (
-    <aside className="sidebar-menu">
-      <div className="sidebar-header">
+    <header>
+      <div className="logo-title">
         <img src="/favicon.ico" alt="Logo" className="favicon" />
-        <h1 className="sidebar-title">Tá Na Medida</h1>
+        <h2>Tá Na Medida</h2>
       </div>
 
-      {visibleItems.map((item, index) => (
-        <motion.div
-          key={index}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <Link to={item.to} className="sidebar-item">
-            {item.icon}
-            {item.text}
-          </Link>
-        </motion.div>
-      ))}
-
-      {isADM && (
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={toggleView}
-          className="sidebar-item"
-          style={{ cursor: 'pointer' }}
-        >
-          {showADM ? <FaMinus /> : <FaPlus />} {showADM ? "Fechar ADM" : "ADM"}
-        </motion.div>
-      )}
-    </aside>
+      <nav className="navbar">
+        <ul className="nav-list">
+          {visibleItems.map((item, index) => (
+            <motion.li 
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="nav-item"
+            >
+              <Link to={item.to} className="nav-link">
+                <span className="nav-icon">{item.icon}</span>
+                <span className="nav-text">{item.text}</span>
+              </Link>
+            </motion.li>
+          ))}
+          {isADM && (
+            <motion.li 
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="nav-item toggle-button"
+              onClick={toggleView}
+              style={{ cursor: 'pointer' }}
+            >
+              <span className="nav-icon">{showADM ? <FaMinus /> : <FaPlus />}</span>
+              <span className="nav-text">{showADM ? "Fechar ADM" : "ADM"}</span>
+            </motion.li>
+          )}
+        </ul>
+      </nav>
+    </header>
   );
 }
 

@@ -1,97 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
 
-/* BASE */
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #fffaf3;
-  display: flex;
-  min-height: 100vh;
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #f4ca9e;
+    color: #c47321;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* SIDEBAR */
-.sidebar-menu {
-  width: 260px;
-  height: 100vh;
-  background-color: #f4ca9e;
-  padding: 20px;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1000;
-  overflow-y: auto;
-}
-
-.sidebar-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
+.logo-title {
+    display: flex;
+    align-items: center;
 }
 
 .favicon {
-  width: 36px;
-  height: 36px;
-  margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 
-.sidebar-title {
-  font-size: 24px;
-  font-family: 'Coiny', sans-serif;
-  color: #c47321;
-  margin: 0;
+.navbar {
+    display: flex;
+    align-items: center;
 }
 
-.sidebar-item {
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  color: #c47321;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  gap: 10px;
-  transition: all 0.2s ease;
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.sidebar-item:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 6px 10px;
+.nav-item {
+    margin: 0 8px;
+    position: relative;
 }
 
-/* CONTEÚDO PRINCIPAL */
-.main-content {
-  margin-left: 260px;
-  padding: 30px;
-  flex: 1;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .sidebar-menu {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: static;
-    box-shadow: none;
-  }
-
-  .sidebar-item {
+.nav-link {
+    color: #c47321;
+    text-decoration: none;
     font-size: 16px;
-    flex: 1 0 50%;
-    justify-content: flex-start;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
 
-  .main-content {
-    margin-left: 0;
-    padding: 16px;
-  }
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
 
-  .sidebar-title {
+.nav-icon {
     font-size: 20px;
-  }
+    margin-bottom: 4px;
+}
+
+.nav-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 48px;
+    font-family: 'Coiny', sans-serif;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+body {
+    padding-top: 100px;
 }
