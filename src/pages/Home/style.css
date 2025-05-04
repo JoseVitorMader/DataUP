@@ -3,17 +3,19 @@
 .home-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start; 
+  min-height: 100vh;
+  padding: 120px 20px 40px; 
+  box-sizing: border-box;
 }
 
 .home-container {
-  width: 80%;
+  width: 100%;
   max-width: 900px;
   background-color: #fff8ee;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-top: 350px;
+  margin: 0 auto;
 }
 
 .home-card {
@@ -29,6 +31,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   color: #c47321;
+  margin: 0;
 }
 
 .header-underline {
@@ -43,6 +46,7 @@
   font-size: 1.1rem;
   color: #a3641a;
   margin-top: 8px;
+  line-height: 1.4;
 }
 
 .ux-guide-container {
@@ -73,6 +77,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0; 
 }
 
 .step-number {
@@ -89,11 +94,14 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: #8c5212;
+  margin: 0 0 8px 0;
 }
 
 .step-description {
   font-size: 1rem;
   color: #70430a;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .ux-hint {
@@ -111,118 +119,139 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hint-text {
   font-size: 1rem;
   color: #a3641a;
   font-weight: 500;
+  text-align: center;
 }
 
 .arrow-icon {
   color: #c47321;
 }
-@media (max-width: 1024px) {
-  body.login-page {
-      padding-right: 5%;
-  }
 
-  body.login-page .login-form {
-      max-width: 500px;
-      height: auto;
-      padding: 30px 20px;
-  }
 
-  body.login-page h1 {
-      font-size: 48px;
+@media (max-width: 992px) {
+  .home-card {
+    padding: 25px;
+  }
+  
+  .header-content h2 {
+    font-size: 2.2rem;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1rem;
+  }
+  
+  .step-title {
+    font-size: 1.1rem;
+  }
+  
+  .step-description {
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 768px) {
-  body.login-page {
-      justify-content: center;
-      padding: 20px;
+  .home-wrapper {
+    padding: 100px 15px 30px;
   }
-
-  body.login-page .login-form {
-      width: 100%;
-      max-width: 90%;
-      height: auto;
-      padding: 25px 15px;
+  
+  .home-card {
+    padding: 20px;
   }
-
-  body.login-page h1 {
-      font-size: 36px;
+  
+  .header-content h2 {
+    font-size: 1.8rem;
   }
-
-  body.login-page input {
-      padding: 16px;
-      margin: 30px 0;
-      font-size: 14px;
+  
+  .header-underline {
+    width: 50px;
+    height: 3px;
   }
-
-  body.login-page button {
-      padding: 20px;
-      font-size: 18px;
+  
+  .ux-step {
+    padding: 12px;
+    gap: 12px;
   }
-
-  .button-group {
-      flex-direction: column;
-      gap: 5px;
+  
+  .step-number-container {
+    width: 30px;
+    height: 30px;
   }
-}
-
-@media (max-width: 480px) {
-  body.login-page h1 {
-      font-size: 28px;
+  
+  .step-number {
+    font-size: 1rem;
   }
-
-  body.login-page input {
-      padding: 14px;
-      margin: 25px 0;
-      font-size: 13px;
-  }
-
-  body.login-page button {
-      padding: 18px;
-      font-size: 16px;
-  }
-
-  .button-group {
-      flex-direction: column;
-      gap: 5px;
-  }
-}
-@media (max-width: 320px) {
-  body.login-page h1 {
-      font-size: 24px;
-  }
-
-  body.login-page input {
-      padding: 12px;
-      margin: 20px 0;
-      font-size: 12px;
-  }
-
-  body.login-page button {
-      padding: 16px;
-      font-size: 14px;
-  }
-}
-@media (max-width: 240px) {
-  body.login-page h1 {
-      font-size: 20px;
-  }
-
-  body.login-page input {
-      padding: 10px;
-      margin: 15px 0;
-      font-size: 11px;
-  }
-
-  body.login-page button {
-      padding: 14px;
-      font-size: 12px;
+  
+  .hint-text {
+    font-size: 0.9rem;
   }
 }
 
+@media (max-width: 576px) {
+  .home-wrapper {
+    padding: 90px 10px 20px;
+  }
+  
+  .header-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .welcome-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .ux-step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-left: none;
+    border-top: 4px solid #c47321;
+  }
+  
+  .step-content {
+    text-align: center;
+  }
+  
+  .step-title {
+    font-size: 1rem;
+  }
+  
+  .step-description {
+    font-size: 0.85rem;
+  }
+  
+  .ux-hint {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .hint-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-content h2 {
+    font-size: 1.3rem;
+  }
+  
+  .welcome-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .step-description {
+    font-size: 0.8rem;
+  }
+  
+  .hint-text {
+    font-size: 0.8rem;
+  }
+}
