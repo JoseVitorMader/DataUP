@@ -65,12 +65,11 @@ function AnimatedRoutes() {
   );
 }
 
-function RoutesApp() {
+function RoutesApp({ user }) {
   return (
     <BrowserRouter>
-      <AnimatedRoutes />
+      <AnimatedRoutes user={user} />
     </BrowserRouter>
   );
 }
-
 export default RoutesApp;
