@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "./static/css/main.bbf85dbd.css",
+    "main.js": "./static/js/main.1c5fd2fa.js",
+    "static/media/fundo_login.png": "./static/media/fundo_login.cb70a75281adb74d4a76.png",
+    "static/media/fundo_site.png": "./static/media/fundo_site.655e8cbcdd1191d6fb18.png",
+    "index.html": "./index.html",
+    "main.bbf85dbd.css.map": "./static/css/main.bbf85dbd.css.map",
+    "main.1c5fd2fa.js.map": "./static/js/main.1c5fd2fa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bbf85dbd.css",
+    "static/js/main.1c5fd2fa.js"
+  ]
+}
