@@ -58,10 +58,14 @@ function Header() {
 
   return (
     <header>
+      
       <div className="logo-title">
+      <Link to="/">
         <img src="/favicon.ico" alt="Logo" className="favicon" />
+      </Link>
         <h2>Tá Na Medida</h2>
       </div>
+     
 
       <div className="nav-container">
         {showScrollButtons && (
