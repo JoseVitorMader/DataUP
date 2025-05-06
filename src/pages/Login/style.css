@@ -14,15 +14,17 @@ body.login-page {
     background: url('/public/fundo_login.png') no-repeat center center fixed;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    height: 100vh;
+    padding-right: 10%;
     min-height: 100vh;
     padding: 20px;
 }
 
 body.login-page .container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -40,7 +42,7 @@ body.login-page .login-form {
 }
 
 body.login-page h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem); /* Tamanho responsivo */
+    font-size: clamp(2rem, 5vw, 3.5rem); 
     font-family: 'Coiny', sans-serif;
     font-weight: 700;
     color: #c47321;
@@ -120,7 +122,6 @@ body.login-page .error {
     color: white;
 }
 
-/* Media Queries para ajustes específicos */
 @media (max-width: 768px) {
     body.login-page .login-form {
         padding: 25px;
