@@ -42,7 +42,7 @@ const RecuperarSenha = () => {
             'template_ge9r3dr',    
             {
               to_email: email,    
-              reset_link: 'https://tanamedida.vercel.app/resetar' 
+              reset_link: 'https://ta-na-medida.vercel.app/resetar' 
             },
             'TpykPSwk5qN8sLLfN'     
           );
