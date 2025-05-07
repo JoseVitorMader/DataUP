@@ -14,15 +14,16 @@ body.register-page {
     background: url('/public/fundo_login.png') no-repeat center center fixed;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
 }
 
+
 body.register-page .container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
     max-width: 1200px;
