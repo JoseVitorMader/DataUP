@@ -15,7 +15,7 @@ function Sobre() {
       <h3>Para mais informações acesse:</h3>
       <a 
         className="sobre-link" 
-        href="https://sites.google.com/estudante.sed.sc.gov.br/tanamedida/início?authuser=2" 
+        href="https://sites.google.com/estudante.sed.sc.gov.br/tanamedida/in%C3%ADcio" 
         target="_blank" 
         rel="noopener noreferrer"
       >
