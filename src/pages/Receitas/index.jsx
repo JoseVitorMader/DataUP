@@ -1,27 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, get, child } from "firebase/database";
+import { db } from '../../firebase.js';
 import './style.css';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCLEL9RdqRoop0n2Dc2c0bqzsKagv4ZaCU",
-  authDomain: "tanamedida-2e7a3.firebaseapp.com",
-  databaseURL: "https://tanamedida-2e7a3-default-rtdb.firebaseio.com",
-  projectId: "tanamedida-2e7a3",
-  storageBucket: "tanamedida-2e7a3.firebasestorage.app",
-  messagingSenderId: "490709823146",
-  appId: "1:490709823146:web:a3c389cab4954757f5aad3",
-  measurementId: "G-QP4XP50HGR"
-};
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+
 
 function Receitas() {
   const [receitas, setReceitas] = useState([]);
   const [receitaSelecionada, setReceitaSelecionada] = useState(null);
   const [loading, setLoading] = useState(true);
   const [ingredientes, setIngredientes] = useState({});
+  const [searchTerm, setSearchTerm] = useState("");
+  const [categoriaAtiva, setCategoriaAtiva] = useState("Todas");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,26 +42,58 @@ function Receitas() {
     return ingredientes[idIngrediente]?.nome || "Ingrediente desconhecido";
   };
 
+  const categorias = ["Todas", ...new Set(receitas.map(receita => receita.categoria))];
+
+  const receitasFiltradas = receitas.filter(receita => {
+    const matchesSearch = receita.titulo.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = categoriaAtiva === "Todas" || receita.categoria === categoriaAtiva;
+    return matchesSearch && matchesCategory;
+  });
+
   return (
     <div className="container">
       <h1>RECEITAS</h1>
+      
+      {!receitaSelecionada && (
+        <div className="filtros-container">
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Pesquisar receitas..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <i className="search-icon">🔍</i>
+          </div>
+          
+          <div className="categorias">
+            {categorias.map(categoria => (
+              <button
+                key={categoria}
+                className={`botao-categoria ${categoria === categoriaAtiva ? 'ativo' : ''}`}
+                onClick={() => setCategoriaAtiva(categoria)}
+              >
+                {categoria}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
       
       {receitaSelecionada ? (
         <div className="receita-detalhes">
           <h2>{receitaSelecionada.titulo}</h2>
           {receitaSelecionada.imagem && (
-            <>
-              {console.log("URL da Imagem:", receitaSelecionada.imagem)}
-              <img 
-                src={
-                  receitaSelecionada.imagem.startsWith("http") 
-                    ? receitaSelecionada.imagem 
-                    : `https://${receitaSelecionada.imagem}`
-                }
-                alt={receitaSelecionada.titulo} 
-                onError={(e) => e.target.style.display = 'none'}
-              />
-            </>
+            <img 
+              src={
+                receitaSelecionada.imagem.startsWith("http") 
+                  ? receitaSelecionada.imagem 
+                  : `https://${receitaSelecionada.imagem}`
+              }
+              alt={receitaSelecionada.titulo} 
+              onError={(e) => e.target.style.display = 'none'}
+              className="imagem-receita"
+            />
           )}
           <p><strong>Categoria:</strong> {receitaSelecionada.categoria}</p>
           <p><strong>Tempo de Preparo:</strong> {receitaSelecionada.tempo_preparo} minutos</p>
@@ -91,25 +115,29 @@ function Receitas() {
           <button className="botao-voltar" onClick={() => setReceitaSelecionada(null)}>Voltar</button>
         </div>
       ) : (
-        <div className="grid">
+        <div className="grid-container">
           {loading ? (
             <p className="loading">Carregando receitas...</p>
-          ) : receitas.length > 0 ? (
-            receitas.map((receita) => (
-              <button
-                key={receita.id}
-                className="botao-receita"
-                onClick={() => setReceitaSelecionada(receita)}
-              >
-                {receita.titulo}
-              </button>
-            ))
+          ) : receitasFiltradas.length > 0 ? (
+            <div className="grid">
+              {receitasFiltradas.map((receita) => (
+                <button
+                  key={receita.id}
+                  className="botao-receita"
+                  onClick={() => setReceitaSelecionada(receita)}
+                >
+                  {receita.titulo}
+                  <span className="categoria-badge">{receita.categoria}</span>
+                </button>
+              ))}
+            </div>
           ) : (
-            <p>Não há receitas disponíveis.</p>
+            <p className="nenhuma-receita">Nenhuma receita encontrada.</p>
           )}
         </div>
       )}
     </div>
   );
 }
+
 export default Receitas;
