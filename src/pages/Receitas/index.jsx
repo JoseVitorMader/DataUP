@@ -4,9 +4,6 @@ import { getDatabase, ref, get, child } from "firebase/database";
 import { db } from '../../firebase.js';
 import './style.css';
 
-
-
-
 function Receitas() {
   const [receitas, setReceitas] = useState([]);
   const [receitaSelecionada, setReceitaSelecionada] = useState(null);
@@ -127,7 +124,6 @@ function Receitas() {
                   onClick={() => setReceitaSelecionada(receita)}
                 >
                   {receita.titulo}
-                  <span className="categoria-badge">{receita.categoria}</span>
                 </button>
               ))}
             </div>
