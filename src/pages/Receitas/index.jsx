@@ -8,7 +8,7 @@ const firebaseConfig = {
   authDomain: "tanamedida-2e7a3.firebaseapp.com",
   databaseURL: "https://tanamedida-2e7a3-default-rtdb.firebaseio.com",
   projectId: "tanamedida-2e7a3",
-  storageBucket: "tanamedida-2e7a3.appspot.com",
+  storageBucket: "tanamedida-2e7a3.firebasestorage.app",
   messagingSenderId: "490709823146",
   appId: "1:490709823146:web:a3c389cab4954757f5aad3",
   measurementId: "G-QP4XP50HGR"
@@ -22,17 +22,6 @@ function Receitas() {
   const [receitaSelecionada, setReceitaSelecionada] = useState(null);
   const [loading, setLoading] = useState(true);
   const [ingredientes, setIngredientes] = useState({});
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,13 +50,6 @@ function Receitas() {
     return ingredientes[idIngrediente]?.nome || "Ingrediente desconhecido";
   };
 
-  const formatarImagem = (url) => {
-    if (!url) return null;
-    if (url.startsWith("http")) return url;
-    if (url.startsWith("data:image")) return url;
-    return `https://${url}`;
-  };
-
   return (
     <div className="container">
       <h1>RECEITAS</h1>
@@ -75,46 +57,38 @@ function Receitas() {
       {receitaSelecionada ? (
         <div className="receita-detalhes">
           <h2>{receitaSelecionada.titulo}</h2>
-          
           {receitaSelecionada.imagem && (
-            <img 
-              src={formatarImagem(receitaSelecionada.imagem)}
-              alt={receitaSelecionada.titulo} 
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
-            />
+            <>
+              {console.log("URL da Imagem:", receitaSelecionada.imagem)}
+              <img 
+                src={
+                  receitaSelecionada.imagem.startsWith("http") 
+                    ? receitaSelecionada.imagem 
+                    : `https://${receitaSelecionada.imagem}`
+                }
+                alt={receitaSelecionada.titulo} 
+                onError={(e) => e.target.style.display = 'none'}
+              />
+            </>
           )}
-          
-          <div className="info-rapida">
-            <p><strong>🍳 Categoria:</strong> {receitaSelecionada.categoria}</p>
-            <p><strong>⏱ Tempo:</strong> {receitaSelecionada.tempo_preparo} min</p>
-            <p><strong>🍽 Rendimento:</strong> {receitaSelecionada.rendimento}</p>
-          </div>
-          
-          <h3>📝 Ingredientes:</h3>
+          <p><strong>Categoria:</strong> {receitaSelecionada.categoria}</p>
+          <p><strong>Tempo de Preparo:</strong> {receitaSelecionada.tempo_preparo} minutos</p>
+          <p><strong>Rendimento:</strong> {receitaSelecionada.rendimento}</p>
+          <h3>Ingredientes:</h3>
           <ul>
-            {Object.values(receitaSelecionada.ingredientes).map((ingrediente, index) => (
-              <li key={index}>
+            {Object.values(receitaSelecionada.ingredientes).map(ingrediente => (
+              <li key={ingrediente.id}>
                 {obterNomeIngrediente(ingrediente.id)}: {ingrediente.quantidade}
               </li>
             ))}
           </ul>
-          
-          <h3>👩‍🍳 Modo de Preparo:</h3>
+          <h3>Passos de Preparo:</h3>
           <ol>
             {Object.values(receitaSelecionada.passos).map((passo, index) => (
               <li key={index}>{passo}</li>
             ))}
           </ol>
-          
-          <button 
-            className="botao-voltar" 
-            onClick={() => setReceitaSelecionada(null)}
-            aria-label="Voltar para lista de receitas"
-          >
-            {isMobile ? '← Voltar' : 'Voltar para lista de receitas'}
-          </button>
+          <button className="botao-voltar" onClick={() => setReceitaSelecionada(null)}>Voltar</button>
         </div>
       ) : (
         <div className="grid">
@@ -126,18 +100,16 @@ function Receitas() {
                 key={receita.id}
                 className="botao-receita"
                 onClick={() => setReceitaSelecionada(receita)}
-                aria-label={`Ver receita de ${receita.titulo}`}
               >
                 {receita.titulo}
               </button>
             ))
           ) : (
-            <p className="sem-receitas">Nenhuma receita encontrada.</p>
+            <p>Não há receitas disponíveis.</p>
           )}
         </div>
       )}
     </div>
   );
 }
-
 export default Receitas;
