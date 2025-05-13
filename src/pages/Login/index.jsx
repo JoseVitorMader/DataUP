@@ -2,21 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, get, child } from 'firebase/database';
+import { db } from '../../firebase.js';
 import './style.css';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCLEL9RdqRoop0n2Dc2c0bqzsKagv4ZaCU",
-  authDomain: "tanamedida-2e7a3.firebaseapp.com",
-  databaseURL: "https://tanamedida-2e7a3-default-rtdb.firebaseio.com",
-  projectId: "tanamedida-2e7a3",
-  storageBucket: "tanamedida-2e7a3.firebasestorage.app",
-  messagingSenderId: "490709823146",
-  appId: "1:490709823146:web:a3c389cab4954757f5aad3",
-  measurementId: "G-QP4XP50HGR"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
 
 const Login = () => {
   const [email, setEmail] = useState('');
