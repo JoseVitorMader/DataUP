@@ -1,43 +1,27 @@
 body {
+    
+    background-size: cover;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    justify-content: center;
+    height: 100vh;
     color: #333;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
     text-align: center;
-}
-
-h1, h2 {
-    font-family: 'Coiny', sans-serif;
-    color: #c47321;
-    margin-bottom: 20px;
+    padding: 20px;
+    
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
     font-size: 42px;
-}
-
-h2 {
-    font-size: 32px;
-    text-align: center;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-    font-size: 18px;
+    color: #c47321;
+    font-family: 'Coiny', sans-serif;
+    margin-bottom: 20px;
 }
 
 .grid {
@@ -45,11 +29,9 @@ p {
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
-    margin: 20px 0;
 }
 
 .botao-receita {
-    top: 10px;
     background: #f4ca9e;
     padding: 15px 20px;
     border-radius: 10px;
@@ -57,7 +39,7 @@ p {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .botao-receita:hover {
@@ -66,7 +48,7 @@ p {
 }
 
 .receita-detalhes {
-    background: #fff8e1;
+    background: #fff8e1; 
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
@@ -74,7 +56,21 @@ p {
     margin: 30px auto;
     text-align: left;
     font-size: 18px;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
+}
+
+.receita-detalhes h2 {
+    font-size: 32px;
+    color: #c47321;
+    font-family: 'Coiny', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.receita-detalhes p {
+    margin-bottom: 10px;
 }
 
 .receita-detalhes ul,
@@ -97,9 +93,6 @@ p {
     margin-top: 30px;
     transition: background-color 0.3s ease;
     font-size: 18px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .botao-voltar:hover {
@@ -110,77 +103,130 @@ p {
     font-size: 24px;
     color: #777;
     font-style: italic;
-    text-align: center;
-    margin: 40px 0;
 }
 
-@media (max-width: 1024px) {
+
+@media (max-width: 768px) {
     .container {
-        padding: 15px;
-    }
-    
-    .receita-detalhes {
-        max-width: 90%;
         padding: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .botao-receita {
+        font-size: 16px;
+    }
+
+    .receita-detalhes h2 {
+        font-size: 28px;
+    }
+
+    .botao-voltar {
+        font-size: 16px;
+    }
+}
+@media (max-width: 1024px) {
+    body.login-page {
+        padding-right: 5%;
+    }
+
+    body.login-page .login-form {
+        max-width: 500px;
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    body.login-page h1 {
+        font-size: 48px;
     }
 }
 
 @media (max-width: 768px) {
-    h1 {
+    body.login-page {
+        justify-content: center;
+        padding: 20px;
+    }
+
+    body.login-page .login-form {
+        width: 100%;
+        max-width: 90%;
+        height: auto;
+        padding: 25px 15px;
+    }
+
+    body.login-page h1 {
         font-size: 36px;
     }
-    
-    h2 {
-        font-size: 28px;
+
+    body.login-page input {
+        padding: 16px;
+        margin: 30px 0;
+        font-size: 14px;
     }
-    
-    .botao-receita,
-    .botao-voltar {
-        font-size: 16px;
-        padding: 12px 18px;
+
+    body.login-page button {
+        padding: 20px;
+        font-size: 18px;
     }
-    
-    .receita-detalhes {
-        font-size: 16px;
-        padding: 15px;
+
+    .button-group {
+        flex-direction: column;
+        gap: 5px;
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 30px;
+    body.login-page h1 {
+        font-size: 28px;
     }
-    
-    h2 {
-        font-size: 24px;
+
+    body.login-page input {
+        padding: 14px;
+        margin: 25px 0;
+        font-size: 13px;
     }
-    
-    .grid {
-        gap: 10px;
+
+    body.login-page button {
+        padding: 18px;
+        font-size: 16px;
     }
-    
-    .botao-receita {
-        width: 100%;
-    }
-    
-    .receita-detalhes {
-        padding: 12px;
-        font-size: 15px;
+
+    .button-group {
+        flex-direction: column;
+        gap: 5px;
     }
 }
-
 @media (max-width: 320px) {
-    h1 {
-        font-size: 26px;
+    body.login-page h1 {
+        font-size: 24px;
     }
-    
-    h2 {
-        font-size: 22px;
+
+    body.login-page input {
+        padding: 12px;
+        margin: 20px 0;
+        font-size: 12px;
     }
-    
-    .botao-receita,
-    .botao-voltar {
-        font-size: 15px;
-        padding: 10px 15px;
+
+    body.login-page button {
+        padding: 16px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 240px) {
+    body.login-page h1 {
+        font-size: 20px;
+    }
+
+    body.login-page input {
+        padding: 10px;
+        margin: 15px 0;
+        font-size: 11px;
+    }
+
+    body.login-page button {
+        padding: 14px;
+        font-size: 12px;
     }
 }
