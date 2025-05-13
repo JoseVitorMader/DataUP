@@ -49,6 +49,7 @@ p {
 }
 
 .botao-receita {
+    top: 10px;
     background: #f4ca9e;
     padding: 15px 20px;
     border-radius: 10px;
