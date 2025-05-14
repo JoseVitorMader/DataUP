@@ -43,13 +43,15 @@ header {
     overflow-x: auto;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none; 
+    
     width: 100%;
     padding: 0 10px;
 }
 
 .navbar::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none; 
+    
 }
 
 .nav-list {
@@ -131,7 +133,6 @@ body {
     padding-top: 100px;
 }
 
-/* Responsividade */
 @media (max-width: 1200px) {
     h2 {
         font-size: 36px;
