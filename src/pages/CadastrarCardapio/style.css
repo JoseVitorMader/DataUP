@@ -5,6 +5,7 @@ body {
   padding: 0;
   background-color: #fff7ed;
   font-family: Arial, sans-serif;
+  cursor: url('/public/cursor.png') 16 16, auto;
 }
 
 .form-container {

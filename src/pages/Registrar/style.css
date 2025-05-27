@@ -8,6 +8,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    cursor: url('/public/cursor.png') 16 16, auto;
 }
 
 body.register-page {

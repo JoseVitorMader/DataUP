@@ -7,4 +7,6 @@
 
 body{
   font-family: sans-serif;
+  cursor: url('/public/cursor.png') 16 16, auto;
 }
+

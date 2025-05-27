@@ -131,7 +131,10 @@ h2 {
 
 body {
     padding-top: 100px;
+    cursor: url('/public/cursor.png') 16 16, auto;
 }
+
+
 
 @media (max-width: 1200px) {
     h2 {
@@ -183,6 +186,7 @@ body {
     
     body {
         padding-top: 80px;
+        cursor: url('/public/cursor.png') 16 16, auto;
     }
 }
 

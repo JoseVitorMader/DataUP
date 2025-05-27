@@ -1,4 +1,6 @@
-
+body {
+  cursor: url('/public/cursor.png') 16 16, auto;
+}
 @media (max-width: 768px) {
     html {
       font-size: 93%; 
