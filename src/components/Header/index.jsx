@@ -18,7 +18,8 @@ const normalItems = [
 const adminItems = [
   { to: "/usuarios", icon: <FaUserShield />, text: "Usuários" },
   { to: "/cadCardapio", icon: <FaUtensils />, text: "Cadastrar Cardápio" },
-  { to: "/cadReceita", icon: <FaBook />, text: "Cadastrar Receita" }
+  { to: "/cadReceita", icon: <FaBook />, text: "Cadastrar Receita" },
+  { to: "/cadIngredientes", icon: <FaBoxes />, text: "Cadastrar Ingredientes" },
 ];
 
 function Header() {
