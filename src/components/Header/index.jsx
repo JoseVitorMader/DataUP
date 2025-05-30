@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaUtensils, FaBoxes, FaComment, FaTruck, FaBook, FaHome, FaInfoCircle, FaEnvelope, FaUserShield, FaChartBar, FaPlus, FaMinus, FaChevronLeft, FaChevronRight, FaUserGraduate, FaUserTie } from 'react-icons/fa';
+import { FaUtensils, FaBoxes, FaComment, FaTruck, FaBook, FaHome, FaInfoCircle, FaEnvelope, FaUserShield, FaPlus, FaMinus, FaChevronLeft, FaChevronRight, FaBars, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import './style.css';
 
@@ -40,6 +40,7 @@ function Header() {
   const [isADM, setIsADM] = useState(false);
   const [showADM, setShowADM] = useState(false);
   const [showScrollButtons, setShowScrollButtons] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const navRef = useRef(null);
 
   useEffect(() => {
@@ -81,16 +82,26 @@ function Header() {
     menuItems = normalItems;
   }
 
+  // Fecha sidebar ao clicar em um link
+  const handleSidebarLink = () => setSidebarOpen(false);
+
   return (
     <header>
-      
       <div className="logo-title">
-      <Link to="/">
-        <img src="/favicon.ico" alt="Logo" className="favicon" />
-      </Link>
+        <Link to="/">
+          <img src="/favicon.ico" alt="Logo" className="favicon" />
+        </Link>
         <h2>Tá Na Medida</h2>
       </div>
-     
+
+      {/* Botão hamburger só no mobile */}
+      <button
+        className="hamburger"
+        onClick={() => setSidebarOpen(true)}
+        aria-label="Abrir menu"
+      >
+        <FaBars />
+      </button>
 
       <div className="nav-container">
         {showScrollButtons && (
@@ -108,7 +119,7 @@ function Header() {
                 whileTap={{ scale: 0.95 }}
                 className="nav-item"
               >
-                <Link to={item.to} className="nav-link">
+                <Link to={item.to} className="nav-link" onClick={handleSidebarLink}>
                   <span className="nav-icon">{item.icon}</span>
                   <span className="nav-text">{item.text}</span>
                 </Link>
@@ -135,6 +146,31 @@ function Header() {
           </button>
         )}
       </div>
+
+      {/* Sidebar mobile */}
+      <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+        <button className="close-sidebar" onClick={() => setSidebarOpen(false)} aria-label="Fechar menu">
+          <FaTimes />
+        </button>
+        <ul className="sidebar-list">
+          {menuItems.map((item, index) => (
+            <li key={index} className="sidebar-item">
+              <Link to={item.to} className="sidebar-link" onClick={handleSidebarLink}>
+                <span className="nav-icon">{item.icon}</span>
+                <span className="nav-text">{item.text}</span>
+              </Link>
+            </li>
+          ))}
+          {isADM && (
+            <li className="sidebar-item toggle-button" onClick={toggleView} style={{ cursor: 'pointer' }}>
+              <span className="nav-icon">{showADM ? <FaMinus /> : <FaPlus />}</span>
+              <span className="nav-text">{showADM ? "Fechar ADM" : "ADM"}</span>
+            </li>
+          )}
+        </ul>
+      </div>
+      {/* Overlay para fechar sidebar ao clicar fora */}
+      {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)}></div>}
     </header>
   );
 }
