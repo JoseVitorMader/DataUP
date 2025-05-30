@@ -16,10 +16,7 @@ const CadastroReceitas = () => {
   const [showPassosPopup, setShowPassosPopup] = useState(false);
 
   const [ingredientes, setIngredientes] = useState([]);
-  const [currentIngrediente, setCurrentIngrediente] = useState({
-    id: '',
-    quantidade: ''
-  });
+  const [currentIngrediente, setCurrentIngrediente] = useState({ id: '' });
   const [listaIngredientes, setListaIngredientes] = useState([]);
 
   const [passos, setPassos] = useState([]);
@@ -40,8 +37,8 @@ const CadastroReceitas = () => {
   }, []);
 
   const handleAddIngrediente = () => {
-    if (!currentIngrediente.id || !currentIngrediente.quantidade) {
-      setError("Preencha todos os campos do ingrediente");
+    if (!currentIngrediente.id) {
+      setError("Selecione um ingrediente");
       return;
     }
 
@@ -51,11 +48,10 @@ const CadastroReceitas = () => {
 
     setIngredientes([...ingredientes, {
       id: currentIngrediente.id,
-      quantidade: currentIngrediente.quantidade,
       nome: ingredienteSelecionado.nome
     }]);
 
-    setCurrentIngrediente({ id: '', quantidade: '' });
+    setCurrentIngrediente({ id: '' });
     setError('');
   };
 
@@ -94,8 +90,7 @@ const CadastroReceitas = () => {
       const ingredientesFormatados = {};
       ingredientes.forEach((ing, index) => {
         ingredientesFormatados[`i${index + 1}`] = {
-          id: ing.id,
-          quantidade: ing.quantidade
+          id: ing.id
         };
       });
 
@@ -130,6 +125,18 @@ const CadastroReceitas = () => {
     } catch (err) {
       console.error("Erro ao cadastrar receita:", err);
       setError("Erro ao cadastrar receita.");
+    }
+  };
+
+ 
+  const handleImagemChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagem(reader.result); 
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -189,13 +196,15 @@ const CadastroReceitas = () => {
         </div>
 
         <div className="form-group">
-          <label>URL da Imagem (opcional)</label>
+          <label>Imagem (opcional)</label>
           <input
-            type="text"
-            value={imagem}
-            onChange={(e) => setImagem(e.target.value)}
-            placeholder="Cole a URL da imagem aqui"
+            type="file"
+            accept="image/*"
+            onChange={handleImagemChange}
           />
+          {imagem && (
+            <img src={imagem} alt="Pré-visualização" className="imagem-preview" />
+          )}
         </div>
 
         <div className="form-group ingredientes-container">
@@ -227,27 +236,20 @@ const CadastroReceitas = () => {
         {showIngredientesPopup && (
           <div className="popup-overlay">
             <div className="popup-content">
-              <h2>Adicionar Ingrediente</h2>
+              <h2>Adicionar 
+                <br />
+                Ingrediente</h2>
               <div className="popup-form-group">
                 <label>Ingrediente</label>
                 <select
                   value={currentIngrediente.id}
-                  onChange={(e) => setCurrentIngrediente({ ...currentIngrediente, id: e.target.value })}
+                  onChange={(e) => setCurrentIngrediente({ id: e.target.value })}
                 >
                   <option value="">Selecione um ingrediente</option>
                   {listaIngredientes.map(ing => (
                     <option key={ing.id} value={ing.id}>{ing.nome} (ID: {ing.id})</option>
                   ))}
                 </select>
-              </div>
-              <div className="popup-form-group">
-                <label>Quantidade</label>
-                <input
-                  type="text"
-                  value={currentIngrediente.quantidade}
-                  onChange={(e) => setCurrentIngrediente({ ...currentIngrediente, quantidade: e.target.value })}
-                  placeholder="Ex: 200g, 1 colher, etc."
-                />
               </div>
               {error && <p className="error">{error}</p>}
               <div className="popup-buttons">

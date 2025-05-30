@@ -1,0 +1,801 @@
+{
+  "cardapios": {
+    "-OOXoLee4BFRk4MWvczm": {
+      "escola": "CEDUP PERFETO MANOEL DE AGUIAR",
+      "nome": "CARDÁPIO TERCERIZADO - MARÇO",
+      "url_pdf": "https://drive.google.com/file/d/1mIO9ebEP22bCL9hOYTxgPHlNEGazM6dY/view?usp=sharing"
+    },
+    "-OP_ewK2QVMcDpVnjMcS": {
+      "escola": "CEDUP PERFETO MANOEL DE AGUIAR",
+      "nome": "CARDÁPIO TERCERIZADO - MAIO",
+      "url_pdf": "https://drive.google.com/file/d/1RHskHZt2EK79UOXlkYY2blvEkzXhunto/view?usp=sharing"
+    },
+    "c1": {
+      "escola": "CEDUP Perfeito Manoel de Aguiar",
+      "id": 1,
+      "nome": "CARDAPIO ABRIL 2025 - INTOLERANTES A LACTOSE",
+      "url_pdf": "https://drive.google.com/file/d/1L2866ZVXq1S0Il3fCsode71K8GeYd__O/view?usp=sharing"
+    },
+    "c2": {
+      "escola": "CEDUP Perfeito Manoel de Aguiar",
+      "id": 2,
+      "nome": "CARDAPIO ABRIL 2025 - TERCERIZADA",
+      "url_pdf": "https://drive.google.com/file/d/1mh81VynhnWd47P5LrBAW5nWrz2rnGRup/view?usp=sharing"
+    },
+    "c3": {
+      "escola": "CEDUP Perfeito Manoel de Aguiar",
+      "id": 3,
+      "nome": "CARDAPIO ABRIL 2025 - DIABÉTICOS",
+      "url_pdf": "https://drive.google.com/file/d/10s8ghKVK12EdetGoWs32SQNo1s_XUe9A/view?usp=sharing"
+    },
+    "c4": {
+      "escola": "CEDUP Perfeito Manoel de Aguiar",
+      "id": 4,
+      "nome": "CARDAPIO ABRIL 2025 - DOENÇA CELIACA",
+      "url_pdf": "https://drive.google.com/file/d/1ry2q0O48zF4zzeFk9OYbk_eH3J5dRa77/view?usp=sharing"
+    },
+    "c5": {
+      "escola": "CEDUP Perfeito Manoel de Aguar",
+      "id": 5,
+      "nome": "CARDAPIO ABRIL 2025 - HIPERCOLESTEROLEMIA",
+      "url_pdf": "https://drive.google.com/file/d/1caQM9-wousYrhPFwfFZpZWbqtS2OmbO5/view?usp=sharing"
+    }
+  },
+  "estoque": {
+    "re1": {
+      "codigo": "002",
+      "produto": "teste",
+      "quantidade": "20",
+      "valorTotal": "400.00",
+      "valorUnitario": "20"
+    },
+    "re10": {
+      "codigo": "001",
+      "produto": "Alface",
+      "quantidade": "10",
+      "valorTotal": "15.00",
+      "valorUnitario": "1,50"
+    },
+    "re2": {
+      "codigo": "008",
+      "produto": "Tomate",
+      "quantidade": "40",
+      "valorTotal": "120.00",
+      "valorUnitario": "3"
+    },
+    "re3": {
+      "codigo": "1.55.05.005.00",
+      "produto": "AÇUCAR CRISTAL ORGANICO",
+      "quantidade": "20",
+      "valorTotal": "20.00",
+      "valorUnitario": "1"
+    },
+    "re4": {
+      "codigo": "1.25.05.130.00",
+      "produto": "ARROZ INTEGRAL",
+      "quantidade": "7",
+      "valorTotal": "7.00",
+      "valorUnitario": "1"
+    },
+    "re5": {
+      "codigo": "1.25.05.130.00",
+      "produto": "ARROZ PARBOLIZADO PCT1 - TIPO 1",
+      "quantidade": "45",
+      "valorTotal": "45.00",
+      "valorUnitario": "1"
+    },
+    "re6": {
+      "codigo": "1.25.05.230.00",
+      "produto": "AVEIA EM FLOCOS",
+      "quantidade": "2",
+      "valorTotal": "2.00",
+      "valorUnitario": "1"
+    },
+    "re7": {
+      "codigo": "1.35.05.355.00",
+      "produto": "BISCOITO CASEIRO",
+      "quantidade": "9",
+      "valorTotal": "9.00",
+      "valorUnitario": "1"
+    },
+    "re8": {
+      "codigo": "1.25.10.310.00",
+      "produto": "CACAU EM PO 100%",
+      "quantidade": "1",
+      "valorTotal": "1.00",
+      "valorUnitario": "1"
+    },
+    "re9": {
+      "codigo": "1.225.032.555",
+      "produto": "cenoura",
+      "quantidade": "20",
+      "valorTotal": "20.00",
+      "valorUnitario": "1"
+    }
+  },
+  "ingredientes": {
+    "130": {
+      "data_cadastro": "2025-05-29T22:05:10.813Z",
+      "id": 130,
+      "idade_11_15": 35000,
+      "idade_16_18": 35000,
+      "idade_19_30": 34000,
+      "idade_30_31": 35000,
+      "idade_6_10": 35000,
+      "nome": "Amendoim sem casca",
+      "unidade": "gramas"
+    },
+    "131": {
+      "data_cadastro": "2025-05-29T22:07:52.862Z",
+      "id": 131,
+      "idade_11_15": 5000,
+      "idade_16_18": 8000,
+      "idade_19_30": 6000,
+      "idade_30_31": 6000,
+      "idade_6_10": 5000,
+      "nome": "Amido de milho",
+      "unidade": "gramas"
+    },
+    "133": {
+      "data_cadastro": "2025-05-29T22:08:26.710Z",
+      "id": 133,
+      "idade_11_15": 50000,
+      "idade_16_18": 60000,
+      "idade_19_30": 50000,
+      "idade_30_31": 50000,
+      "idade_6_10": 40000,
+      "nome": "Arroz integral tipo 1",
+      "unidade": "gramas"
+    },
+    "135": {
+      "data_cadastro": "2025-05-29T22:10:06.472Z",
+      "id": 135,
+      "idade_11_15": 50000,
+      "idade_16_18": 59000,
+      "idade_19_30": 49000,
+      "idade_30_31": 50000,
+      "idade_6_10": 40000,
+      "nome": "Arroz integral tipo 1 (para carreteiro e risoto)",
+      "unidade": "gramas"
+    },
+    "137": {
+      "data_cadastro": "2025-05-29T22:10:44.653Z",
+      "id": 137,
+      "idade_11_15": 50000,
+      "idade_16_18": 60000,
+      "idade_19_30": 50000,
+      "idade_30_31": 50000,
+      "idade_6_10": 40000,
+      "nome": "Arroz parbolizado tipo 1",
+      "unidade": "gramas"
+    },
+    "138": {
+      "data_cadastro": "2025-05-29T22:15:30.354Z",
+      "id": 138,
+      "idade_11_15": 50000,
+      "idade_16_18": 60000,
+      "idade_19_30": 50000,
+      "idade_30_31": 50000,
+      "idade_6_10": 40000,
+      "nome": "Arrozparboilizadotipo1(paracarreteiroerisoto)",
+      "unidade": "gramas"
+    },
+    "140": {
+      "data_cadastro": "2025-05-29T22:16:10.557Z",
+      "id": 140,
+      "idade_11_15": 20000,
+      "idade_16_18": 25000,
+      "idade_19_30": 20000,
+      "idade_30_31": 22000,
+      "idade_6_10": 15000,
+      "nome": "Arroz parboiliza do tipo 1(para sopa)",
+      "unidade": "gramas"
+    },
+    "142": {
+      "data_cadastro": "2025-05-29T22:16:45.397Z",
+      "id": 142,
+      "idade_11_15": 50000,
+      "idade_16_18": 60000,
+      "idade_19_30": 49000,
+      "idade_30_31": 50000,
+      "idade_6_10": 40000,
+      "nome": "Arroz polido tipo 1",
+      "unidade": "gramas"
+    },
+    "144": {
+      "data_cadastro": "2025-05-29T22:17:25.742Z",
+      "id": 144,
+      "idade_11_15": 20000,
+      "idade_16_18": 25000,
+      "idade_19_30": 20000,
+      "idade_30_31": 18000,
+      "idade_6_10": 15000,
+      "nome": "Arroz polido tipo 1 (para sopa)",
+      "unidade": "gramas"
+    },
+    "146": {
+      "data_cadastro": "2025-05-29T22:18:24.481Z",
+      "id": 146,
+      "idade_11_15": 10000,
+      "idade_16_18": 15000,
+      "idade_19_30": 10000,
+      "idade_30_31": 10000,
+      "idade_6_10": 5000,
+      "nome": "Aveia em flocos ( para cucas, leites batidos e iogurtes)",
+      "unidade": "gramas"
+    },
+    "147": {
+      "data_cadastro": "2025-05-29T22:44:18.311Z",
+      "id": 147,
+      "idade_11_15": 20000,
+      "idade_16_18": 25000,
+      "idade_19_30": 20000,
+      "idade_30_31": 20000,
+      "idade_6_10": 10000,
+      "nome": "Aveia em flocos ( para mingal)",
+      "unidade": "gramas"
+    },
+    "149": {
+      "data_cadastro": "2025-05-29T22:44:50.163Z",
+      "id": 149,
+      "idade_11_15": 20000,
+      "idade_16_18": 30000,
+      "idade_19_30": 20000,
+      "idade_30_31": 20000,
+      "idade_6_10": 15000,
+      "nome": "Farinha de mandioca",
+      "unidade": "gramas"
+    },
+    "151": {
+      "data_cadastro": "2025-05-29T22:45:43.841Z",
+      "id": 151,
+      "idade_11_15": 10000,
+      "idade_16_18": 15000,
+      "idade_19_30": 10000,
+      "idade_30_31": 10000,
+      "idade_6_10": 8000,
+      "nome": "Farinha de milho (para bolo de fubá)",
+      "unidade": "gramas"
+    },
+    "153": {
+      "data_cadastro": "2025-05-29T22:46:16.482Z",
+      "id": 153,
+      "idade_11_15": 30000,
+      "idade_16_18": 40000,
+      "idade_19_30": 30000,
+      "idade_30_31": 30000,
+      "idade_6_10": 15000,
+      "nome": "Farinha de milho (para polenta acompanhamento)",
+      "unidade": "gramas"
+    },
+    "155": {
+      "data_cadastro": "2025-05-29T22:47:03.168Z",
+      "id": 155,
+      "idade_11_15": 50000,
+      "idade_16_18": 60000,
+      "idade_19_30": 50000,
+      "idade_30_31": 50000,
+      "idade_6_10": 30000,
+      "nome": "Farinha de milho (para polenta prato único)",
+      "unidade": "gramas"
+    },
+    "157": {
+      "data_cadastro": "2025-05-29T22:48:14.518Z",
+      "id": 157,
+      "idade_11_15": 25000,
+      "idade_16_18": 30000,
+      "idade_19_30": 25000,
+      "idade_30_31": 25000,
+      "idade_6_10": 18000,
+      "nome": "Farinha de trigo (para bolo)",
+      "unidade": "gramas"
+    },
+    "159": {
+      "data_cadastro": "2025-05-29T22:48:46.671Z",
+      "id": 159,
+      "idade_11_15": 30000,
+      "idade_16_18": 35000,
+      "idade_19_30": 30000,
+      "idade_30_31": 29000,
+      "idade_6_10": 25000,
+      "nome": "Farinha de trigo (para cuca)",
+      "unidade": "gramas"
+    },
+    "161": {
+      "data_cadastro": "2025-05-29T22:49:35.645Z",
+      "id": 161,
+      "idade_11_15": 30000,
+      "idade_16_18": 37000,
+      "idade_19_30": 30000,
+      "idade_30_31": 30000,
+      "idade_6_10": 25000,
+      "nome": "Farinha de Trigo (para torta salgada)",
+      "unidade": "gramas"
+    },
+    "163": {
+      "data_cadastro": "2025-05-29T22:50:04.427Z",
+      "id": 163,
+      "idade_11_15": 12000,
+      "idade_16_18": 15000,
+      "idade_19_30": 12000,
+      "idade_30_31": 12000,
+      "idade_6_10": 9000,
+      "nome": "Farinha de trigo integral",
+      "unidade": "gramas"
+    },
+    "165": {
+      "data_cadastro": "2025-05-29T22:50:35.556Z",
+      "id": 165,
+      "idade_11_15": 10000,
+      "idade_16_18": 12000,
+      "idade_19_30": 10000,
+      "idade_30_31": 10000,
+      "idade_6_10": 8000,
+      "nome": "Triguilho (trigo para quibe)",
+      "unidade": "gramas"
+    },
+    "167": {
+      "data_cadastro": "2025-05-29T22:51:05.725Z",
+      "id": 167,
+      "idade_11_15": 20000,
+      "idade_16_18": 20000,
+      "idade_19_30": 20000,
+      "idade_30_31": 20000,
+      "idade_6_10": 10000,
+      "nome": "Flocos de milho (cereal)",
+      "unidade": "gramas"
+    },
+    "169": {
+      "data_cadastro": "2025-05-29T22:51:33.245Z",
+      "id": 169,
+      "idade_11_15": 40000,
+      "idade_16_18": 50000,
+      "idade_19_30": 40000,
+      "idade_30_31": 40000,
+      "idade_6_10": 30000,
+      "nome": "Goma de Tapioca",
+      "unidade": "gramas"
+    },
+    "171": {
+      "data_cadastro": "2025-05-29T22:52:14.875Z",
+      "id": 171,
+      "idade_11_15": 75000,
+      "idade_16_18": 80000,
+      "idade_19_30": 75000,
+      "idade_30_31": 75000,
+      "idade_6_10": 60000,
+      "nome": "Macarrão",
+      "unidade": "gramas"
+    },
+    "173": {
+      "data_cadastro": "2025-05-29T22:52:42.651Z",
+      "id": 173,
+      "idade_11_15": 20000,
+      "idade_16_18": 25000,
+      "idade_19_30": 20000,
+      "idade_30_31": 20000,
+      "idade_6_10": 15000,
+      "nome": "Macarrão (para sopa)",
+      "unidade": "gramas"
+    },
+    "175": {
+      "data_cadastro": "2025-05-29T22:53:58.662Z",
+      "id": 175,
+      "idade_11_15": 30000,
+      "idade_16_18": 40000,
+      "idade_19_30": 30000,
+      "idade_30_31": 30000,
+      "idade_6_10": 20000,
+      "nome": "Ervilha congelada (para torta, sopa, arroz, ensopado, refogado com carnes em geral)",
+      "unidade": "gramas"
+    },
+    "177": {
+      "data_cadastro": "2025-05-29T22:54:34.377Z",
+      "id": 177,
+      "idade_11_15": 30000,
+      "idade_16_18": 50000,
+      "idade_19_30": 30000,
+      "idade_30_31": 30000,
+      "idade_6_10": 20000,
+      "nome": "Feijão (preto, vermelho, carioca)",
+      "unidade": "gramas"
+    },
+    "179": {
+      "data_cadastro": "2025-05-29T22:55:35.121Z",
+      "id": 179,
+      "idade_11_15": 20000,
+      "idade_16_18": 25000,
+      "idade_19_30": 20000,
+      "idade_30_31": 20000,
+      "idade_6_10": 15000,
+      "nome": "Feijão [preto, vermleho, carioca] (para sopa)",
+      "unidade": "gramas"
+    },
+    "181": {
+      "data_cadastro": "2025-05-29T22:56:45.377Z",
+      "id": 181,
+      "idade_11_15": 30000,
+      "idade_16_18": 50000,
+      "idade_19_30": 30000,
+      "idade_30_31": 30000,
+      "idade_6_10": 20000,
+      "nome": "Grão de bico",
+      "unidade": "gramas"
+    },
+    "183": {
+      "data_cadastro": "2025-05-29T22:57:15.805Z",
+      "id": 183,
+      "idade_11_15": 30000,
+      "idade_16_18": 50000,
+      "idade_19_30": 30000,
+      "idade_30_31": 30000,
+      "idade_6_10": 20000,
+      "nome": "Lentilha",
+      "unidade": "gramas"
+    },
+    "185": {
+      "data_cadastro": "2025-05-29T22:57:41.493Z",
+      "id": 185,
+      "idade_11_15": 40000,
+      "idade_16_18": 50000,
+      "idade_19_30": 40000,
+      "idade_30_31": 40000,
+      "idade_6_10": 30000,
+      "nome": "Milho (canjica)",
+      "unidade": "gramas"
+    },
+    "186": {
+      "data_cadastro": "2025-05-29T22:59:27.901Z",
+      "id": 186,
+      "idade_11_15": 50000,
+      "idade_16_18": 60000,
+      "idade_19_30": 50000,
+      "idade_30_31": 50000,
+      "idade_6_10": 40000,
+      "nome": "Milho (quirera)",
+      "unidade": "gramas"
+    },
+    "188": {
+      "data_cadastro": "2025-05-29T23:00:09.134Z",
+      "id": 188,
+      "idade_11_15": 30000,
+      "idade_16_18": 40000,
+      "idade_19_30": 30000,
+      "idade_30_31": 30000,
+      "idade_6_10": 20000,
+      "nome": "Milho verde congelado (para torta, sopa, arroz, creme, ensopado, refogado com carnes em geral)",
+      "unidade": "gramas"
+    }
+  },
+  "recebimentos": {
+    "re1": {
+      "codigo": "002",
+      "produto": "teste",
+      "quantidade": "20",
+      "valorTotal": "400.00",
+      "valorUnitario": "20"
+    },
+    "re10": {
+      "codigo": "001",
+      "produto": "Alface",
+      "quantidade": "10",
+      "valorTotal": "15.00",
+      "valorUnitario": "1,50"
+    },
+    "re2": {
+      "codigo": "008",
+      "produto": "Tomate",
+      "quantidade": "40",
+      "valorTotal": "120.00",
+      "valorUnitario": "3"
+    },
+    "re3": {
+      "codigo": "1.55.05.005.00",
+      "produto": "AÇUCAR CRISTAL ORGANICO",
+      "quantidade": "20",
+      "valorTotal": "20.00",
+      "valorUnitario": "1"
+    },
+    "re4": {
+      "codigo": "1.25.05.130.00",
+      "produto": "ARROZ INTEGRAL",
+      "quantidade": "7",
+      "valorTotal": "7.00",
+      "valorUnitario": "1"
+    },
+    "re5": {
+      "codigo": "1.25.05.130.00",
+      "produto": "ARROZ PARBOLIZADO PCT1 - TIPO 1",
+      "quantidade": "45",
+      "valorTotal": "45.00",
+      "valorUnitario": "1"
+    },
+    "re6": {
+      "codigo": "1.25.05.230.00",
+      "produto": "AVEIA EM FLOCOS",
+      "quantidade": "2",
+      "valorTotal": "2.00",
+      "valorUnitario": "1"
+    },
+    "re7": {
+      "codigo": "1.35.05.355.00",
+      "produto": "BISCOITO CASEIRO",
+      "quantidade": "9",
+      "valorTotal": "9.00",
+      "valorUnitario": "1"
+    },
+    "re8": {
+      "codigo": "1.25.10.310.00",
+      "produto": "CACAU EM PO 100%",
+      "quantidade": "1",
+      "valorTotal": "1.00",
+      "valorUnitario": "1"
+    },
+    "re9": {
+      "codigo": "1.225.032.555",
+      "produto": "cenoura",
+      "quantidade": "20",
+      "valorTotal": "20.00",
+      "valorUnitario": "1"
+    }
+  },
+  "receitas": {
+    "-ORYFIw6WB14UD7SvyY3": {
+      "categoria": "Prato Principal",
+      "id": "-ORYFIw6WB14UD7SvyY3",
+      "imagem": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUXGB8aGBgYGRcbIBsaGBoaGhodGhseHSggHRolHRoeITEiJSorLi4uHR8zODMtNygtLisBCgoKDg0OGhAQGy8lHyUyLTUtLS8vLS0tLS0tLS0tLS01LzUtLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgMEAAECBwj/xABCEAABAgMGBAMGBQIEBAcAAAABAhEAAyEEBRIxQVEGImFxE4GRMqGxwdHwFCNCUuFi8RUkM3IHksLjFjRUgpPS4v/EABkBAAMBAQEAAAAAAAAAAAAAAAIDBAEABf/EAC4RAAICAgIBBAEDAQkAAAAAAAABAhEDIRIxQQQTIlEyYXGRgQUUIzOhsdHw8f/aAAwDAQACEQMRAD8AeCn798aKYmIrGjmICjiAjvGmaJVJjk5fe8cccARikxsZfe0Yo/frHHGKTGJmtm0aWHiIWMqcksNzlHXRqVk4vJAzBjab1KiRLllR8z8IqGXLGQMw7mifqY6WVkMVMNkhh7oW81dBrDfZNMtUwe3MRLG1H9zwPtV4Iq6p0zsGHqSY7XJAqwgXe08pQSM2pAPLIL2oo4n8RyZZCfBUVHIFbk+QaCUq8iAGkyg+VVd94RLPZpifzSlUxRLlQGQPwEEPxMxbAoZqghbEHQijesJ92bYvkkxykWkrUAZUuuxX9Ykm2QaSgeylA+hLQEuy3qcLKFDoW82hhFuTMRilqCuxFDsdjDFO/J0mvANmy0A1TMT3AV8GjSEo0WCdjT3GJ7RPUSyhWKhnIVR0mvQ+Ud7jDUU0dzJJGkV1oMA+J76XZgjwSxJOLMhhodiSfdEd28bJLCchj+5P0jvdXkXJJOrDEyVFK0og3JmpmJCkFwa7U7GsU7TZ4cmn0C012BJkqK8yVvBGZKI0iIo9Y0wB2qzBnNKQKmylAuMobJln9dopzLH5xqBnBSVMAomPEqDF6fdw84prlFPWNskn6d9olxRkQ+J0MbjRXCX0e1Yq79Y2SxEceBXOjfONqGxyf4Rp6aOgXERqFDHSR2+xEa1ZwJppQzjQSSWA+6x0hBUWH8Dv0jtS/wBKD/uVr2HSBlJRDhByNFk09pWwyHcxypKlVUew0HlGJSExZsK0Eh89ImlO+ypY1FaKxl7DyjhSDtBpcknJgxrT5x34adQO9IyzGJtttiUrCScwS46N9YG+OFLNElIbCG1q5O4hmv65rPaZdQUGuFaDhILEAhqEdCISeIbomSLTZzZJaiiYlKF5kFYVhJNXBYgkj31hU4uXTFST7Lq7WZCisgBHowPSJ7vsyZhK1DCknlALZ0HvyEXZ/B81UyXMXPBTLOJUtKc1Co53yBajQQk3DKTOTNdTJFJf6ArRTbirVYeUduKSbFcbYHCMK/CmkpLAvliDkcu+VdnileHEUqzgolICWPqfiT1MPE5aFDCQCNiI8+4j4WXj/KWFBVQkio35tWfaNeloxxYCvHiKbOUCeUAEMHBrnXeA94WdcxYmSqFqnKo17xZVYQkvMSRUgA5Eg6bjtHcq2OpsgPlpGPPqkhTx32F7rsq7VZ1yZpIUnJRDuDk5/cPg0C7dwpOkoMwqSpKfaCXdt/vKC3DUibOom1BIHtJQGVXKtPUbQenAy2lkghTpBLmtfaHX5xylHphV5F24uJCqaETiMCqJYAYDoxFW09IcJjjPmG49ofWFBPBMkH/XWR0Cc/e0Z/iFoxLlomqUAyXYOKDYdQ5jo5OKvsOM9VIaZtnCg4Yjf67QPnWcpyi5Jm4UJUfEKmZUzw1MTqVBsoks9qlzCySyv2kEP1S4BMVRyJ9nSivAMw5RB4frBidZNRWKypO4aGIEFzZFC0Vl2V8vWDipFMo4RIjUZQB/AHYRkMX4QbRuNMG0TPl846Stx5H4xqYNe3xjjeCCo6UqtM45AxEJGcRFXTURaKcIwPzEcxGg0EDKVDIQ5M3T2UnlfmL5nbtE8iUmhfl6RAFABhEV3gBVCXUXbSnziSTZYo0tFm12NWYLpZ323gLJnYFssjCplIWkioNadRDOZRUCkFhkRrAq87PKlJSgIGFglCUioIDBoXkWrKvTyX4tW2W1zyioOYYHro8bROfF7NRkNTV4q2WxLUgJNMNKjSmr6RNZLrCHUVFR1bIdoGmKyKO0B5KS+BJwjIdPrDDZrOGAJFKig9RENksCfa1ej190V70V4TqSkqJYO5oTTLZ2gYQ4KxfBN1Eu3lOEtNXrr9YU7VepClAnLXpvDHKmLXKwkDGRlU5VGghGtd0mdMMtToFMf/17dYHInJpgtKKaZIjimX4ePxHSBVR1bU9YC3lxdjkqWCwIKZY1JUGfpSvpB61cPWZKGUkKbIaUhTvi4TPGKXyoRR2z6JGpg470Szf0A0X2osJjTAPZC+Zj0OY8jtEVtXjBmSkkYcxm5IrXeJJvC0+WAVlIBLZkke75wx2S7AiU2gDl/eTBuKixKi32DuCpZXMQrERgIdiXIbI9DDjxappeLUMR5GPK7vv5VnUVIbNQDuxAJbIiCyb+tVqZS1JTL1SNvfSOnhk3bNtKNFhN+zMSqKOJ2TsKMS+VIbeGbEkhJLvr1JqYF8KokBRKgFzDoa5bPnB+8JypA8WUjEjJST+kfuHQajaFuUVpBRVqxpRakpGGjs7dN+0JXEd4JUXlUYuFClRt0hnUtJlYixCk1G4O/SsedXXIUq1pkzC48TCQ4NDllq0A5tnPTPQJM3EB/UAUq0UCHD7Kjv8ADhXeILtSjwkywScAwF83Ry12LiLksF2/Vof3D6iLoT8DJQtWiquyERCJcH7KpKqHOILXYCkuIehQLaMifw1bRkdRlhILGXlHPigv95RGual8/t44lzMSmaqjTzgzS3ZQA6+rIG6t/KJ0sKE1OZ3Jf6RIEAZZJDDvqflA+9wQlwKgvpEuSV7LcUPBqbakAkFQcZh66fWDFklDAFBIfX+YQ5FwmYkqUtSTiLk7PRtz1hzuqeoIABUcIZzmQNe8TwnJ3yRV6nHjglwlb8ludakgAr/LObnL1yMAZF5BdtWjEG/TWlQKp3JJb1gjfPPLXLIxJIcaYSK+jwOsl2SphkzFzEzMAdOFw5oQSQXLNGScm1QWBwjFuXlHcq9FJXNlhEzElZYMSVBnxD+kny+ER2C/0rd3Y0SBr5wY/EklX5IY8pViAKhXaohb/BWGyqSoS1hQJbmWdwXBUxYFoya4/K9DMcVkdcd/psuy+JEFRQXzagJy8mg/YZ2JLjZxvXeE+5JCJ0+YsA4UuUPup82o/wBYJ2EWhIWlZSkpJw0PMno+Y0gMU5NcmF6zBCD4x7pWE7xn4UuzKyen3tCDfExUxaEcwW/tBRBw5sWzrDpfMnxJRUk4VNrodH6R5/ZbwHjI8Rks5f6PBz6PNktNhhXC5mIAM+Yg6EK866+ecc3PaQUqQQfyzhbqMx5QcVe8ooZC0l+ojzK970tEyZMEkKwKUXwhgS7O+eQgY3F0iadUGeI7zkpIBUFLeoFcIHugBfF+iYjw0OEkc2hbaOE8LT6zVqSBhLpr3z8oXLQSKQ2ImTdE8qxSVfoGTU+8+sU0TlIWwOEppSlIlkzyDnG51jmTZ6RLS6lgEj+l8JPZ4Ym26kB3oJ3Ytc5aUS0KVMJolLu+47bx6Tw8uYqVgnHEqoL5tkx69Ys8HcNpkIKqBbAEtVu8R3jaBLtagMlJSrzrn3aJfcjJj4Ymjs3cuTKEqSVzCXCQWoP91KB4n4f4HMoiYtAxp5vaV7WesFOFreFzVpf2WHqCfiGhmxn+INY4vYTR43d/EpF4TZc7kQVCWAU4SlSAEpKga1AAJ7HKHtaHGx+BhN/4rWbxJ+JEoBcofmKB5lpZxkWOF+/wjfBXEnio8KcXIoCdU5VfOGaQWPkpcX/Qcgp3V+oNi+ShBSxzkzBgWWOhgYBhZaRlpunaJCli49kgEHp9RlFOOXgzJDyEP8JV09YyK34pX7oyG2K4g1bAee2kWrolupcz9tB3MUbROA3OeWneDd3IIQh6E8ym65R03oOCtkyxhT0A/v5wCnJVQl1J90E7bbVJcBAI3J+UDbXKUUBS1AKd8IyAFctT0iObLIk0ohVMPLpE/jFJrQ94lumSEymUKuS2tYqSLGudNPK0tKmq/NhLGsLleqCVMllzwy8SxkwBZq6dYjl2lMpHtDxCmhw0T5fKLi7sllSgsHCGwMojvQavC3fPDilTMUqcsIIqlyWbb73jncVofhUJP5Oia6uIUJKpeNUxzQ4WY7ZCAUyYZtoCVBQClgFswCdHgvYrply04gVKJo6mPyjj/DRMJJCm3BbsQRV6RJOE5pKR6mL1GLFKTgu12NN2WOVZ5akhRCcypRHxZmiays+FSwuhzAo+TdGgLbpHiyBKUo4SwUTnysfUtnECbKoLC0hglOEVq3WtYpUqSSWjzJLlcpS27OuILenmQqiUJIUxz1/tHnlosvjyirCQlJOEvU1z+XrDhbJDhQNS9X61ruIGKKUoYsEBJLMKto0ctvZPLHf7CXcQWq1CUqcTLYuKB2alPjHpplygE4QGGjR4/KnGXP8AFVQOX6CHOz3tiAPxp7s4DPNxpgy9K4sP8R2xAlYXY4S+tDlHkEyUoUOzgn4Q2z7dKnqBWvEFKKMIyCvo2p6RNZ7gSsqkTjys8pac21B6pJHlB47j2LeG1QjS6kDUwSuubME+WmUcSypgBqDmn3P5RIu6lyZxlpTjJOZD0BzpkIZrFednsgPhoe0lJGNQepDsKsEvoGfrD5NPQmHpcn5NaXke7rtZlcqiCrDUHcwmXvaVTrQpaVuwwqSMxhNQRtWkKtqvW0IOILxKUSeb2n6gUEFeF5ihInWjNaV81MwSHp0BeJZ4Ki66LvTt48ikhkum1LkNPk4VlSWAflVkUu2rih7jVxHbeMrXNLVlU/S71zY0byr1iS5b1TNYFSCn9qQw8w7gwbtl0SpygsEpOoehy/5T1HmDEEfXLBJ48l/o/wDk9RqEmsvBX5oWrqnkTQSQpbhwokuMy56j4xdtqJUqYhMqWlOJWIsGoP50iSRdMtCvzEKlLK8XipJUHOlaYelCOkUb3kLTbCKEBOJJqyknbarhtIuhljkj8XZH6icpzTkuh9si3QD0iaSnOX/7kf8AUPvpFW7yfDS9KBxEtpScJKSyhUEaGKoOtkUo3omwiMgf48//ANRK/wDg/wC5G4f7iJ/akVWxKwjMlvlDYxGmQavQaesK91jFPQOvwrDZo/U/GGZDsQKvSaoIy5qddf5gXIWVF1OwfMZnKCt52dRSSkVHakId8X7MSfCUkhYObkU7fOI8jS7L8GGWV1Eb7LaVKDtygtSDdgt6SCkuMw7Fu7wk8NWkrlTZaSVTMbgd2yPRqwzWO2kEJmoThIzGQOsLjLybmwcW4vwEpllmE0UnBoTU+jfOKtqlJCkpx4VO4pnvTUQQl2GWKoDPkXce8/CJpkhOMLIDgM+fWDaEKQv3rYiVgIBAJLnTJ6dYpWIFOIA+xRj84cpwCwz0gDeNzBK/ElqOJZCVAkMx6fZgZx8oOGS9M7k2EFTlJydtD/Md2izAtyschoBEtnmpQfDxGjZ6OIuzGOfrAqno6TYLnWOjTKBWxrC3fl0S8JlB8JGZIfES/wAWMMl9XkJKUgoUsF66DZzo+kVcUuZIxFIcjPVx13BjW1dHRbqzxK33cpM0S1jmSSSxoU5hn3jmdPSpQTWWSa4wz9HdvfHoPEV1sEqSy5mEkE0dsx8PMwqoUi1BSCAk5Mp3BSaj+M45xVqxkpykilLu6WgBKElU1iWcMwq46gRFM4iSUhE0qQpNQoB6DSm8TWA2mQtUqWELlBKifFchCWqzVAZ4ozbokTlBrQc8gh/eW+EG1C9ik5Vo6kXsZk1Spblhmc2rUxWk4RagZiyQpJOWReCtluKRIJBmqxKDsrCKdOkRi75CptVKfCzAhmPlCfexxm2rqvopcsssag3ov8QXej8MqYgsQMTjpnSKHDdtCLKvGGCkqAb9SiGBD+pPeCdnn2OXLVKXNWQaEKUCW8hi/vBKyXXZbRKCpHMHYoV071B2gZethFfNNL7rQqGGnr+BCst2zEFK0TFE/qKaV26wzXDftoM4SiXGpVoO4Hug+eFpax+WtUpQDYTUHyNX84F/4NPlLV+WW/ekBQLbj2h6ecHljHNH5JM3nxncdL6HixpWpNSgg6Pn6iB9/JnBCwJJWkJdBl8xQojMgVAz3FN4CWYTRzLU4OWw7N84szVzMLpnEKFRkQwz+Ijz8OHFhy/FUyicnOOyOz3tNBQkLU9BUvD2gwpXZZpU4FKVKCkHEXcgu4LHsVe6G1H3rHqQkpIilGmcfhEbCMidzsfdGQZgK4dD2hPYneGpcxgO0K3DX/mQP6TBm9pykpGE1bKkUzdE2MszQCOVTHrrC3e1gTOKpSkYlUJbNIdwxzGUXLEuYqUFAupzow7COJtvUlaQKKNHI12IiWUk+yrG3F6Z1ctjTISEolkaqJZydy+cEV2KWoDCQlQd9cT1r1fWIULKyAs01jjwikliSEh88n7wtv8ATQ1ycnbeyzc1sStBGI8tCWoAMovKtCWw4gX/AFA7/OKJKVy1JJQgqZyGBV3+EBV2SaEkhJAHyOp+kZbSQPFSbfQx2i1BKeUuEsHOukRItK1JcIyqKgmm0L4TMnAy8Ckpw0INe7xnC3iyJRkTyVKCj4agSaHIE936MWjE9h+2lG72WZ8mYkpmzCkn9YS4DkAD0IAi9d94Ykt6dIsWmT+SQACs56OfllC7bpykg4FBISHzqGzcbQLhTtHKSkqGCba0hyogp694BcUXsmzqZwAQSATQgivvhfFtVbAlKUGinxJVykBw4feFvj5FoVOEuZiPL+UokMwbFl1+UNjTRk8fB0T3hxt4yEsjw1S5hU5LulilmYFlPUdB5DLYPxKjabG/jU8SSSA+mIOz9xtWsDLus4E3wpjZOVDXYd/pBa97mASJkpWEDPOnmKx3JKVMxxfE1MtEwJUqdLXLWQygSGI11ygDaLchTgMOhAY+WsXrusqpyTiLtuSQTFa8riUlJmYkk6AA16AQcZRT+gHFtFH8aH5kkKGxIp2yi/dVqkpmBSSUKNCpzkasdGptApFkJUAUkH1i9ZrEkHm+A+cMnONUOweknk2mXuLLOXlqBKiqhCmo2rAZHd47sEwBBUi0TJEwFjKdbKOhR3+94jvCyeNhEslIAZ89Tq+XeOrFw41FTSa1cp9wLl+sJ9zHwqTHT9DnUvgr/UIS+IMCk+NOIW1FEnL+4yMOtw8SEAP+Yk1xNoa+cKsy6JC1BaykkNmo6at7+7wVsA8NvDKQ2QBDej5RFJwX+W2v4oqh/ZueX51/qOlousTUmdZ+VQzSQClVK8uYVCted1nApXh/h1kEHECUkFnwkUejwUuS2TUL8QKJdnSagjQhsvvrBzia8JqZAXLl4kGq0s5HUMKgHSKYbhbWyL1HpsmGVPoTeHpS5FnXQqWaAUBI1NYcbHbEqwhmLFwcwQ1IW7rmpmnxBnQHR3f3fWDV02BaZpUr2Wo2Xntn7oWpNNOO7FNJp2F2O3x+kZHfp6xkU2KoX7jnAWpDa09xg5fGEjC7K08oVLLOwT0EH9Q+kNt8ygoF98/eIryK0TY9EFnWhcrw5czDMAdlNQu+QZw8V7xcBJUQSKKIGZoKdIGypjcijVy0cz7QrApwwS5J7RJN6oohHYwotCSApKNWALAk/SBl8z3UwSFGmIHLP7MRWCcxCi/KKhnzGoDxVt14okrUVpUUkgBS8LVAz6PTKFvaH44fLRdvm2S5SUzTmyXIG2gEMqLUnACsgJOp2MK9gsKZgwzJfJQ4SzZuNfcKRcvO+UD/AC8lQKyCCNEj70g4/G2zpQ5VGN2u/wBgvZpAxA0NKAjSB1pvJ1TEiSlpZbE+ozp0DawLvW+1IkLTKXzISA7eTU1hZuK9piF4StwsuoKbNqtt8ICeRKl9jsPpJTjKf0Pl42kJkrKizAF9q1jzm/7ZPmTZqJc+UUKRyBgc0AK5nfE7l/7Q9W22y12acopDYCOZiCWp72jyu77u8RKleJhm5pDcvZ9fl1g5fFImgrbMubiJcs83OGpXDXqGZmi7ar/mz5pQZqcCkh0sAxToDn745uE4iZRQFFJZYLUOxiaXcclU8jw8KEMyajmLksf2sQ3nAOfYfHyD1WKQkKCyoqV7LEkvodqRYst12tCAVKSpLh0/uTqkl6OHGUU13chNsWZYWsJA0UoIUc2O+RrE19X+Uy2lFyCHrkAXbvANttJbCrTbCV5mTOT4cleCYGdx7A1BTAwcPzXBnTmGaShimn7nDnPKB1hvZcxRITzKZycgBvQnp6QbmyJk7AkzgEhT0D1ajh31MdUoujlTREqyCTWaRXI5AjpFG+ZfjiWiTgDOrEddCDF29J5QCmcHKCyMINSWLvoG0rAOSqYlJUpJCXxIIpU6dI2Cf5ASlT0S3Td09YUZiAlCS2LEoOR+2uXX+YuSR4SqgKT+pKny6GL1l4kLIlokFbhiR/LAF4DXutP4gKUVoL8yQag0Zx2ha9yc3yVDfckl+TYfkWWxzVBSfEQQQS5UR22I8hENsErERJUo4RUnlSH86lt2HfStIvWUDhD4dVN8dYKKsMqcirMciPusBmyrG0pLQUJzl0yvd14qlqDTa9K9ukOd2cSKqmYM8lJ+6doSplzYPYUwGhHxaCfDUnxcaJjhCuUkGqT+5NMwS4MbiyJv/DZT/eJcayrl/v8AyTX5xOgeIlOEHxBhIbQkHz6RYuDi2bjTLUl3IFDFA8DynOG1FwqpWkEkihqMNdX39YKXdw8mQoKTOSVO+IgD/q90ZkyYeVp7/cTCPKLvQ7fiTuPSMgf4w/cn1/8AzGQ33sf2Te3IWrSpnNHd4czNxykKfNI9RQwoW2XSD/C83HJKCf8ATV7jHpyPOh2BLwSUrxGv0MRWa9UE+EkkFnY67gQYvezZwmXrKUhSVoLEPoNq5xHk0XQSY4XdMCjQ4SCHajgGvk0Xr0lyZ6VEEMCCXS+Q2MKnCSpqleMvQgB3DjVhpmIcUWKUolYJZbBSXYDPTQ1yjltaOb4ysDotKEskqGE0AJA8hFC8LtsspR5lonLUMKCzBzzF2yzq8GLfwvKJw4FACqTjLeTmKlvloMrBaMQwJdMw1UkDqHeg8+9YBxb0yzBkS6b33X/f5Cd1XHJWCVcyXqlyBkwZq6bwn2y4xOmzPwwxJSagKAcF/ZJ/sWhm4dtqUysSXTLIcYsy75VygIiwGRahNsyKKQUrxKoGIZndTmu4p1g+KklaFrLLHKasaLjuZCJYkrS6MJxBVQSSN9mpHnfE91mzWpUlJOE80ouC6Fe+lUv0h6TxLJUvw1zUOnPmFDsYTrddNotU1cw2lC0pUfCxJIdDlQGhAD6vG5HGqJYcuTYqWqebLNKpayrGxW7Zijj4QXmX/wCwQedSS2uTNTzMQWzh44jOUpJKCXFC+/u+9ItybUlKQVKZq8woegO/TWFS4uhkXNp3on4fvlYASJC2JqQksXzLnOIr/wDCMxM3wSU/rZJwk6E0Z46BExpsnnQCHQCzEByAaDyiGbeBs4KZwaWsljpWoHeF070MTTWyjf1rlzDKEoYSxHKABVhXpnBGwXStg85LtmxpAefbpE6ckJ5ZYUGajlq+WlIdbvXZyiqEMC1c98zWOyXGkbDdsV5E9CLRMTaD4gChhJHKW1EXb7ssuYgCUyUkgEDJjqBuPnFm9bD4hMuSApJ5ku1H0J3eF2SmWHlz5i0rSaJBZmLV3rpGqLltASlGOmH7LdS5YHhqSsDQ8p+kDZnDc+1T5k1YEvCUpT+pwBo3vJbOIF34uS7fmDdJEErkvlal+IlgCGwk599jC8nuwi3Hs1e3PQOvDhSelZKGPoK9a5RFLuS2y1pCAnC7qwKp1oQK+UNN88QqlKQlUp/E9kghnGY7jtFRV7TRMwGWEvUElwRuG+cTLN6qtxX9f/Ryx4k+2DLeu0oZkYg1Qxd+jGvpGXXbZqDiDgjQuGfQikGZl7hKxLtCCgEjDMBcHI5tSC9tsqSmgDZ5DWOjkcV84pP9B0Vj67E+90zFOoLUVrLnASGJqctBDTwZZVu0wlYCa4iVZ99YrWW7FKUAlQD9H9Ib+H7FgQ2rnzh+JrI0NzZYY8bS22Xfwidh6CNxaYRkW8F9Hk82JVsTtG+Grb4U8OeVfKfPI++O7VLNa/dYFzkENFzPPQ/W+QCN4T71siTQ+nTXzIhuui1CfJSrUUV3GRgXedlzLVibLGyvG6K05KQlOBsOkZYZyJivDJJY1ABam5Zm7xUlyiUu9QfnBK7R4aedWEnZi3eJ9tjLpBXxTMVhGIywlsQDkHIxq8rJKMohipQSz0xGmROj+QiOyWiXKlYSsAChL7mmtM2gZf16hFmmTBzJSgn/AHKyA8ywg0mYpUwHYLPOmB3HKCAntSmmkD7TfyEtKXj8bSUl6n+o5CBlwcWTOcqlhJS2EPQ9G06x3elqkT7R+JKFIXgCVB6OCahu7P0jkowjTexk5vLNuqQKtcub43iz5WBBLkgcoADAEtnlF2df6mwyq6EjT+YI2W90sylU6nSF61qTKxTJaRgUosNvvaEam9oZXFB222hJkJBAcEMxO4dwPapBCdM/y+FSQpKw2WR3bvXyhfua2IHMohYfUBgn6xiLzC1GU7BKnBH6hXDXtn6Rijuvo1st3NYpdntIC+ZJ9kHQncZGCFtuxBnrlLAVLBxJHQihp6RUsN6p8diArCmgI3i3xRZJk0yZ1nmBCfZWVAlhmmndxGJvn2dS4lCVw5ZpYmFSTjL4XJoHOHD6ZxXuz8MUYFFQXUBYJJOeYyPaC1psClJSlKwZjDGMT40vUoJyL/pO/qDv+ySkJZCVJmuCxDUGbgjarxsZOTpsG0ui9dFu8NakLIcKwkimvzz84CcRWL8RaD4bOo4XHSpJ319IO3ZZvGl41SipTO5Zy2/3pA+6yZc9RmSzLcOgHVL1Yuej1pSGRbi3JAzjyVM7mcOKkoFRMSsNlVOvZjk8VZN2TJKgMWDFkDUV2IMGbHeKaqJpiLA6NSgfpFy9LSZ1lWJaMRGEpIZwcQy8ngObbphKKirQEt1jWZiFFZmAOyUgnDSppu2ZixZbSmcsCYVoUhwARhLFqlx0gRd14TZE1QmYnJeqTpRm2pBi+b78VP8ApEsMKVBLEL/S5egcEV7dIJwbfE6M1XIuXzP8MYHK0qYigoxz6EdMxFj8UnxEjmCFpBYFmILEhO2Qbz1gHdaJ85aVAJZHKUqJHM9awUviXMnCWcBxyyQroKFuvlGKKumdytWh6uGRJKXlKCjqcz5iCF2hkkO7KLwp8FFZUSPZAL9SdPn5Q6WSVhHev1hkFbVATenZKwjcRfi07xkUcRFivPyIZuv390gWqXBZYcZwOtiwkFRc9AHJOgHUvFMiOJNw3eIkzmV7C6Hz1hvvCT0fqOuvbWPNUYycSgANE1J6Ocn7PDzwfe4nJMlZ5wOXqIW1Y2LBNsQuWotkc6ZdRFf8YkFk4lKO7tSHK8Lvd6Qvm7SglgK67RNKFMojJMA3wPEQETEoKVH2d9vfC3fl7KRLTZsRUBVTiufKKfDtDhbbtYFTYt9T5GEW9JQTNWSC5NNf7wDdKg0gBKtp8ZmORp6R1aZypjhDgDNX0i7Ns0xJxqQQGpTOIZswlIwpbF2o+8dpNOgl9E9wXQ5QocxoVKNXh8tmFUky15FgcqjbpCbKvE2eWAzpAYMz/R4oW6/lTDh9kEanOFyUpysNOMVQT4lulFFSRhoKAZtlTUQt2PxVzDLUkIUBq4I8ou2W+1JnoE1bpSGS2Qq9R84esMq1ScaRzgOkhg/94O5QVS3fQmKbd2eb2SYuVOViPODrVxt2h5uf/MIIKlS0nIAj2hr21aE202FS5pmTUqTLIOE7kZPtSLliti5SglJYOGB1jciUqfkZjlTpli02xabT4cyikH2kkg5OCO4ILQ1/hTaZeFU1AVkMRU4GdWTSsU5d4S5k4oUEsycSjoWfmIyowjL1siAsTJM1Bz9lSSx6sftoU6tNBN/YauXh2ZLAC50otqkKPxCawJ/4g2WZLTZ8Syuz+MTiAYoVhPKczhVUu+h6Rbue8ZmFJWasxTvT3bxZv+8ZS5BlTCOYhQfQjX0cQKkozF3PiLM1FnUCpCdHIFQWgbwVPKpqySWCmAJ0grw9aZv5hkylKShRGIMaO4oavA6+b1CpniSkBMz9bBnA3G8MW04ht7TDt/W9Ei0oKgGMoEPXJSgQdtIpXje6pkqcBLUUlBbCNWdLdQrXpA61WkTAiZMqQwAbIO7Q0WOamdLwZKblIZ+2xByrGWo0c7ldCpwreah+Wpw24I+OsN/MZoWhyooCc+pb4wBsNhK1hRBxHIMz7ekPHC/D6kKxLViVt13PaCauVozlUaYw2GwiWAlIqWdoKTEFgkZqp5amMkScIrnqYpXreiZCAsh1TDhQnI4f1K+9xFMI1tk8m3pBP8Ojp6GMgd4vUepjIfwQnk/oWVKwpz6RVtwKQ7ByaAltOxihInqlspU1CqZKLkHVm16xq1XshX6i4IIcULZt5PGOaO9qVnAmhQJyY1B07wMVeC5P+YSWCKgfuqwfoYhmWv8ANIKuUhi+wrtmRTzji8lic0tIpQk7M7AQClYbg10ex8K8QSrbIC0nmA5gcwdaRctFjeseM3NMVY54XJUp25kDJtM8j57x7JcN8S7TLxJLKaqdv4g0uWmA7Wyouxwv2i4keK6gGIp3HzrDzNkvpA28rFiDMN65dR5wGTFq0FjybEa/fClIq5csAG+2aEG2p9p0snMNVuhj0LiW7CU8iCGJp1bMdPTWPPLzTPQtlpDmrPp1iSV2VKqF6bbBMmIQkKNdd4NJsAl1UATWvlA9ABA/Sr3gvWLVnnAEJWXfTRs/eYKVdIyLpuypYrIJuNSUjDVRbIDJ/veLV0Xyuynwyn/ULJL0To5hiuSbJEtSChPhrfEGbv2MK9sswUseGkLxHlcc3RvKrwcZKemIkvbkpfY23nZ5QsKgpQJABfV/7wIuWbJM0qmAFKKpxdagmCdj4amKkjxJiQoCgNU+YcfbwBn3VLmgKRXJwMq6jp3hKp6so3d0E79vGQubLVKQkFRwqU1CKJdzQkHXSIrxuVM5ID+HMS+FQqFb5H+RFa+56PBTISGUklgaEUrEd0zU4GPKpNKaH7Ec7SUonS26GC57AEpKSpalAZku4DOegDxYtlmlplLUSFnlLfqIxCg86+UL1stMzEkAUALqBNSrOlI3YbSlCyqY5Cjq7ClA0BTe2FaqmFOC7wEszJZpzE1I1yia1ETJyylI8RBKdCFJJJGdAWLxRtVnkTVhVnWUrw8wyGbCvcxLIss6zJXNWkqTmVJLmm4z84JN3aMpNUwdabnWm0gg8szEWOQL1Hvhlu+5AkOmbUVAIo+zvT3wt2m3zJuBaAddDqxNPKGPgywz58z8xKsA1qPX6R0oykbFpDBwjJ8UkhLJTV21Jen3tD3JkhIiC7LvTKQEpDDyi4tWgz1Ow3ivHj4rZLkycnogmkVc8qQ6z8vOAM5YnzMSgGB5cqAVixetpCk4E+yK9y+Z98VLGlvvWHxiIcmFfSNxHy/bxkHQFnlAmGoMqYz05Dn226dI3NGEF0uSMmPvBDiGa0zzMmeEkkJHtEZqbMA6DcwPt07KTJSBXmOnrqfqYmlFLothKfkT5aHWMQJD1G42+EELODioK6kZDsN4tG7VcqiczU+dDGk2NdFJLOBvCw1FK3Zu0Wdf6FAdG+Jc1ind18WqzTgpGeoaih3+cHZElSgzEKB5g4psQ+hiO8rKUJUpwGFAKvtXTy9YbXkSpU6Z6bwtxVKtaWcCYKKTsYPTJcfPcmyzJJQpBKZpVmOpc96R6Pw5xzlLtNNAvTz2hsZ/YqcFfxGW8rClypqtvQ+X3pHjHEileIshiSTQaaCPeUKRMS6SCDrCNx7wugyzOlpIWn2m/Uk5uOn1hOfFrkhmLL4Z44uwzFnkFVCrafQRHZLrVi/MNAWIIrTrHrnDN1ShJSMIK1JJVTR2HTJoE3xcKZiipBA0UG23G+kS83Wh8IrtoRbahSEkJBKToKNv5RPwhOCXUpPM7UGQHzrBG38PzUh0qJGeGuUB1WI1zD7OPWOtcaYTVy5IO3jfIMwSUl8WbaJ1ruY7vGyS5YE2SlgkMUJybU9M/dACXdk5GGYBiYM2T/zBey2/EMOEjQuBSAa49BqVrZWKJUyb+JUkEFIzahFCW0imq61hHigMlSixydzTygxIsCDMZIpgNNHcaRckXcv8LMlqAxIOJLbJP0jXOtC2t2DpVvlykLCgDiBB76N5xtUtMyzqxpyANOhrlAW8sglTDUblni9YrWfBUhKfaSQSTQdjnBdK0baYSsFxyikKlKKVHQ1BbTfPWLKbwnWdXhTCQ+4cK7UgNc1tmOUBKiUNUZVr6x6Bw/cyrSAZ4GAEEAhy/wBI5Qk3TNcoqNoEcLWDxlEpQyXpsATkN9o9LuuwCWAAIsWG7pclICAEgdBHdstSUB1HCNtT22izHi4dkc8vLo6Wtn6ZnQD6wv2+81rIRKRyYmUpRwktma5jP0iFd6rnO6DLQCwBbmAq9O8Syerbeb/x74co2KcqZEpLhj2+/jEEuQ6hVSTuks7HbI+Yi5MT9+XzERIFfukFQuwjiH7k/wDLG4q4ugjI6jgDeF2pkIKgCVKoly9SaU189o5s12iWhYFZmAktVjVvvWL9vlrWUEEcpfmJIqIkkJCRmcWZJOZ69PoIDhso918VvYDv2SV2ZAlhyWwhI0ADjt84oWf/AC0tH4gqZVAczLOxIzSdtCNdGcKTUj7ep+cU7fLStKkqAKdj90jnDyKcvo1YpaVOrFiBFCGqDUVAivbLGFIJA0duv943ZJaZQwoolzRyWelH9e7xiZhYxlG2wUuxsXPMpm92neKs6Rq0FpyQAVFgN4G2iXMWGQMHNmrMpbMDMV3jOglsnuu+J9nIwKLftOVYdrp41lTGTNGBW+hhFRZSAATUBn3Z6xFNkg1Ffs7RyZrPWLRdsmeAUnsUn0aKKuHmriJVuWc948xk3hapDmWrLJIevl9DDTdHHk8JHjywfjC3jxydtbGKc1HT0GLVcRNcj5QJmcOFRYpGdXDP6GD9k4ysy/aJQesFZF52ddUzEE994F+ng/JyzSXgT1XKU5o2FHOWXaKVp4SxnEBhPTvHpAKDkx8xHMyUDkPhn6xr9Ovs5Z39Hnn/AIPMshctbrAyI07RqVLmh+RFaPze8GPQpcgOCQHrs/rHFpkIUkghI3qB74VL0yewve8M8ytHCclXOoVfQ/LSK87hOU6SMeDVIBIfTPKPR1zbPLBBmIA7v6f3gfP4ksqPZKph/poPWN9h12b7qXgXbg4eTKJCUKIUoqJUK1GlNKQ62YJlI5mQP6s/SF5fEsxRaWgSw/c75xXllSy6yVHr5Q/Hj4iZzsN26/2fwg5/crzyGmUCVKUpWJSiT18jG1ym+9vsxLIR99qiHJCWySWnp9j+DFiUjN/L4fIRsBq/f20Yk5j7+2aDoW2am/fyiAmsTTD8P7xVXnHHJlrxVbiNRC0ZGG2R2b2B2HwiKVkexjIyCYSOJmXnA69PZPf5xuMhUgofkiGwf6aewiRMZGRgXlkgyMVtfvrGRkCcRrz++sVhl5n4mMjIw0jV9I5PyjIyORpCrKMs3tRkZGM2IzWDL76QbkZecZGQKGmTcx2PxgNb8j97xkZBAsAWjXuPjGSPpGRkEhMwxZdO4glZsvvaMjINAlhf1+JjqTp2HzjIyGAMuT/Z9I5TmO4+CoyMjQDmbpFVf36iMjIw5E0ZGRkYaf/Z",
+      "ingredientes": {
+        "i1": {
+          "id": "142"
+        },
+        "i2": {
+          "id": "177"
+        },
+        "i3": {
+          "id": "188"
+        },
+        "i4": {
+          "id": "183"
+        }
+      },
+      "passos": {
+        "p1": "Cozinhe a lentilha:  Em uma panela, coloque a lentilha e cubra com água.  Cozinhe por cerca de 20 minutos ou até ficar macia. Escorra e reserve.",
+        "p2": "Prepare o arroz:  Em uma panela, aqueça o óleo e refogue a cebola e o alho até dourar.  Adicione o arroz cru, refogue por 1-2 minutos.  Coloque o milho, a lentilha cozida e o feijão cozido (com um pouco do caldo).  Misture bem.",
+        "p3": "Cozinhe tudo junto:  Adicione água quente suficiente para cobrir tudo (cerca de 2 xícaras).  Tempere com sal.  Tampe e cozinhe em fogo médio-baixo até o arroz ficar macio e a água secar (cerca de 15-20 minutos).",
+        "p4": "Finalização:  Verifique o sal, ajuste se necessário.  Finalize com cheiro-verde picado se desejar."
+      },
+      "rendimento": "1",
+      "tempo_preparo": "30",
+      "titulo": "Arroz e feijão com milho e Lentilha"
+    },
+    "r1": {
+      "categoria": "Prato Principal",
+      "id": "1",
+      "imagem": "URL_da_imagem",
+      "ingredientes": {
+        "i1": {
+          "id": "101",
+          "quantidade": "2 xícaras"
+        },
+        "i2": {
+          "id": "102",
+          "quantidade": "300g"
+        },
+        "i3": {
+          "id": "103",
+          "quantidade": "1 unidade"
+        },
+        "i4": {
+          "id": "104",
+          "quantidade": "2 dentes"
+        },
+        "i5": {
+          "id": "105",
+          "quantidade": "1 colher de sopa"
+        },
+        "i6": {
+          "id": "106",
+          "quantidade": "1 litro"
+        },
+        "i7": {
+          "id": "107",
+          "quantidade": "A gosto"
+        }
+      },
+      "passos": {
+        "p1": "Aqueça o óleo e refogue a cebola e o alho até dourarem.",
+        "p2": "Acrescente a carne seca e misture bem.",
+        "p3": "Adicione o arroz e mexa por 2 minutos.",
+        "p4": "Coloque a água quente e o sal, misture bem.",
+        "p5": "Cozinhe até a água secar e o arroz ficar macio.",
+        "p6": "Desligue o fogo e tampe por 5 minutos antes de servir."
+      },
+      "rendimento": "10 porções",
+      "tempo_preparo": "45",
+      "titulo": "Arroz Carreteiro"
+    },
+    "r2": {
+      "categoria": "Prato Principal",
+      "id": "2",
+      "imagem": "URL_da_imagem",
+      "ingredientes": {
+        "i1": {
+          "id": "108",
+          "quantidade": "500g"
+        },
+        "i2": {
+          "id": "109",
+          "quantidade": "200g"
+        },
+        "i3": {
+          "id": "110",
+          "quantidade": "2 dentes"
+        },
+        "i4": {
+          "id": "111",
+          "quantidade": "1 unidade"
+        },
+        "i5": {
+          "id": "112",
+          "quantidade": "1 colher de sopa"
+        },
+        "i6": {
+          "id": "113",
+          "quantidade": "1 litro"
+        },
+        "i7": {
+          "id": "114",
+          "quantidade": "A gosto"
+        }
+      },
+      "passos": {
+        "p1": "Cozinhe o feijão na panela de pressão por 25 minutos.",
+        "p2": "Em outra panela, refogue o alho e a cebola no óleo.",
+        "p3": "Adicione o feijão cozido e misture bem.",
+        "p4": "Acrescente o macarrão e cozinhe até ficar macio.",
+        "p5": "Tempere com sal e deixe ferver por mais 5 minutos.",
+        "p6": "Sirva quente."
+      },
+      "rendimento": "12 porções",
+      "tempo_preparo": "40",
+      "titulo": "Feijão com Macarrão"
+    },
+    "r3": {
+      "categoria": "Lanche",
+      "id": "3",
+      "imagem": "URL_da_imagem",
+      "ingredientes": {
+        "i1": {
+          "id": "115",
+          "quantidade": "2 xícaras"
+        },
+        "i2": {
+          "id": "116",
+          "quantidade": "1 xícara"
+        },
+        "i3": {
+          "id": "117",
+          "quantidade": "1 colher de sopa"
+        },
+        "i4": {
+          "id": "118",
+          "quantidade": "2 unidades"
+        },
+        "i5": {
+          "id": "119",
+          "quantidade": "1/2 xícara"
+        },
+        "i6": {
+          "id": "120",
+          "quantidade": "Para fritar"
+        }
+      },
+      "passos": {
+        "p1": "Misture a farinha, o açúcar e o fermento em uma tigela.",
+        "p2": "Acrescente os ovos e o leite aos poucos, misturando bem.",
+        "p3": "Aqueça o óleo em fogo médio.",
+        "p4": "Com uma colher, coloque pequenas porções da massa no óleo quente.",
+        "p5": "Frite até os bolinhos ficarem dourados.",
+        "p6": "Retire e coloque em papel toalha para absorver o óleo.",
+        "p7": "Polvilhe açúcar e canela antes de servir."
+      },
+      "rendimento": "20 unidades",
+      "tempo_preparo": "30",
+      "titulo": "Bolinho de Chuva"
+    },
+    "r4": {
+      "categoria": "Acompanhamento",
+      "id": "4",
+      "imagem": "URL_da_imagem",
+      "ingredientes": {
+        "i1": {
+          "id": "121",
+          "quantidade": "2 cenouras raladas"
+        },
+        "i2": {
+          "id": "122",
+          "quantidade": "2 xícaras de farinha de mandioca"
+        },
+        "i3": {
+          "id": "123",
+          "quantidade": "1 cebola picada"
+        },
+        "i4": {
+          "id": "124",
+          "quantidade": "2 colheres de sopa de manteiga"
+        },
+        "i5": {
+          "id": "125",
+          "quantidade": "Sal a gosto"
+        }
+      },
+      "passos": {
+        "p1": "Aqueça a manteiga e refogue a cebola até dourar.",
+        "p2": "Adicione a cenoura ralada e refogue por mais 2 minutos.",
+        "p3": "Acrescente a farinha de mandioca e mexa bem.",
+        "p4": "Tempere com sal a gosto e misture até ficar homogêneo.",
+        "p5": "Sirva quente ou fria."
+      },
+      "rendimento": "10 porções",
+      "tempo_preparo": "20",
+      "titulo": "Farofa de Cenoura"
+    }
+  },
+  "users": {
+    "1742994841767": {
+      "ADM": true,
+      "email": "maderjosevitor@gmail.com",
+      "senha": "Jose@108"
+    },
+    "1743878857670": {
+      "ADM": false,
+      "email": "maderluanamaria@gmail.com",
+      "senha": "Luana@123"
+    },
+    "1744809564235": {
+      "ADM": true,
+      "email": "luzcollabb@gmail.com",
+      "senha": "Isadorabl123"
+    },
+    "1744810399272": {
+      "ADM": false,
+      "email": "4541010142@estudante.sed.sc.gov.br",
+      "senha": "jose"
+    },
+    "1745585063736": {
+      "ADM": false,
+      "email": "marquesgabi714@gmail.com",
+      "senha": "ouricenoura"
+    },
+    "1746399627102": {
+      "ADM": false,
+      "email": "miromader@yahoo.com.br",
+      "senha": "33702812"
+    },
+    "1746484391720": {
+      "ADM": true,
+      "email": "karen.carvalho@sed.sc.gov.br",
+      "senha": "12345"
+    },
+    "1746487563670": {
+      "ADM": false,
+      "email": "wellington_de_andrade@hotmail.com",
+      "senha": "Cedup@2025"
+    },
+    "1746627257752": {
+      "ADM": false,
+      "email": "erik4.laurinda@gmail.com",
+      "senha": "bunda123"
+    },
+    "1747915365425": {
+      "ADM": true,
+      "email": "nutri@nutri.com",
+      "senha": "nutri123"
+    },
+    "user2": {
+      "ADM": true,
+      "email": "tanamedidacedup@gmail.com",
+      "senha": "TaNaMedida1604"
+    }
+  }
+}

@@ -11,6 +11,13 @@ function Receitas() {
   const [ingredientes, setIngredientes] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
   const [categoriaAtiva, setCategoriaAtiva] = useState("Todas");
+  const [faixas, setFaixas] = useState({
+    idade_6_10: 0,
+    idade_11_15: 0,
+    idade_16_18: 0,
+    idade_19_30: 0,
+    idade_30_31: 0,
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,6 +54,37 @@ function Receitas() {
     return matchesSearch && matchesCategory;
   });
 
+  const handleFaixaChange = (e) => {
+    setFaixas({ ...faixas, [e.target.name]: Number(e.target.value) });
+  };
+
+  const calcularTotalIngrediente = (ingrediente) => {
+    const dados = ingredientes[ingrediente.id];
+    if (!dados) return 0;
+    // Se os valores estão em miligramas, descomente a linha abaixo e comente a de cima:
+    return (
+    (faixas.idade_6_10 * ((dados.idade_6_10 || 0) / 1000)) +
+    (faixas.idade_11_15 * ((dados.idade_11_15 || 0) / 1000)) +
+    (faixas.idade_16_18 * ((dados.idade_16_18 || 0) / 1000)) +
+    (faixas.idade_19_30 * ((dados.idade_19_30 || 0) / 1000)) +
+    (faixas.idade_30_31 * ((dados.idade_30_31 || 0) / 1000))
+    );
+    // return (
+    //   (faixas.idade_6_10 * (dados.idade_6_10 || 0)) +
+    //   (faixas.idade_11_15 * (dados.idade_11_15 || 0)) +
+    //   (faixas.idade_16_18 * (dados.idade_16_18 || 0)) +
+    //   (faixas.idade_19_30 * (dados.idade_19_30 || 0)) +
+    //   (faixas.idade_30_31 * (dados.idade_30_31 || 0))
+    // );
+  };
+
+  function formatarQuantidadeGramas(quantidade) {
+    if (quantidade >= 1000) {
+      return `${(quantidade / 1000).toLocaleString('pt-BR', { maximumFractionDigits: 2 })} Kg`;
+    }
+    return `${quantidade} g`;
+  }
+
   return (
     <div className="container">
       <h1>RECEITAS</h1>
@@ -82,11 +120,7 @@ function Receitas() {
           <h2>{receitaSelecionada.titulo}</h2>
           {receitaSelecionada.imagem && (
             <img 
-              src={
-                receitaSelecionada.imagem.startsWith("http") 
-                  ? receitaSelecionada.imagem 
-                  : `https://${receitaSelecionada.imagem}`
-              }
+              src={receitaSelecionada.imagem}
               alt={receitaSelecionada.titulo} 
               onError={(e) => e.target.style.display = 'none'}
               className="imagem-receita"
@@ -109,6 +143,37 @@ function Receitas() {
               <li key={index}>{passo}</li>
             ))}
           </ol>
+          <h3>Informe a quantidade de pessoas por faixa etária:</h3>
+          <form className="form-faixas">
+            <label>
+              6-10 anos:
+              <input type="number" name="idade_6_10" min="0" value={faixas.idade_6_10} onChange={handleFaixaChange} />
+            </label>
+            <label>
+              11-15 anos:
+              <input type="number" name="idade_11_15" min="0" value={faixas.idade_11_15} onChange={handleFaixaChange} />
+            </label>
+            <label>
+              16-18 anos:
+              <input type="number" name="idade_16_18" min="0" value={faixas.idade_16_18} onChange={handleFaixaChange} />
+            </label>
+            <label>
+              19-30 anos:
+              <input type="number" name="idade_19_30" min="0" value={faixas.idade_19_30} onChange={handleFaixaChange} />
+            </label>
+            <label>
+              30-31 anos:
+              <input type="number" name="idade_30_31" min="0" value={faixas.idade_30_31} onChange={handleFaixaChange} />
+            </label>
+          </form>
+          <h3>Ingredientes (quantidade total):</h3>
+          <ul>
+            {Object.values(receitaSelecionada.ingredientes).map(ingrediente => (
+              <li key={ingrediente.id}>
+                {obterNomeIngrediente(ingrediente.id)}: {formatarQuantidadeGramas(calcularTotalIngrediente(ingrediente))}
+              </li>
+            ))}
+          </ul>
           <button className="botao-voltar" onClick={() => setReceitaSelecionada(null)}>Voltar</button>
         </div>
       ) : (
