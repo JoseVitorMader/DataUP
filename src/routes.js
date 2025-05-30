@@ -17,7 +17,7 @@ import CadastroCardapio from "./pages/CadastrarCardapio";
 import AdminUsers from "./pages/GerenciaUsuarios";
 import CadastroReceitas from "./pages/CadastrarReceitas";
 import CadastroIngredientes from "./pages/CadastrarIngredientes";
-// import HomePage from "./pages/FuncionarioEstudante";
+import FuncionarioEstudante from './pages/FuncionarioEstudante';
 
 // Animação foda
 const AnimatedPage = ({ children }) => (
@@ -47,7 +47,7 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<AnimatedPage><Login /></AnimatedPage>} />
+        <Route path="/" element={<AnimatedPage><FuncionarioEstudante /></AnimatedPage>} />
         <Route path="/login" element={<AnimatedPage><Login /></AnimatedPage>} />
         <Route path="/home" element={<LayoutWithHeader><Home /></LayoutWithHeader>} />
         <Route path="/sobre" element={<LayoutWithHeader><Sobre /></LayoutWithHeader>} />
@@ -63,8 +63,7 @@ function AnimatedRoutes() {
         <Route path= "/cadCardapio"  element ={ <LayoutWithHeader> <CadastroCardapio/></LayoutWithHeader>}/>
         <Route path= "/cadReceita"  element ={ <LayoutWithHeader> <CadastroReceitas/></LayoutWithHeader>}/>
         <Route path= "/cadIngredientes"  element ={ <LayoutWithHeader> <CadastroIngredientes/></LayoutWithHeader>}/>
-        {/* <Route path="/homePage" element={<AnimatedPage><HomePage /></AnimatedPage>} /> */}
-        
+       
         <Route path="*" element={<AnimatedPage><Erro /></AnimatedPage>} />
       </Routes>
     </AnimatePresence>

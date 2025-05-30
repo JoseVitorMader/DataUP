@@ -9,9 +9,11 @@ function HomePage() {
   const handleUserSelection = (type) => {
     setUserType(type);
     if (type === 'funcionario') {
+      localStorage.setItem('tipoUsuario', 'funcionario');
       navigate('/login');
     } else {
-      navigate('/home');
+      localStorage.setItem('tipoUsuario', 'estudante');
+      navigate('/cardapios');
     }
   };
 
@@ -38,7 +40,7 @@ function HomePage() {
         </div>
         
         <div className="footer">
-          <p className="footer-text">Desenvolvido por DataUp © 2025 - Versão: 1 de 13/05/2025 - 20:16</p>
+          <p className="footer-text">Desenvolvido por DataUp © 2025</p>
           <div className="divider"></div>
           <p className="tagline">Tá Na Medida, o portal dos estudantes da Rede Estadual de Ensino para acesso aos recursos Alimentares</p>
         </div>
