@@ -54,7 +54,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    
       <form className="login-form" onSubmit={handleLogin}>
         <h1>Tá Na Medida!</h1>
         {error && <p className="error">{error}</p>}
@@ -78,7 +78,7 @@ const Login = () => {
           <button type="button" className="small-button recuperar-button" onClick={() => navigate('/recuperar')}>Recuperar Senha</button>
         </div>
       </form>
-    </div>
+
   );
 };
 

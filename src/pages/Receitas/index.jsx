@@ -87,6 +87,9 @@ function Receitas() {
 
   return (
     <div className="container">
+      <br />
+      <br />
+      <br />
       <h1>RECEITAS</h1>
       
       {!receitaSelecionada && (

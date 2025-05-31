@@ -44,7 +44,6 @@ const Cadastro = () => {
   };
   
   return (
-    <div className="container">
       <form className="login-form" onSubmit={handleRegister}>
         <h1>Registro</h1>
         {error && <p className="error">{error}</p>}
@@ -70,9 +69,8 @@ const Cadastro = () => {
           required
         />
         <button type="submit">Cadastrar</button>
-        <button type="button" className="small-button" onClick={() => navigate('/')}>Voltar</button>
+        <button type="button" className="small-button" onClick={() => navigate('/login')}>Voltar</button>
       </form>
-    </div>
   );
 };
 

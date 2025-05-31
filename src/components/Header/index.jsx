@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+  import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaUtensils, FaBoxes, FaComment, FaTruck, FaBook, FaHome, FaInfoCircle, FaEnvelope, FaUserShield, FaPlus, FaMinus, FaChevronLeft, FaChevronRight, FaBars, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -42,18 +42,19 @@ function Header() {
   const [showScrollButtons, setShowScrollButtons] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const navRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const adm = localStorage.getItem('isADM') === 'true';
     setIsADM(adm);
-    
+
     const checkScroll = () => {
-      if (navRef.current) {
-        const needsScroll = navRef.current.scrollWidth > navRef.current.clientWidth;
+      if (navRef.current && containerRef.current) {
+        const needsScroll = navRef.current.scrollWidth > containerRef.current.clientWidth;
         setShowScrollButtons(needsScroll);
       }
     };
-    
+
     checkScroll();
     window.addEventListener('resize', checkScroll);
     return () => window.removeEventListener('resize', checkScroll);
@@ -65,8 +66,11 @@ function Header() {
 
   const scroll = (direction) => {
     if (navRef.current) {
-      const scrollAmount = direction === 'left' ? -200 : 200;
-      navRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      const scrollAmount = 120;
+      navRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
     }
   };
 
@@ -103,13 +107,17 @@ function Header() {
         <FaBars />
       </button>
 
-      <div className="nav-container">
+      <div className="nav-container" ref={containerRef}>
         {showScrollButtons && (
-          <button className="scroll-button left" onClick={() => scroll('left')}>
+          <button
+            className="scroll-button left"
+            onClick={() => scroll('left')}
+            aria-label="Rolar para esquerda"
+          >
             <FaChevronLeft />
           </button>
         )}
-        
+
         <nav className="navbar" ref={navRef}>
           <ul className="nav-list">
             {menuItems.map((item, index) => (
@@ -139,9 +147,13 @@ function Header() {
             )}
           </ul>
         </nav>
-        
+
         {showScrollButtons && (
-          <button className="scroll-button right" onClick={() => scroll('right')}>
+          <button
+            className="scroll-button right"
+            onClick={() => scroll('right')}
+            aria-label="Rolar para direita"
+          >
             <FaChevronRight />
           </button>
         )}

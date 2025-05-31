@@ -61,7 +61,6 @@ const RecuperarSenha = () => {
   };
 
   return (
-    <div className="container">
       <form className="login-form" onSubmit={handlePasswordReset}>
         <h1>Recuperar Senha</h1>
         {message && <p className="success-message">{message}</p>}
@@ -75,10 +74,9 @@ const RecuperarSenha = () => {
         />
         <button type="submit">Enviar Email</button>
         <div className="button-group">
-          <button type="button" className="small-button" onClick={() => navigate('/')}>Voltar</button>
+          <button type="button" className="small-button" onClick={() => navigate('/login')}>Voltar</button>
         </div>
       </form>
-    </div>
   );
 };
 

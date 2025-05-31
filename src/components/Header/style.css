@@ -22,6 +22,7 @@ header {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-shrink: 0;
 }
 
 .logo-title h2 {
@@ -42,25 +43,40 @@ header {
     align-items: center;
     justify-content: flex-end;
     flex: 1;
+    min-width: 0; /* Permite que o container encolha */
+    position: relative;
+    padding: 0 30px; /* Espaço para os botões de scroll */
 }
 
 .navbar {
     display: flex;
     align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    width: 100%;
+    max-width: 100%;
+}
+
+.navbar::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
 }
 
 .nav-list {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     list-style: none;
     margin: 0;
     padding: 0;
+    white-space: nowrap;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
+    flex-shrink: 0; /* Impede que os itens encolham */
 }
 
 .nav-link {
@@ -82,6 +98,38 @@ header {
 .nav-icon {
     margin-right: 6px;
     font-size: 1.1em;
+}
+
+/* Scroll buttons */
+.scroll-button {
+    position: absolute;
+    background: rgba(244, 202, 158, 0.8);
+    border: none;
+    color: #c47321;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: opacity 0.3s;
+}
+
+.scroll-button.left {
+    left: 0;
+}
+
+.scroll-button.right {
+    right: 0;
+}
+
+.scroll-button:hover {
+    background: #ffe2c2;
 }
 
 /* Mobile Hamburger Button */

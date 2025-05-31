@@ -52,7 +52,6 @@ const ResetarSenha = () => {
   };
 
   return (
-    <div className="container">
       <form className="login-form" onSubmit={handlePasswordReset}>
         <h1>Redefinir Senha</h1>
         {message && <p className="success-message">{message}</p>}
@@ -73,10 +72,9 @@ const ResetarSenha = () => {
         />
         <button type="submit">Redefinir Senha</button>
         <div className="button-group">
-          <button type="button" className="small-button" onClick={() => navigate('/')}>Voltar</button>
+          <button type="button" className="small-button" onClick={() => navigate('/login')}>Voltar</button>
         </div>
       </form>
-    </div>
   );
 };
 
