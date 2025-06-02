@@ -101,7 +101,7 @@ const CadastroIngredientes = () => {
           name="idade_6_10" 
           value={form.idade_6_10} 
           onChange={handleChange} 
-          step="1" // Alterado para 1 grama
+          step="any" // Alterado para 1 grama
           min="0"
           required
           placeholder="Ex: 150"
@@ -115,7 +115,7 @@ const CadastroIngredientes = () => {
           name="idade_11_15" 
           value={form.idade_11_15} 
           onChange={handleChange} 
-          step="1"
+          step="any"
           min="0"
           required
           placeholder="Ex: 200"
@@ -129,7 +129,7 @@ const CadastroIngredientes = () => {
           name="idade_16_18" 
           value={form.idade_16_18} 
           onChange={handleChange} 
-          step="1"
+          step="any"
           min="0"
           required
           placeholder="Ex: 250"
@@ -143,7 +143,7 @@ const CadastroIngredientes = () => {
           name="idade_19_30" 
           value={form.idade_19_30} 
           onChange={handleChange} 
-          step="1"
+          step="any"
           min="0"
           required
           placeholder="Ex: 300"
@@ -157,7 +157,7 @@ const CadastroIngredientes = () => {
           name="idade_30_31" 
           value={form.idade_30_31} 
           onChange={handleChange} 
-          step="1"
+          step="any"
           min="0"
           required
           placeholder="Ex: 280"
