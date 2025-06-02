@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, set } from 'firebase/database';
+import { ref, get, set } from 'firebase/database';
 import './style.css';
 import { db } from '../../firebase.js';
 
@@ -22,20 +22,35 @@ const Cadastro = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     setError("");
-  
+
     if (password !== confirmPassword) {
       setError("As senhas não coincidem.");
       return;
     }
-  
+
     try {
+      // Verifica se o e-mail já existe
+      const usersRef = ref(db, 'users');
+      const snapshot = await get(usersRef);
+
+      if (snapshot.exists()) {
+        const users = snapshot.val();
+        const emailExists = Object.values(users).some(
+          user => user.email.trim().toLowerCase() === email.trim().toLowerCase()
+        );
+        if (emailExists) {
+          setError("Este e-mail já está cadastrado.");
+          return;
+        }
+      }
+
       const userId = Date.now().toString();
-      set(ref(db, 'users/' + userId), {
+      await set(ref(db, 'users/' + userId), {
         email: email.trim().toLowerCase(),
         senha: password.trim(),
         ADM: false 
       });
-  
+
       navigate('/');
     } catch (err) {
       console.error("Erro no cadastro:", err);
