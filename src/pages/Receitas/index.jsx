@@ -78,11 +78,18 @@ function Receitas() {
     // );
   };
 
-  function formatarQuantidadeGramas(quantidade) {
-    if (quantidade >= 1000) {
-      return `${(quantidade / 1000).toLocaleString('pt-BR', { maximumFractionDigits: 2 })} Kg`;
+  function formatarQuantidade(quantidade, unidade) {
+    if (unidade === 'ml') {
+      if (quantidade >= 1000) {
+        return `${(quantidade / 1000).toLocaleString('pt-BR', { maximumFractionDigits: 2 })} L`;
+      }
+      return `${quantidade} ml`;
+    } else {
+      if (quantidade >= 1000) {
+        return `${(quantidade / 1000).toLocaleString('pt-BR', { maximumFractionDigits: 2 })} Kg`;
+      }
+      return `${quantidade} g`;
     }
-    return `${quantidade} g`;
   }
 
   return (
@@ -173,7 +180,7 @@ function Receitas() {
           <ul>
             {Object.values(receitaSelecionada.ingredientes).map(ingrediente => (
               <li key={ingrediente.id}>
-                {obterNomeIngrediente(ingrediente.id)}: {formatarQuantidadeGramas(calcularTotalIngrediente(ingrediente))}
+                {obterNomeIngrediente(ingrediente.id)}: {formatarQuantidade(calcularTotalIngrediente(ingrediente), ingredientes[ingrediente.id]?.unidade)}
               </li>
             ))}
           </ul>

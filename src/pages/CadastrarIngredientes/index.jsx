@@ -39,6 +39,9 @@ const CadastroIngredientes = () => {
     });
   };
 
+  const tipoIngrediente = localStorage.getItem('tipoIngrediente') || 'comida';
+  const unidade = tipoIngrediente === 'liquido' ? 'ml' : 'gramas';
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const db = getDatabase();
@@ -50,14 +53,13 @@ const CadastroIngredientes = () => {
       await set(novoIngredienteRef, {
         id: nextId,
         nome: form.nome,
-        
         idade_6_10: parseFloat(form.idade_6_10) * 1000 || 0,
         idade_11_15: parseFloat(form.idade_11_15) * 1000 || 0,
         idade_16_18: parseFloat(form.idade_16_18) * 1000 || 0,
         idade_19_30: parseFloat(form.idade_19_30) * 1000 || 0,
         idade_30_31: parseFloat(form.idade_30_31) * 1000 || 0,
         data_cadastro: new Date().toISOString(),
-        unidade: 'gramas' 
+        unidade 
       });
 
       alert(`Ingrediente cadastrado com sucesso! ID: ${nextId}`);
@@ -80,8 +82,9 @@ const CadastroIngredientes = () => {
   return (
     <form onSubmit={handleSubmit} className="form-container">
       <h1>Cadastro de Ingredientes</h1>
-      <p className="info-text">(Todos os valores devem ser informados em gramas)</p>
-      
+      <p className="info-text">
+        (Todos os valores devem ser informados em {unidade})
+      </p>
       <label>
         Nome do Alimento:
         <input 
@@ -90,26 +93,24 @@ const CadastroIngredientes = () => {
           value={form.nome} 
           onChange={handleChange} 
           required 
-          placeholder="Ex: Arroz integral"
+          placeholder={`Ex: ${tipoIngrediente === 'liquido' ? 'Leite' : 'Arroz integral'}`}
         />
       </label>
-      
       <label>
-        Gramas per capita (6-10 anos):
+        {unidade.charAt(0).toUpperCase() + unidade.slice(1)} per capita (6-10 anos):
         <input 
           type="number" 
           name="idade_6_10" 
           value={form.idade_6_10} 
           onChange={handleChange} 
-          step="any" // Alterado para 1 grama
+          step="any"
           min="0"
           required
-          placeholder="Ex: 150"
+          placeholder={`Ex: ${tipoIngrediente === 'liquido' ? '150' : '150'}`}
         />
       </label>
-      
       <label>
-        Gramas per capita (11-15 anos):
+        {unidade.charAt(0).toUpperCase() + unidade.slice(1)} per capita (11-15 anos):
         <input 
           type="number" 
           name="idade_11_15" 
@@ -118,12 +119,11 @@ const CadastroIngredientes = () => {
           step="any"
           min="0"
           required
-          placeholder="Ex: 200"
+          placeholder={`Ex: ${tipoIngrediente === 'liquido' ? '200' : '200'}`}
         />
       </label>
-      
       <label>
-        Gramas per capita (16-18 anos):
+        {unidade.charAt(0).toUpperCase() + unidade.slice(1)} per capita (16-18 anos):
         <input 
           type="number" 
           name="idade_16_18" 
@@ -132,12 +132,11 @@ const CadastroIngredientes = () => {
           step="any"
           min="0"
           required
-          placeholder="Ex: 250"
+          placeholder={`Ex: ${tipoIngrediente === 'liquido' ? '250' : '250'}`}
         />
       </label>
-      
       <label>
-        Gramas per capita (19-30 anos):
+        {unidade.charAt(0).toUpperCase() + unidade.slice(1)} per capita (19-30 anos):
         <input 
           type="number" 
           name="idade_19_30" 
@@ -146,12 +145,11 @@ const CadastroIngredientes = () => {
           step="any"
           min="0"
           required
-          placeholder="Ex: 300"
+          placeholder={`Ex: ${tipoIngrediente === 'liquido' ? '300' : '300'}`}
         />
       </label>
-      
       <label>
-        Gramas per capita (30-31 anos):
+        {unidade.charAt(0).toUpperCase() + unidade.slice(1)} per capita (30-31 anos):
         <input 
           type="number" 
           name="idade_30_31" 
@@ -160,10 +158,9 @@ const CadastroIngredientes = () => {
           step="any"
           min="0"
           required
-          placeholder="Ex: 280"
+          placeholder={`Ex: ${tipoIngrediente === 'liquido' ? '280' : '280'}`}
         />
       </label>
-      
       <button type="submit">Cadastrar Ingrediente</button>
     </form>
   );

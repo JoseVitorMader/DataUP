@@ -18,6 +18,7 @@ import AdminUsers from "./pages/GerenciaUsuarios";
 import CadastroReceitas from "./pages/CadastrarReceitas";
 import CadastroIngredientes from "./pages/CadastrarIngredientes";
 import FuncionarioEstudante from './pages/FuncionarioEstudante';
+import SelecionarTipoIngrediente from './pages/SelecionarTipoIngrediente';
 
 // Animação foda
 const AnimatedPage = ({ children }) => (
@@ -63,6 +64,7 @@ function AnimatedRoutes() {
         <Route path= "/cadCardapio"  element ={ <LayoutWithHeader> <CadastroCardapio/></LayoutWithHeader>}/>
         <Route path= "/cadReceita"  element ={ <LayoutWithHeader> <CadastroReceitas/></LayoutWithHeader>}/>
         <Route path= "/cadIngredientes"  element ={ <LayoutWithHeader> <CadastroIngredientes/></LayoutWithHeader>}/>
+        <Route path="/selecionar-tipo-ingrediente" element={ <LayoutWithHeader><SelecionarTipoIngrediente /> </LayoutWithHeader>} />
        
         <Route path="*" element={<AnimatedPage><Erro /></AnimatedPage>} />
       </Routes>
