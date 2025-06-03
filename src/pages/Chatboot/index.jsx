@@ -7,8 +7,6 @@ const Chatboot = () => {
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-
-  // Exemplo usando Hugging Face Inference API (gratuito para alguns modelos)
   const sendMessage = async () => {
     if (!input.trim()) return;
     const userMessage = { sender: "user", text: input };
@@ -23,9 +21,11 @@ const Chatboot = () => {
           "Authorization": `Bearer ${process.env.REACT_APP_OPENROUTER_API_KEY}`
         },
         body: JSON.stringify({
-          model: "mistralai/mistral-7b-instruct", // Ou outro modelo disponível na OpenRouter
+          model: "mistralai/mistral-7b-instruct", 
           messages: [
-            { role: "system", content: "Você é um especialista em alimentação saudável. Responda perguntas de forma clara e objetiva." },
+            { role: "system", content: `Você é um especialista em alimentação saudável. Responda SEMPRE em português, de forma clara e objetiva.
+            Sempre que alguém disser "Oi", "Olá", "Bom dia", "Boa tarde", "Boa noite" ou usar qualquer saudação, responda com:
+            "Oi, eu sou o Fuutinho, e estou aqui para ser sua IA de apoio sobre suas dúvidas em relação à alimentação. Lembre-se: todas as respostas devem ser no idioma da pergunta realizada."` },
             { role: "user", content: input }
           ]
         })
