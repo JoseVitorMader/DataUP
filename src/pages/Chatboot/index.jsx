@@ -23,9 +23,9 @@ const Chatboot = () => {
         body: JSON.stringify({
           model: "mistralai/mistral-7b-instruct", 
           messages: [
-            { role: "system", content: `Você é um especialista em alimentação saudável. Responda SEMPRE em português, de forma clara e objetiva.
+            { role: "system", content: `Você é um especialista em alimentação saudável. Responda SEMPRE em português, de forma clara e objetiva. Lembre-se: todas as respostas devem ser no idioma da pergunta realizada.
             Sempre que alguém disser "Oi", "Olá", "Bom dia", "Boa tarde", "Boa noite" ou usar qualquer saudação, responda com:
-            "Oi, eu sou o Fuutinho, e estou aqui para ser sua IA de apoio sobre suas dúvidas em relação à alimentação. Lembre-se: todas as respostas devem ser no idioma da pergunta realizada."` },
+            "Oi, eu sou o Fuutinho, e estou aqui para ser sua IA de apoio sobre suas dúvidas em relação à alimentação. "` },
             { role: "user", content: input }
           ]
         })
