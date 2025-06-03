@@ -12,13 +12,15 @@ const normalItems = [
   { to: "/recebimento", icon: <FaTruck />, text: "Recebimento" },
   { to: "/receitas", icon: <FaBook />, text: "Receitas" },
   { to: "/sobre", icon: <FaInfoCircle />, text: "Sobre" },
-  { to: "/contato", icon: <FaEnvelope />, text: "Contato" }
+  { to: "/contato", icon: <FaEnvelope />, text: "Contato" },
+  { to: "/chatboot", icon: <FaComment />, text: "Chatbot" }
 ];
 
 const estudanteItems = [
   { to: "/cardapios", icon: <FaUtensils />, text: "Cardápio" },
   { to: "/sobre", icon: <FaInfoCircle />, text: "Sobre" },
-  { to: "/contato", icon: <FaEnvelope />, text: "Contato" }
+  { to: "/contato", icon: <FaEnvelope />, text: "Contato" },
+  { to: "/chatboot", icon: <FaComment />, text: "Chatbot" }
 ];
 
 const funcionarioItems = [
@@ -34,6 +36,7 @@ const funcionarioItems = [
   { to: "/cadCardapio", icon: <FaUtensils />, text: "Cadastrar Cardápio" },
   { to: "/cadReceita", icon: <FaBook />, text: "Cadastrar Receita" },
   { to: "/selecionar-tipo-ingrediente", icon: <FaBoxes />, text: "Cadastrar Ingredientes" },
+  
 ];
 
 function Header() {

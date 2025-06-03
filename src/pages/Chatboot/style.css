@@ -1,0 +1,154 @@
+/* Chatbot Styles - Versão Melhorada */
+:root {
+  --primary-color: #FF7B25;
+  --secondary-color: #FFAA5E;
+  --accent-color: #FFD166;
+  --light-color: #FFF4E6;
+  --dark-color: #5A2D0C;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
+  --border-radius: 16px;
+  --border-radius-small: 8px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.chatbot-container {
+  max-width: 600px; /* Aumentei a largura máxima */
+  margin: 0 auto;
+  padding: 25px;
+  font-family: 'Comic Neue', cursive, sans-serif;
+  background-color: var(--light-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.chatbot-title {
+  font-size: 2.2rem; /* Aumentei o tamanho da fonte */
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  text-align: center;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.chat-messages {
+  border: 3px solid var(--secondary-color);
+  padding: 20px; /* Mais espaço interno */
+  height: 400px; /* Altura maior */
+  overflow-y: auto;
+  margin-bottom: 20px;
+  border-radius: var(--border-radius-small);
+  background-color: white;
+  font-size: 1.1rem; /* Fonte maior para melhor legibilidade */
+  line-height: 1.6; /* Espaçamento entre linhas aumentado */
+}
+
+.message {
+  margin-bottom: 15px; /* Mais espaço entre mensagens */
+  padding: 12px 16px; /* Mais espaço interno */
+  border-radius: var(--border-radius-small);
+  line-height: 1.6;
+  max-width: 85%; /* Largura maior para as mensagens */
+  word-wrap: break-word;
+}
+
+.user-message {
+  background-color: var(--primary-color);
+  color: white;
+  margin-left: auto;
+  border-top-right-radius: 0;
+}
+
+.bot-message {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  margin-right: auto;
+  border-top-left-radius: 0;
+  border: 1px solid var(--secondary-color);
+}
+
+.typing-indicator {
+  color: var(--dark-color);
+  font-style: italic;
+  padding: 12px 16px;
+  background-color: rgba(255, 170, 94, 0.1);
+  border-radius: var(--border-radius-small);
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.chat-input {
+  flex-grow: 1;
+  padding: 15px 20px; /* Mais confortável para digitar */
+  border: 3px solid var(--secondary-color);
+  border-radius: 50px;
+  font-size: 1.1rem; /* Fonte maior */
+  outline: none;
+  transition: var(--transition);
+  background-color: white;
+}
+
+.send-button {
+  padding: 15px 25px; /* Botão maior */
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem; /* Texto maior */
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+/* Responsividade mantendo a legibilidade */
+@media (max-width: 768px) {
+  .chatbot-container {
+    padding: 20px;
+    max-width: 95%;
+  }
+  
+  .chat-messages {
+    height: 350px;
+    font-size: 1.05rem;
+  }
+  
+  .message {
+    max-width: 90%;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 540px) {
+  .chat-messages {
+    height: 300px;
+    padding: 15px;
+  }
+  
+  .chat-input {
+    padding: 12px 18px;
+  }
+  
+  .send-button {
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .chatbot-title {
+    font-size: 1.8rem;
+  }
+  
+  .chat-messages {
+    font-size: 1rem;
+    height: 280px;
+  }
+}

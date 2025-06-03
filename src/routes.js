@@ -19,6 +19,7 @@ import CadastroReceitas from "./pages/CadastrarReceitas";
 import CadastroIngredientes from "./pages/CadastrarIngredientes";
 import FuncionarioEstudante from './pages/FuncionarioEstudante';
 import SelecionarTipoIngrediente from './pages/SelecionarTipoIngrediente';
+import Chatboot from "./pages/Chatboot";
 
 // Animação foda
 const AnimatedPage = ({ children }) => (
@@ -65,7 +66,7 @@ function AnimatedRoutes() {
         <Route path= "/cadReceita"  element ={ <LayoutWithHeader> <CadastroReceitas/></LayoutWithHeader>}/>
         <Route path= "/cadIngredientes"  element ={ <LayoutWithHeader> <CadastroIngredientes/></LayoutWithHeader>}/>
         <Route path="/selecionar-tipo-ingrediente" element={ <LayoutWithHeader><SelecionarTipoIngrediente /> </LayoutWithHeader>} />
-       
+       <Route path="/chatboot" element={<LayoutWithHeader><Chatboot /></LayoutWithHeader>} />
         <Route path="*" element={<AnimatedPage><Erro /></AnimatedPage>} />
       </Routes>
     </AnimatePresence>
