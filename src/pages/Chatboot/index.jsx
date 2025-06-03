@@ -20,7 +20,7 @@ const Chatboot = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${processenvOPENROUTERAPIKEY}` // Coloque seu token da OpenRouter aqui
+          "Authorization": `Bearer ${process.env.OPENROUTERAPIKEY}` // Coloque seu token da OpenRouter aqui
         },
         body: JSON.stringify({
           model: "mistralai/mistral-7b-instruct", // Ou outro modelo disponível na OpenRouter
