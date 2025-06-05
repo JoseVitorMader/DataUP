@@ -110,6 +110,28 @@
 }
 
 
+@media (max-width: 1024px) {
+  .chatbot-container {
+    max-width: 80vw;
+    padding: 20px;
+  }
+  .chat-messages {
+    height: 350px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .chatbot-container {
+    max-width: 95vw;
+    padding: 18px;
+  }
+  .chat-messages {
+    height: 320px;
+    font-size: 0.98rem;
+  }
+}
+
 @media (max-width: 768px) {
   .chatbot-container {
     padding: 20px;
@@ -124,6 +146,25 @@
   .message {
     max-width: 90%;
     padding: 10px 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .chatbot-container {
+    padding: 14px;
+    max-width: 99vw;
+  }
+  .chatbot-title {
+    font-size: 1.5rem;
+  }
+  .chat-messages {
+    height: 260px;
+    font-size: 0.96rem;
+    padding: 10px;
+  }
+  .message {
+    padding: 8px 10px;
+    font-size: 0.96rem;
   }
 }
 
@@ -181,6 +222,21 @@
     width: 100%;
     box-sizing: border-box;
     padding: 10px 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .chatbot-title {
+    font-size: 1rem;
+  }
+  .chat-messages {
+    height: 120px;
+    font-size: 0.88rem;
+    padding: 4px;
+  }
+  .message {
+    font-size: 0.88rem;
+    padding: 6px 6px;
   }
 }
 
