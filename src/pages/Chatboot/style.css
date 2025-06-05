@@ -13,7 +13,7 @@
 }
 
 .chatbot-container {
-  max-width: 600px; /* Aumentei a largura máxima */
+  max-width: 600px; 
   margin: 0 auto;
   padding: 25px;
   font-family: 'Comic Neue', cursive, sans-serif;
@@ -23,7 +23,7 @@
 }
 
 .chatbot-title {
-  font-size: 2.2rem; /* Aumentei o tamanho da fonte */
+  font-size: 2.2rem; 
   color: var(--primary-color);
   margin-bottom: 25px;
   text-align: center;
@@ -109,7 +109,7 @@
   box-shadow: var(--shadow);
 }
 
-/* Responsividade mantendo a legibilidade */
+
 @media (max-width: 768px) {
   .chatbot-container {
     padding: 20px;
