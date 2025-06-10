@@ -2,7 +2,7 @@
   max-width: 95%;
   margin: 30px auto;
   padding: 20px;
-  background-color: #f5d7af;
+  background-color: transparent;
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -120,6 +120,17 @@
 
 .card-row .value {
   text-align: right;
+}
+
+.alerta-esgotado {
+  color: #fff;
+  background-color: #c0392b;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  animation: pulse 1.2s infinite;
+  display: inline-block;
 }
 
 

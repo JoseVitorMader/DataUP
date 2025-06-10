@@ -109,6 +109,62 @@ body.register-page .error {
     color: white;
 }
 
+/* Estilização customizada para radio buttons */
+.custom-radio-group {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 10px 0;
+}
+
+.custom-radio-label {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #c47321;
+    font-family: 'Coiny', sans-serif;
+    cursor: pointer;
+    gap: 8px;
+    user-select: none;
+}
+
+.custom-radio-label input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c47321;
+    border-radius: 50%;
+    background: #fff;
+    margin-right: 6px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+}
+
+.custom-radio-label input[type="radio"]:checked {
+    border-color: #9e540a;
+    background: #ffe3b0;
+}
+
+.custom-radio-label input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #c47321;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
+.custom-radio-label input[type="radio"]:focus {
+    box-shadow: 0 0 0 3px #ffe3b0;
+    border-color: #c47321;
+}
+
 /* Media Queries para ajustes específicos */
 @media (max-width: 768px) {
     body.register-page .login-form {
@@ -131,6 +187,10 @@ body.register-page .error {
     
     body.register-page button {
         padding: 12px;
+    }
+    
+    .custom-radio-label {
+        font-size: 1rem;
     }
 }
 

@@ -11,14 +11,26 @@ const Cardapio = () => {
   const [cardapioSelecionado, setCardapioSelecionado] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Recupera o idEscola do usuário logado
+  const session = JSON.parse(localStorage.getItem('userSession'));
+  const idEscola = session?.idEscola;
+
   useEffect(() => {
+    if (!idEscola) {
+      setCardapios([]);
+      setLoading(false);
+      return;
+    }
     const fetchCardapios = async () => {
       try {
         const dbRef = ref(db);
         const snapshot = await get(child(dbRef, "cardapios"));
         if (snapshot.exists()) {
-          const lista = Object.values(snapshot.val());
+          const lista = Object.values(snapshot.val())
+            .filter(cardapio => cardapio.idEscola === idEscola);
           setCardapios(lista);
+        } else {
+          setCardapios([]);
         }
       } catch (error) {
         console.error("Erro ao buscar cardápios:", error);
@@ -28,7 +40,7 @@ const Cardapio = () => {
     };
 
     fetchCardapios();
-  }, []);
+  }, [db, idEscola]);
 
   return (
     <div className="container">

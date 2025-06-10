@@ -6,6 +6,7 @@ import './style.css';
 
 const ResetarSenha = () => {
   const [email, setEmail] = useState('');
+  const [escola, setEscola] = useState('');
   const [novaSenha, setNovaSenha] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -23,24 +24,44 @@ const ResetarSenha = () => {
     setMessage('');
     setError('');
 
-    if (!email || !novaSenha) {
-      setError("Por favor, insira um email válido e uma nova senha.");
+    if (!email || !novaSenha || !escola) {
+      setError("Por favor, insira o nome da escola, um email válido e uma nova senha.");
       return;
     }
 
     try {
+      // Busca o id da escola pelo nome
+      const escolasRef = ref(db, 'escolas');
+      const snapshotEscolas = await get(escolasRef);
+      let idEscola = null;
+      if (snapshotEscolas.exists()) {
+        const escolas = snapshotEscolas.val();
+        for (const [key, value] of Object.entries(escolas)) {
+          if (value.nome.trim().toLowerCase() === escola.trim().toLowerCase()) {
+            idEscola = key;
+            break;
+          }
+        }
+      }
+      if (!idEscola) {
+        setError("Escola não encontrada.");
+        return;
+      }
+
       const usersRef = ref(db, 'users');
       const snapshot = await get(usersRef);
 
       if (snapshot.exists()) {
         const users = snapshot.val();
-        const userKey = Object.keys(users).find(key => users[key].email === email);
+        const userKey = Object.keys(users).find(
+          key => users[key].email === email && users[key].idEscola === idEscola
+        );
 
         if (userKey) {
           await update(ref(db, `users/${userKey}`), { senha: novaSenha });
           setMessage("Senha redefinida com sucesso!");
         } else {
-          setError("Este e-mail não está registrado em nosso sistema.");
+          setError("Este e-mail não está registrado para esta escola.");
         }
       } else {
         setError("Nenhum usuário encontrado no sistema.");
@@ -56,6 +77,13 @@ const ResetarSenha = () => {
         <h1>Redefinir Senha</h1>
         {message && <p className="success-message">{message}</p>}
         {error && <p className="error">{error}</p>}
+        <input
+          type="text"
+          placeholder="Nome da Escola"
+          value={escola}
+          onChange={(e) => setEscola(e.target.value)}
+          required
+        />
         <input
           type="email"
           placeholder="Digite seu email"

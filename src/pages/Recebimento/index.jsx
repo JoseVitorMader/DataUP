@@ -11,6 +11,10 @@ function CadastrarRecebimento() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
+  // Recupera o idEscola da sessão do usuário logado
+  const session = JSON.parse(localStorage.getItem('userSession'));
+  const idEscola = session?.idEscola;
+
   const calcularTotal = () => {
     const qtd = parseFloat(quantidade.replace(',', '.')) || 0;
     const valor = parseFloat(valorUnitario.replace(',', '.')) || 0;
@@ -41,7 +45,8 @@ function CadastrarRecebimento() {
 
         await set(ref(db, `ingredientes/${nextId}`), {
           id: nextId.toString(),
-          nome: nomeProduto
+          nome: nomeProduto,
+          idEscola: idEscola // Adiciona o id da escola ao ingrediente
         });
         return true;
       }
@@ -57,9 +62,14 @@ function CadastrarRecebimento() {
     setError('');
     setSuccess('');
 
+    if (!idEscola) {
+      setError("Não foi possível identificar a escola. Faça login novamente.");
+      return;
+    }
+
     try {
       const ingredienteAdicionado = await verificarEAdicionarIngrediente(produto);
-      
+
       const recebimentosRef = ref(db, 'recebimentos');
       const snapshot = await new Promise((resolve, reject) => {
         onValue(recebimentosRef, resolve, reject, { onlyOnce: true });
@@ -76,18 +86,18 @@ function CadastrarRecebimento() {
         produto,
         quantidade,
         valorUnitario,
-        valorTotal: calcularTotal()
+        valorTotal: calcularTotal(),
+        idEscola: idEscola // Adiciona o id da escola ao recebimento
       };
 
       await set(ref(db, `recebimentos/re${count}`), recebimento);
-      
+
       let successMessage = `Recebimento re${count} cadastrado com sucesso!`;
       if (ingredienteAdicionado) {
         successMessage += ` O ingrediente "${produto}" foi adicionado ao estoque.`;
       }
 
       setSuccess(successMessage);
-
 
       setQuantidade('');
       setProduto('');

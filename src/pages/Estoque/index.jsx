@@ -8,6 +8,11 @@ function Estoque() {
   const [success, setSuccess] = useState('');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
 
+  // Recupera o idEscola do usuário logado (ajuste conforme seu contexto)
+  const session = JSON.parse(localStorage.getItem('userSession'));
+  const idEscola = session?.idEscola;
+  console.log('idEscola da sessão:', idEscola);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 800);
@@ -18,37 +23,30 @@ function Estoque() {
   }, []);
 
   useEffect(() => {
-    const recebimentosRef = ref(db, 'recebimentos');
-    const estoqueRef = ref(db, 'estoque');
+    if (!idEscola) {
+      setEstoque([]);
+      return;
+    }
 
-    onValue(recebimentosRef, (snapshot) => {
+    // Agora busca direto da tabela recebimento
+    const recebimentoRef = ref(db, 'recebimentos');
+    onValue(recebimentoRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        Object.entries(data).forEach(([key, value]) => {
-          const estoqueItemRef = ref(db, `estoque/${key}`);
-          set(estoqueItemRef, value); 
-        });
-      }
-    });
-
-    onValue(estoqueRef, (snapshot) => {
-      const data = snapshot.val();
-      if (data) {
-        const lista = Object.entries(data).map(([id, item]) => ({ id, ...item }));
+        const lista = Object.entries(data)
+          .map(([id, item]) => ({ id, ...item }))
+          .filter(item => String(item.idEscola).trim() === String(idEscola).trim());
         setEstoque(lista);
       } else {
         setEstoque([]);
       }
     });
-  }, []);
+  }, [idEscola]);
 
   const handleQuantidadeChange = (id, novaQuantidade) => {
     const novaQtdNum = parseFloat(novaQuantidade.replace(',', '.')) || 0;
-    if (novaQtdNum <= 0.00) {
-      remove(ref(db, `estoque/${id}`));
-    } else {
-      set(ref(db, `estoque/${id}/quantidade`), novaQuantidade);
-    }
+    // Não remove mais o item quando zerado, apenas atualiza a quantidade
+    set(ref(db, `estoque/${id}/quantidade`), novaQuantidade);
     setSuccess('Quantidade atualizada com sucesso!');
     setTimeout(() => setSuccess(''), 3000);
   };
@@ -94,7 +92,7 @@ function Estoque() {
                     {quantidade < 1 && quantidade > 0 ? (
                       <span className="alerta-baixo">Baixo Estoque</span>
                     ) : quantidade === 0 ? (
-                      <span className="alerta-baixo">Zerado</span>
+                      <span className="alerta-esgotado">❌ Esgotado</span>
                     ) : (
                       '-'
                     )}
@@ -147,7 +145,7 @@ function Estoque() {
                     {quantidade < 1 && quantidade > 0 ? (
                       <span className="alerta-baixo">⚠️ Baixo Estoque</span>
                     ) : quantidade === 0 ? (
-                      <span className="alerta-baixo">❌ Zerado</span>
+                      <span className="alerta-esgotado">❌ Esgotado</span>
                     ) : (
                       '✅ Normal'
                     )}

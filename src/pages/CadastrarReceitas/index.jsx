@@ -66,6 +66,10 @@ const CadastroReceitas = () => {
     setError('');
   };
 
+  // Recupera o idEscola da sessão do usuário logado
+  const session = JSON.parse(localStorage.getItem('userSession'));
+  const idEscola = session?.idEscola;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
@@ -83,6 +87,11 @@ const CadastroReceitas = () => {
 
     if (passos.length === 0) {
       setError("Adicione pelo menos um passo");
+      return;
+    }
+
+    if (!idEscola) {
+      setError("Não foi possível identificar a escola. Faça login novamente.");
       return;
     }
 
@@ -104,6 +113,7 @@ const CadastroReceitas = () => {
 
       await set(novaReceitaRef, {
         id: novaReceitaId,
+        idEscola: idEscola, // <-- Adiciona o id da escola aqui
         titulo,
         categoria,
         tempo_preparo: tempoPreparo,

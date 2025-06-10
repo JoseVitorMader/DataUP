@@ -19,13 +19,30 @@ function Receitas() {
     idade_30_31: 0,
   });
 
+  // Recupera o idEscola do usuário logado
+  const session = JSON.parse(localStorage.getItem('userSession'));
+  const idEscola = session?.idEscola;
+
   useEffect(() => {
+    if (!idEscola) {
+      setReceitas([]);
+      setLoading(false);
+      return;
+    }
+
     const fetchData = async () => {
       try {
         const dbRef = ref(db);
         const snapshot = await get(child(dbRef, "receitas"));
         if (snapshot.exists()) {
-          setReceitas(Object.values(snapshot.val()));
+          // Filtra receitas pelo idEscola
+          setReceitas(
+            Object.values(snapshot.val()).filter(
+              receita => receita.idEscola === idEscola
+            )
+          );
+        } else {
+          setReceitas([]);
         }
 
         const ingredientesSnapshot = await get(child(dbRef, "ingredientes"));
@@ -40,7 +57,7 @@ function Receitas() {
     };
 
     fetchData();
-  }, []);
+  }, [idEscola]);
 
   const obterNomeIngrediente = (idIngrediente) => {
     return ingredientes[idIngrediente]?.nome || "Ingrediente desconhecido";

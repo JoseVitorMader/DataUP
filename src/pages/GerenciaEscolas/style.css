@@ -19,7 +19,6 @@ body {
   margin-top: 110px;
 }
 
-
 .admin-container h1 {
   font-size: 48px;
   margin-bottom: 30px;
@@ -30,6 +29,7 @@ body {
 .loading {
   font-size: 24px;
   color: #c47321;
+  margin: 40px 0;
 }
 
 .error {
@@ -72,7 +72,7 @@ table {
   background-color: #fffdf7;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
 th, td {
@@ -91,23 +91,6 @@ tr:hover {
   background-color: #f4e1c6;
 }
 
-.admin-status {
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.admin-status.admin {
-  background-color: #4caf50;
-  color: white;
-}
-
-.admin-status.user {
-  background-color: #f8a46f;
-  color: white;
-}
-
 .actions {
   display: flex;
   gap: 10px;
@@ -122,18 +105,6 @@ button {
   font-size: 16px;
   font-family: 'Coiny', cursive;
   transition: all 0.3s;
-}
-
-.back-button {
-  background: linear-gradient(90deg, #c47321, #9e540a);
-  color: white;
-  padding: 12px 25px;
-  margin-bottom: 20px;
-}
-
-.back-button:hover {
-  background: linear-gradient(90deg, #c96806, #8f4904);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .edit {
@@ -151,37 +122,11 @@ button {
   color: white;
 }
 
-.toggle-admin {
-  background-color: #eca966;
-  color: black;
-}
-
 .delete {
   background-color: #f44336;
   color: white;
 }
 
-.no-users {
-  font-size: 20px;
-  color: #c47321;
-  padding: 20px;
-}
-
-input[type="email"], select {
-  padding: 10px;
-  border: 2px solid #c47321;
-  border-radius: 10px;
-  width: 100%;
-  font-family: 'Coiny', cursive;
-  background-color: #fffdf7;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilos para o formulário de adicionar usuário */
 .add-user-btn {
   background: linear-gradient(90deg, #4caf50, #2e7d32);
   color: white;
@@ -203,9 +148,10 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
 }
 
-.add-user-form input {
+.add-user-form input[type="text"] {
   padding: 15px;
   font-size: 16px;
   border: 2px solid #c47321;
@@ -213,6 +159,7 @@ button:hover {
   background-color: #fff;
   transition: all 0.3s;
   font-family: 'Coiny', cursive;
+  width: 250px;
 }
 
 .add-user-form input:focus {
@@ -238,141 +185,64 @@ button:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos responsivos para o formulário */
-@media (max-width: 768px) {
-  .add-user-form {
-    padding: 20px;
-    gap: 15px;
-  }
-  
-  .add-user-form input {
-    padding: 12px;
-    font-size: 15px;
-  }
-  
-  .add-user-form button[type="submit"] {
-    padding: 12px;
-    font-size: 16px;
-  }
+.no-users {
+  font-size: 20px;
+  color: #c47321;
+  padding: 20px;
 }
 
-@media (max-width: 480px) {
-  .add-user-form {
-    padding: 15px;
-    gap: 12px;
-  }
-  
-  .add-user-form input {
-    padding: 10px;
-    font-size: 14px;
-  }
-  
-  .add-user-form button[type="submit"] {
-    padding: 10px;
-    font-size: 15px;
-  }
-}
-
+/* Responsivo */
 @media (max-width: 1024px) {
-  body.login-page {
-      padding-right: 5%;
+  .admin-container {
+    max-width: 95%;
+    padding: 25px;
   }
-
-  body.login-page .login-form {
-      max-width: 500px;
-      height: auto;
-      padding: 30px 20px;
+  .admin-container h1 {
+    font-size: 38px;
   }
-
-  body.login-page h1 {
-      font-size: 48px;
+  th, td {
+    padding: 10px;
+    font-size: 15px;
   }
 }
 
 @media (max-width: 768px) {
-  body.login-page {
-      justify-content: center;
-      padding: 20px;
+  .admin-container {
+    padding: 15px;
+    margin-top: 80px;
   }
-
-  body.login-page .login-form {
-      width: 100%;
-      max-width: 90%;
-      height: auto;
-      padding: 25px 15px;
+  .admin-container h1 {
+    font-size: 28px;
   }
-
-  body.login-page h1 {
-      font-size: 36px;
+  .add-user-form input[type="text"] {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
   }
-
-  body.login-page input {
-      padding: 16px;
-      margin: 30px 0;
-      font-size: 14px;
-  }
-
-  body.login-page button {
-      padding: 20px;
-      font-size: 18px;
-  }
-
-  .button-group {
-      flex-direction: column;
-      gap: 5px;
+  .add-user-form button[type="submit"] {
+    padding: 12px;
+    font-size: 15px;
   }
 }
 
 @media (max-width: 480px) {
-  body.login-page h1 {
-      font-size: 28px;
+  .admin-container {
+    padding: 8px;
+    margin-top: 60px;
   }
-
-  body.login-page input {
-      padding: 14px;
-      margin: 25px 0;
-      font-size: 13px;
+  .admin-container h1 {
+    font-size: 20px;
   }
-
-  body.login-page button {
-      padding: 18px;
-      font-size: 16px;
+  th, td {
+    padding: 6px;
+    font-size: 12px;
   }
-
-  .button-group {
-      flex-direction: column;
-      gap: 5px;
+  .add-user-form input[type="text"] {
+    font-size: 13px;
+    padding: 10px;
   }
-}
-@media (max-width: 320px) {
-  body.login-page h1 {
-      font-size: 24px;
-  }
-
-  body.login-page input {
-      padding: 12px;
-      margin: 20px 0;
-      font-size: 12px;
-  }
-
-  body.login-page button {
-      padding: 16px;
-      font-size: 14px;
-  }
-}
-@media (max-width: 240px) {
-  body.login-page h1 {
-      font-size: 20px;
-  }
-
-  body.login-page input {
-      padding: 10px;
-      margin: 15px 0;
-      font-size: 11px;
-  }
-
-  body.login-page button {
-      padding: 14px;
-      font-size: 12px;
+  .add-user-form button[type="submit"] {
+    padding: 10px;
+    font-size: 13px;
   }
 }

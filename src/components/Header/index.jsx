@@ -1,6 +1,6 @@
-  import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaUtensils, FaBoxes, FaComment, FaTruck, FaBook, FaHome, FaInfoCircle, FaEnvelope, FaUserShield, FaPlus, FaMinus, FaChevronLeft, FaChevronRight, FaBars, FaTimes } from 'react-icons/fa';
+import { FaUtensils, FaBoxes, FaComment, FaTruck, FaBook, FaHome, FaInfoCircle, FaEnvelope, FaUserShield, FaPlus, FaMinus, FaChevronLeft, FaChevronRight, FaBars, FaTimes, FaSignOutAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import './style.css';
 
@@ -9,7 +9,6 @@ const normalItems = [
   { to: "/cardapios", icon: <FaUtensils />, text: "Cardápio" },
   { to: "/estoque", icon: <FaBoxes />, text: "Estoque" },
   { to: "/feedbacks", icon: <FaComment />, text: "Feedbacks" },
-  { to: "/recebimento", icon: <FaTruck />, text: "Recebimento" },
   { to: "/receitas", icon: <FaBook />, text: "Receitas" },
   { to: "/sobre", icon: <FaInfoCircle />, text: "Sobre" },
   { to: "/contato", icon: <FaEnvelope />, text: "Contato" },
@@ -35,12 +34,18 @@ const funcionarioItems = [
   { to: "/usuarios", icon: <FaUserShield />, text: "Usuários" },
   { to: "/cadCardapio", icon: <FaUtensils />, text: "Cadastrar Cardápio" },
   { to: "/cadReceita", icon: <FaBook />, text: "Cadastrar Receita" },
-  { to: "/selecionar-tipo-ingrediente", icon: <FaBoxes />, text: "Cadastrar Ingredientes" },
+  { to: "/recebimento", icon: <FaTruck />, text: "Recebimento" },
   
+];
+
+const admMasterItems = [
+  { to: "/gerenciar-escolas", icon: <FaUserShield />, text: "Gerenciar Escolas" },
+  { to: "/selecionar-tipo-ingrediente", icon: <FaBoxes />, text: "Cadastrar Ingredientes" }
 ];
 
 function Header() {
   const [isADM, setIsADM] = useState(false);
+  const [isADMMASTER, setIsADMMASTER] = useState(false);
   const [showADM, setShowADM] = useState(false);
   const [showScrollButtons, setShowScrollButtons] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -48,9 +53,16 @@ function Header() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const adm = localStorage.getItem('isADM') === 'true';
-    setIsADM(adm);
+    const updateADM = () => {
+      setIsADM(localStorage.getItem('isADM') === 'true');
+      setIsADMMASTER(localStorage.getItem('isADMMASTER') === 'true');
+    };
+    window.addEventListener('storage', updateADM);
+    updateADM();
+    return () => window.removeEventListener('storage', updateADM);
+  }, []);
 
+  useEffect(() => {
     const checkScroll = () => {
       if (navRef.current && containerRef.current) {
         const needsScroll = navRef.current.scrollWidth > containerRef.current.clientWidth;
@@ -61,7 +73,7 @@ function Header() {
     checkScroll();
     window.addEventListener('resize', checkScroll);
     return () => window.removeEventListener('resize', checkScroll);
-  }, [showADM]);
+  }, []);
 
   const toggleView = () => {
     setShowADM(!showADM);
@@ -79,18 +91,32 @@ function Header() {
 
   const tipoUsuario = localStorage.getItem('tipoUsuario');
 
+  // Itens principais (sempre visíveis conforme tipo)
   let menuItems;
   if (tipoUsuario === 'estudante') {
     menuItems = estudanteItems;
   } else if (isADM && showADM) {
-    menuItems = funcionarioItems;
+    menuItems = [
+      ...funcionarioItems,
+      // Adiciona os exclusivos do ADM Master se for ADM Master também
+      ...(isADMMASTER ? admMasterItems : [])
+    ];
+  } else if (isADM) {
+    menuItems = normalItems;
   } else {
-    // Mostra só os itens normais para funcionário comum
     menuItems = normalItems;
   }
 
   // Fecha sidebar ao clicar em um link
   const handleSidebarLink = () => setSidebarOpen(false);
+
+  // Função de logout
+  const handleLogout = () => {
+    localStorage.removeItem('userSession');
+    localStorage.removeItem('isADM');
+    localStorage.removeItem('tipoUsuario');
+    window.location.href = '/';
+  };
 
   return (
     <header>
@@ -99,6 +125,22 @@ function Header() {
           <img src="/favicon.ico" alt="Logo" className="favicon" />
         </Link>
         <h2>Tá Na Medida</h2>
+        <button
+          className="logout-btn"
+          onClick={handleLogout}
+          title="Sair"
+          style={{
+            background: 'none',
+            border: 'none',
+            marginLeft: '10px',
+            cursor: 'pointer',
+            color: '#c00',
+            fontSize: '1.5rem',
+            verticalAlign: 'middle'
+          }}
+        >
+          <FaSignOutAlt />
+        </button>
       </div>
 
       {/* Botão hamburger só no mobile */}
