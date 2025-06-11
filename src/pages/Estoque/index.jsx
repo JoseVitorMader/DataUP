@@ -89,8 +89,8 @@ function Estoque() {
                   </td>
                   <td>R$ {total}</td>
                   <td>
-                    {quantidade < 1 && quantidade > 0 ? (
-                      <span className="alerta-baixo">Baixo Estoque</span>
+                    {quantidade <= 5 && quantidade > 0 ? (
+                      <span className="alerta-baixo">⚠️ Baixo Estoque</span>
                     ) : quantidade === 0 ? (
                       <span className="alerta-esgotado">❌ Esgotado</span>
                     ) : (
@@ -142,7 +142,7 @@ function Estoque() {
                 <div className="card-row">
                   <span className="label">Status:</span>
                   <span className="value">
-                    {quantidade < 1 && quantidade > 0 ? (
+                    {quantidade <= 5 && quantidade > 0 ? (
                       <span className="alerta-baixo">⚠️ Baixo Estoque</span>
                     ) : quantidade === 0 ? (
                       <span className="alerta-esgotado">❌ Esgotado</span>

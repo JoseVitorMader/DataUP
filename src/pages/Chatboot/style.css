@@ -69,6 +69,13 @@
   border: 1px solid var(--secondary-color);
 }
 
+
+@media (max-width: 1024px) {
+  .bot-message {
+    font-family: 'Edu SA Hand', cursive, sans-serif;
+  }
+}
+
 .typing-indicator {
   color: var(--dark-color);
   font-style: italic;
