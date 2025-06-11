@@ -46,7 +46,7 @@ function Estoque() {
   const handleQuantidadeChange = (id, novaQuantidade) => {
     const novaQtdNum = parseFloat(novaQuantidade.replace(',', '.')) || 0;
     // Não remove mais o item quando zerado, apenas atualiza a quantidade
-    set(ref(db, `estoque/${id}/quantidade`), novaQuantidade);
+    set(ref(db, `recebimentos/${id}/quantidade`), novaQuantidade);
     setSuccess('Quantidade atualizada com sucesso!');
     setTimeout(() => setSuccess(''), 3000);
   };

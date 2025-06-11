@@ -26,8 +26,20 @@ const Cardapio = () => {
         const dbRef = ref(db);
         const snapshot = await get(child(dbRef, "cardapios"));
         if (snapshot.exists()) {
-          const lista = Object.values(snapshot.val())
-            .filter(cardapio => cardapio.idEscola === idEscola);
+          let lista = Object.values(snapshot.val());
+          if (session?.isSed === "true") {
+            // Busca todas as escolas SED
+            const escolasSnap = await get(child(dbRef, "escolas"));
+            let escolasSedIds = [];
+            if (escolasSnap.exists()) {
+              escolasSedIds = Object.entries(escolasSnap.val())
+                .filter(([_, escola]) => escola.isSed === true)
+                .map(([id]) => id);
+            }
+            lista = lista.filter(cardapio => escolasSedIds.includes(cardapio.idEscola));
+          } else {
+            lista = lista.filter(cardapio => cardapio.idEscola === idEscola);
+          }
           setCardapios(lista);
         } else {
           setCardapios([]);

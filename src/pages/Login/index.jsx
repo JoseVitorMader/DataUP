@@ -11,6 +11,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [escola, setEscola] = useState('');
+  const [escolas, setEscolas] = useState([]);
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -33,6 +34,27 @@ const Login = () => {
     }
   }, [navigate]);
 
+  // Busca todas as escolas ao carregar a tela
+  useEffect(() => {
+    const fetchEscolas = async () => {
+      try {
+        const snapshot = await get(child(ref(db), "escolas"));
+        if (snapshot.exists()) {
+          const escolasObj = snapshot.val();
+          // Transforma em array [{id, nome}]
+          const escolasArr = Object.keys(escolasObj).map(id => ({
+            id,
+            nome: escolasObj[id].nome || id
+          }));
+          setEscolas(escolasArr);
+        }
+      } catch (err) {
+        console.error("Erro ao buscar escolas:", err);
+      }
+    };
+    fetchEscolas();
+  }, []);
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
@@ -52,7 +74,7 @@ const Login = () => {
             user.email.trim().toLowerCase() === email.trim().toLowerCase() &&
             user.senha.trim() === password.trim() &&
             user.idEscola &&
-            escola.trim().toLowerCase() === getEscolaNomeById(user.idEscola, db)
+            String(escola).trim() === String(user.idEscola).trim() // compara como string e sem espaços
           ) {
             userFound = { ...user, key };
           }
@@ -101,14 +123,6 @@ const Login = () => {
     }
   };
 
-  // Função auxiliar para buscar nome da escola pelo id (sincrona, pois você pode manter um cache ou buscar antes)
-  function getEscolaNomeById(idEscola, dbInstance) {
-    // Aqui você pode implementar um cache ou buscar do localStorage.
-    // Para simplificação, vamos assumir que o nome digitado é o id (caso use o id como nome).
-    // O ideal é buscar o nome da escola pelo id no banco e comparar.
-    return escola.trim().toLowerCase();
-  }
-
   // Logout automático após 2h
   useEffect(() => {
     const interval = setInterval(() => {
@@ -126,13 +140,16 @@ const Login = () => {
     <form className="login-form" onSubmit={handleLogin}>
       <h1>Tá Na Medida!</h1>
       {error && <p className="error">{error}</p>}
-      <input
-        type="text"
-        placeholder="Escola"
+      <select
         value={escola}
         onChange={(e) => setEscola(e.target.value)}
         required
-      />
+      >
+        <option value="">Selecione a escola</option>
+        {escolas.map((esc) => (
+          <option key={esc.id} value={esc.id}>{esc.nome}</option>
+        ))}
+      </select>
       <input
         type="email"
         placeholder="Email"
