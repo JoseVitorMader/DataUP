@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
 
 .home-wrapper {
   display: flex;
@@ -254,4 +256,11 @@
   .hint-text {
     font-size: 0.8rem;
   }
+}
+
+.lora-body {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }

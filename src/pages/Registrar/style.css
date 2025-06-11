@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
 
 * {
     margin: 0;
@@ -206,4 +208,10 @@ body.register-page .error {
     body.register-page h1 {
         font-size: 1.8rem;
     }
+}
+.lora-body {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }

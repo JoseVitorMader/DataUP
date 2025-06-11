@@ -1,4 +1,8 @@
 /* Chatbot Styles - Versão Melhorada */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Hand&display=swap');
+
 :root {
   --primary-color: #FF7B25;
   --secondary-color: #FFAA5E;
@@ -10,6 +14,13 @@
   --border-radius: 16px;
   --border-radius-small: 8px;
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .chatbot-container {
