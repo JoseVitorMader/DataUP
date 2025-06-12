@@ -1,7 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Edu+SA+Hand&display=swap');
 
+body, 
+.cadastro-receitas-container, 
+.form-receita, 
+.form-group, 
+.form-group input, 
+.form-group select, 
+.form-group textarea, 
+.add-button, 
+.submit-button, 
+.ingredientes-list, 
+.passos-list, 
+.popup-content, 
+.popup-form-group, 
+.popup-buttons, 
+.popup-buttons button, 
+.cancel-button, 
+.remove-button {
+  font-family: "Lora", serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
+/* Mantém títulos e headers com fonte especial */
+h1, h2, h3, h4, h5, h6,
+.cadastro-receitas-container h1,
+.popup-content h2 {
+  font-family: 'Coiny', 'Edu SA Hand', cursive, sans-serif !important;
+}
 body {
   margin: 0;
   padding: 0;
@@ -182,11 +210,4 @@ body {
     padding: 6px;
     font-size: 11px;
   }
-}
-
-.lora-body {
-  font-family: "Lora", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
 }
